@@ -46,7 +46,7 @@ namespace PC_Room
             */
         }
 
-        public FoodOrderForm(string seatNumber, int customerID)
+        public FoodOrderForm(string seatNumber, int customerID) : this()
         {
             this.seatNumber = seatNumber;
             this.customerID = customerID;
@@ -187,8 +187,8 @@ namespace PC_Room
 
             order.ProductID = e.ProductId;
             order.Count = e.Count;
-            order.SeatID = 1;
-            order.CustomerID = 1;
+            order.SeatID = int.Parse(seatNumber);
+            order.CustomerID = customerID;
             order.OrderTime = DateTime.Now;
             order.buyed = false;
             DataRepository.Order.Insert(order);
