@@ -1,6 +1,6 @@
 ﻿namespace loginform
 {
-    partial class productIcon
+    partial class ProductIcon
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,19 +33,20 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.OrderBtn = new System.Windows.Forms.Button();
             this.ProductPhoto = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnCount = new DevExpress.XtraEditors.SpinEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCount.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.lblPrice);
             this.panel1.Controls.Add(this.OrderBtn);
             this.panel1.Controls.Add(this.ProductPhoto);
+            this.panel1.Controls.Add(this.btnCount);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -55,16 +56,17 @@
             // lblName
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblName.Location = new System.Drawing.Point(190, 14);
+            this.lblName.Location = new System.Drawing.Point(178, 30);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(109, 38);
+            this.lblName.Size = new System.Drawing.Size(121, 26);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Name";
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(195, 77);
+            this.lblPrice.Location = new System.Drawing.Point(178, 77);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(63, 15);
             this.lblPrice.TabIndex = 2;
@@ -91,14 +93,31 @@
             this.ProductPhoto.TabIndex = 0;
             this.ProductPhoto.TabStop = false;
             // 
-            // label1
+            // btnCount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.btnCount.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.btnCount.Location = new System.Drawing.Point(247, 72);
+            this.btnCount.Name = "btnCount";
+            this.btnCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.btnCount.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.btnCount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.btnCount.Properties.MaxValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.btnCount.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.btnCount.Size = new System.Drawing.Size(52, 24);
+            this.btnCount.TabIndex = 4;
             // 
             // productIcon
             // 
@@ -111,6 +130,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCount.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,6 +142,6 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button OrderBtn;
         private System.Windows.Forms.PictureBox ProductPhoto;
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SpinEdit btnCount;
     }
 }

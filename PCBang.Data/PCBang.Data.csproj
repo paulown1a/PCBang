@@ -72,6 +72,8 @@
     <Compile Include="Data\GameUsingListData.cs" />
     <Compile Include="Data\OrderData.cs" />
     <Compile Include="Data\ProductData.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Game.cs">
       <DependentUpon>PCBang.tt</DependentUpon>
     </Compile>

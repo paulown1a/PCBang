@@ -1,6 +1,7 @@
 ﻿using PC_Project.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,9 +42,18 @@ namespace PC_Project.Data
                         select x;
             //select new { album = x, artistname = x.artist.name };
             return query.ToList();
+        }
 
+        public void AddPhoth(int productId, string filePath)
+        {
+            var product = Get(productId);
 
+            if (product == null)
+                return;
 
+            product.Photo = File.ReadAllBytes(filePath);
+
+            Update(product);
         }
     }
 }

@@ -8,12 +8,6 @@ using System.Threading.Tasks;
 
 namespace PC_Project.Data
 {
-    public partial class Order
-    {
-        public string ProductName { get; set; }
-        public int ProductPrice { get; set; }
-    }
-
     public class OrderData : EntitiyData<Order>
     {
         public Order Get(int orderId)
@@ -34,16 +28,16 @@ namespace PC_Project.Data
             PCBangEntities context = CreateContext();
             var query = from x in context.Orders
                         where x.buyed == buyed
-                        select x;
-            var orders = query.ToList();
+                        select new { Order = x, ProductName = x.Product.Name, ProductPrice = x.Product.Price };
+            var list = query.ToList();
 
-            foreach (var order in orders)
+            foreach (var x in list)
             {
-                order.ProductName = context.Products.FirstOrDefault(x => x.ProductID == order.ProductID).Name;
-                order.ProductPrice = context.Products.FirstOrDefault(x => x.ProductID == order.ProductID).Price;
+                x.Order.ProductName = x.ProductName;
+                x.Order.ProductPrice= x.ProductPrice;
             }
 
-            return orders;
+            return list.ConvertAll(x => x.Order);
         }
         public void Insert(int entity)
         {

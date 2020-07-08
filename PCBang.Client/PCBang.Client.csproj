@@ -94,11 +94,11 @@
       <DependentUpon>NewAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessKiller.cs" />
-    <Compile Include="productIcon.cs">
+    <Compile Include="ProductIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="productIcon.Designer.cs">
-      <DependentUpon>productIcon.cs</DependentUpon>
+    <Compile Include="ProductIcon.Designer.cs">
+      <DependentUpon>ProductIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,8 +120,8 @@
     <EmbeddedResource Include="NewAccount.resx">
       <DependentUpon>NewAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="productIcon.resx">
-      <DependentUpon>productIcon.cs</DependentUpon>
+    <EmbeddedResource Include="ProductIcon.resx">
+      <DependentUpon>ProductIcon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -138,6 +138,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PC_Project.Data.Order.datasource" />
+    <None Include="Properties\DataSources\PC_Project.Data.Product.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Seat.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

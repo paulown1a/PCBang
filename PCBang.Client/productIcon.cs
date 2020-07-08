@@ -12,9 +12,9 @@ using PC_Project.Data;
 
 namespace loginform
 {
-    public partial class productIcon : UserControl
+    public partial class ProductIcon : UserControl
     {
-        public productIcon()
+        public ProductIcon()
         {
             InitializeComponent();
         }
@@ -23,8 +23,8 @@ namespace loginform
         {
             Enabled = false;
 
-            if (DataRepository.Product.GetByName("핫도그") != null)
-                OnOrderBtnClicked(DataRepository.Product.GetByName("핫도그").Value, 1);
+            if (DataRepository.Product.GetByName(lblName.Text) != null)
+                OnOrderBtnClicked(DataRepository.Product.GetByName(lblName.Text).Value, (int)btnCount.Value);
             Enabled = true;
         }
 
@@ -77,5 +77,9 @@ namespace loginform
         }
         #endregion
 
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
