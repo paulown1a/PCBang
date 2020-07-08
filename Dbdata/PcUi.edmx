@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PCUIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chatting">
+          <Key>
+            <PropertyRef Name="ChattingID" />
+          </Key>
+          <Property Name="ChattingID" Type="int" Nullable="false" />
+          <Property Name="SeatID" Type="int" Nullable="false" />
+          <Property Name="SendTIme" Type="datetime" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="Checked" Type="bit" Nullable="false" />
+          <Property Name="Sent" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Code">
+          <Key>
+            <PropertyRef Name="CodeID" />
+          </Key>
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="LoginID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoginPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Payment" Type="int" Nullable="false" />
+          <Property Name="RemainingTime" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PC방_UI.dbo.GameGenre' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GameGenre">
+          <Key>
+            <PropertyRef Name="GameID" />
+            <PropertyRef Name="CodeID" />
+          </Key>
+          <Property Name="GameID" Type="int" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GameUsingList">
+          <Key>
+            <PropertyRef Name="GameID" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="GameID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="UsedTime" Type="int" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SeatID" Type="int" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="OrderTime" Type="datetime" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Seat">
+          <Key>
+            <PropertyRef Name="SeatID" />
+          </Key>
+          <Property Name="SeatID" Type="int" Nullable="false" />
+          <Property Name="Breakdown" Type="bit" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Game_Code">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_게임 이용내역_게임">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameUsingList" Type="Self.GameUsingList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="GameID" />
+            </Principal>
+            <Dependent Role="GameUsingList">
+              <PropertyRef Name="GameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_게임 이용내역_회원">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="GameUsingList" Type="Self.GameUsingList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="GameUsingList">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_게임장르_etc">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="GameGenre" Type="Self.GameGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="GameGenre">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_게임장르_게임">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameGenre" Type="Self.GameGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="GameID" />
+            </Principal>
+            <Dependent Role="GameGenre">
+              <PropertyRef Name="GameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_etc">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_상품">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_좌석">
+          <End Role="Seat" Type="Self.Seat" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seat">
+              <PropertyRef Name="SeatID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_회원">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_상품_etc">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_좌석_회원">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Seat">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_채팅_좌석">
+          <End Role="Seat" Type="Self.Seat" Multiplicity="1" />
+          <End Role="Chatting" Type="Self.Chatting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seat">
+              <PropertyRef Name="SeatID" />
+            </Principal>
+            <Dependent Role="Chatting">
+              <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PCUIModelStoreContainer">
+          <EntitySet Name="Chatting" EntityType="Self.Chatting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Code" EntityType="Self.Code" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameUsingList" EntityType="Self.GameUsingList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seat" EntityType="Self.Seat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameGenre" EntityType="Self.GameGenre" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GameGenre].[GameID] AS [GameID], 
+    [GameGenre].[CodeID] AS [CodeID]
+    FROM [dbo].[GameGenre] AS [GameGenre]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Game_Code" Association="Self.FK_Game_Code">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="Game" EntitySet="Game" />
+          </AssociationSet>
+          <AssociationSet Name="FK_게임 이용내역_게임" Association="Self.FK_게임 이용내역_게임">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="GameUsingList" EntitySet="GameUsingList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_게임 이용내역_회원" Association="Self.FK_게임 이용내역_회원">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="GameUsingList" EntitySet="GameUsingList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_게임장르_etc" Association="Self.FK_게임장르_etc">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="GameGenre" EntitySet="GameGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_게임장르_게임" Association="Self.FK_게임장르_게임">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="GameGenre" EntitySet="GameGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_etc" Association="Self.FK_구매_etc">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_상품" Association="Self.FK_구매_상품">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_좌석" Association="Self.FK_구매_좌석">
+            <End Role="Seat" EntitySet="Seat" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_회원" Association="Self.FK_구매_회원">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_상품_etc" Association="Self.FK_상품_etc">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_좌석_회원" Association="Self.FK_좌석_회원">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Seat" EntitySet="Seat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_채팅_좌석" Association="Self.FK_채팅_좌석">
+            <End Role="Seat" EntitySet="Seat" />
+            <End Role="Chatting" EntitySet="Chatting" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PCUIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chatting">
+          <Key>
+            <PropertyRef Name="ChattingID" />
+          </Key>
+          <Property Name="ChattingID" Type="Int32" Nullable="false" />
+          <Property Name="SeatID" Type="Int32" Nullable="false" />
+          <Property Name="SendTIme" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Checked" Type="Boolean" Nullable="false" />
+          <Property Name="Sent" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Seat" Relationship="Self.FK_채팅_좌석" FromRole="Chatting" ToRole="Seat" />
+        </EntityType>
+        <EntityType Name="Code">
+          <Key>
+            <PropertyRef Name="CodeID" />
+          </Key>
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Games" Relationship="Self.FK_Game_Code" FromRole="Code" ToRole="Game" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_etc" FromRole="Code" ToRole="Order" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_상품_etc" FromRole="Code" ToRole="Product" />
+          <NavigationProperty Name="Games1" Relationship="Self.GameGenre" FromRole="Code" ToRole="Game" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="LoginID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Payment" Type="Int32" Nullable="false" />
+          <Property Name="RemainingTime" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GameUsingLists" Relationship="Self.FK_게임_이용내역_회원" FromRole="Customer" ToRole="GameUsingList" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_회원" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="Seats" Relationship="Self.FK_좌석_회원" FromRole="Customer" ToRole="Seat" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="Self.FK_Game_Code" FromRole="Game" ToRole="Code" />
+          <NavigationProperty Name="GameUsingLists" Relationship="Self.FK_게임_이용내역_게임" FromRole="Game" ToRole="GameUsingList" />
+          <NavigationProperty Name="Codes" Relationship="Self.GameGenre" FromRole="Game" ToRole="Code" />
+        </EntityType>
+        <EntityType Name="GameUsingList">
+          <Key>
+            <PropertyRef Name="GameID" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="GameID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="UsedTime" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_게임_이용내역_회원" FromRole="GameUsingList" ToRole="Customer" />
+          <NavigationProperty Name="Game" Relationship="Self.FK_게임_이용내역_게임" FromRole="GameUsingList" ToRole="Game" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeatID" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="Self.FK_구매_etc" FromRole="Order" ToRole="Code" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_구매_회원" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_구매_상품" FromRole="Order" ToRole="Product" />
+          <NavigationProperty Name="Seat" Relationship="Self.FK_구매_좌석" FromRole="Order" ToRole="Seat" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="Self.FK_상품_etc" FromRole="Product" ToRole="Code" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_상품" FromRole="Product" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Seat">
+          <Key>
+            <PropertyRef Name="SeatID" />
+          </Key>
+          <Property Name="SeatID" Type="Int32" Nullable="false" />
+          <Property Name="Breakdown" Type="Boolean" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" />
+          <NavigationProperty Name="Chattings" Relationship="Self.FK_채팅_좌석" FromRole="Seat" ToRole="Chatting" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_좌석_회원" FromRole="Seat" ToRole="Customer" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_좌석" FromRole="Seat" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_채팅_좌석">
+          <End Role="Seat" Type="Self.Seat" Multiplicity="1" />
+          <End Role="Chatting" Type="Self.Chatting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seat">
+              <PropertyRef Name="SeatID" />
+            </Principal>
+            <Dependent Role="Chatting">
+              <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Game_Code">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_etc">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_상품_etc">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_게임_이용내역_회원">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="GameUsingList" Type="Self.GameUsingList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="GameUsingList">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_회원">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_좌석_회원">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Seat">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_게임_이용내역_게임">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameUsingList" Type="Self.GameUsingList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="GameID" />
+            </Principal>
+            <Dependent Role="GameUsingList">
+              <PropertyRef Name="GameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_상품">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_좌석">
+          <End Role="Seat" Type="Self.Seat" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seat">
+              <PropertyRef Name="SeatID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GameGenre">
+          <End Role="Code" Type="Self.Code" Multiplicity="*" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="PCUIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chattings" EntityType="Self.Chatting" />
+          <EntitySet Name="Codes" EntityType="Self.Code" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="GameUsingLists" EntityType="Self.GameUsingList" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Seats" EntityType="Self.Seat" />
+          <AssociationSet Name="FK_채팅_좌석" Association="Self.FK_채팅_좌석">
+            <End Role="Seat" EntitySet="Seats" />
+            <End Role="Chatting" EntitySet="Chattings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Game_Code" Association="Self.FK_Game_Code">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Game" EntitySet="Games" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_etc" Association="Self.FK_구매_etc">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_상품_etc" Association="Self.FK_상품_etc">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_게임_이용내역_회원" Association="Self.FK_게임_이용내역_회원">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="GameUsingList" EntitySet="GameUsingLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_회원" Association="Self.FK_구매_회원">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_좌석_회원" Association="Self.FK_좌석_회원">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Seat" EntitySet="Seats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_게임_이용내역_게임" Association="Self.FK_게임_이용내역_게임">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="GameUsingList" EntitySet="GameUsingLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_상품" Association="Self.FK_구매_상품">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_좌석" Association="Self.FK_구매_좌석">
+            <End Role="Seat" EntitySet="Seats" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="GameGenre" Association="Self.GameGenre">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Game" EntitySet="Games" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PCUIModelStoreContainer" CdmEntityContainer="PCUIEntities">
+          <EntitySetMapping Name="Chattings">
+            <EntityTypeMapping TypeName="PCUIModel.Chatting">
+              <MappingFragment StoreEntitySet="Chatting">
+                <ScalarProperty Name="ChattingID" ColumnName="ChattingID" />
+                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+                <ScalarProperty Name="SendTIme" ColumnName="SendTIme" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Checked" ColumnName="Checked" />
+                <ScalarProperty Name="Sent" ColumnName="Sent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Codes">
+            <EntityTypeMapping TypeName="PCUIModel.Code">
+              <MappingFragment StoreEntitySet="Code">
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="PCUIModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="LoginPassword" ColumnName="LoginPassword" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="RemainingTime" ColumnName="RemainingTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="PCUIModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="GameID" ColumnName="GameID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameUsingLists">
+            <EntityTypeMapping TypeName="PCUIModel.GameUsingList">
+              <MappingFragment StoreEntitySet="GameUsingList">
+                <ScalarProperty Name="GameID" ColumnName="GameID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="UsedTime" ColumnName="UsedTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="PCUIModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="PCUIModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seats">
+            <EntityTypeMapping TypeName="PCUIModel.Seat">
+              <MappingFragment StoreEntitySet="Seat">
+                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+                <ScalarProperty Name="Breakdown" ColumnName="Breakdown" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="GameGenre" TypeName="PCUIModel.GameGenre" StoreEntitySet="GameGenre">
+            <EndProperty Name="Code">
+              <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+            </EndProperty>
+            <EndProperty Name="Game">
+              <ScalarProperty Name="GameID" ColumnName="GameID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
