@@ -86,7 +86,7 @@
     <Compile Include="Genre.cs">
       <DependentUpon>PCBang.tt</DependentUpon>
     </Compile>
-    <Compile Include="GenreData.cs" />
+    <Compile Include="Data\GenreData.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>PCBang.tt</DependentUpon>
     </Compile>

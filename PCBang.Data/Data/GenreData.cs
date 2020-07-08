@@ -22,6 +22,7 @@ namespace PC_Project.Data
                 return;
             Delete(Genre);
         }
+
         public void AddPhoth(int genreId, string filePath)
         {
             var genre = Get(genreId);

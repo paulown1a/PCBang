@@ -30,5 +30,15 @@ namespace PC_Project.Data
                         select x;
             return query.ToList();
         }
+
+        public List<Chatting> GetNotRead(bool sent, int seatId)
+        {
+            PCBangEntities context = CreateContext();
+
+            var query = from x in context.Chattings
+                        where x.Sent == sent && x.Checked == false && x.SeatID == seatId
+                        select x;
+            return query.ToList();
+        }
     }
 }

@@ -43,8 +43,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CodeID" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PCBang.dbo.GameGenre' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="GameGenre">
           <Key>
             <PropertyRef Name="GameID" />
@@ -262,18 +260,12 @@ warning 6002: The table/view 'PCBang.dbo.GameGenre' does not have a primary key 
           <EntitySet Name="Code" EntityType="Self.Code" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameGenre" EntityType="Self.GameGenre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameUsingList" EntityType="Self.GameUsingList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seat" EntityType="Self.Seat" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GameGenre" EntityType="Self.GameGenre" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [GameGenre].[GameID] AS [GameID], 
-    [GameGenre].[GenreID] AS [GenreID], 
-    [GameGenre].[Dummy] AS [Dummy]
-    FROM [dbo].[GameGenre] AS [GameGenre]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Game_Code" Association="Self.FK_Game_Code">
             <End Role="Code" EntitySet="Code" />
             <End Role="Game" EntitySet="Game" />
