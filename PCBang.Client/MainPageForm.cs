@@ -83,7 +83,7 @@ namespace MainPage
         private void btnFoodOrder_Click(object sender, EventArgs e)
         {
             MessageBox.Show("음식주문");
-            FoodOrderForm Foodorder = new FoodOrderForm();
+            FoodOrderForm Foodorder = new FoodOrderForm(seatNumber, customer.CustomerID);
             Foodorder.Show();
         }
     }

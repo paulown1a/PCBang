@@ -20,8 +20,8 @@ namespace PC_Room
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Panel leftBorderBtnSecond;
-
-
+        private string seatNumber;
+        private int customerID;
 
         public FoodOrderForm()
         {
@@ -44,6 +44,12 @@ namespace PC_Room
        
             }, System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
             */
+        }
+
+        public FoodOrderForm(string seatNumber, int customerID)
+        {
+            this.seatNumber = seatNumber;
+            this.customerID = customerID;
         }
 
         private struct RGBColors
