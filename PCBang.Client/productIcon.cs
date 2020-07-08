@@ -18,7 +18,7 @@ namespace loginform
         {
             InitializeComponent();
         }
-
+         
         private void OrderBtn_Click(object sender, EventArgs e)
         {
             Enabled = false;
