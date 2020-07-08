@@ -1,4 +1,5 @@
 ﻿using DevExpressKiller;
+using PC_Room;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,7 @@ namespace loginform
 
             ProcessKiller.Instance.Start();
 
-            Application.Run(new LoginForm());
-            //hello 200708 10시 57분
+            Application.Run(new FoodOrderForm());
         }
     }
 }

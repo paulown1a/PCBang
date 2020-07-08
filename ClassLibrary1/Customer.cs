@@ -18,8 +18,8 @@ namespace Dbdata
         public Customer()
         {
             this.GameUsingLists = new HashSet<GameUsingList>();
-            this.Orders = new HashSet<Order>();
             this.Seats = new HashSet<Seat>();
+            this.Orders = new HashSet<Order>();
         }
     
         public int CustomerID { get; set; }
@@ -33,8 +33,8 @@ namespace Dbdata
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameUsingList> GameUsingLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seat> Seats { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

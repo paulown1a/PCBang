@@ -6,10 +6,4 @@ using System.Threading.Tasks;
 
 namespace loginform
 {
-    class CardviewImage
-    {
-
-
-    }
-    
 }

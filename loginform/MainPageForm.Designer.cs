@@ -50,19 +50,19 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.lblGameNo5 = new DevExpress.XtraEditors.LabelControl();
-            this.lblGameNo4 = new DevExpress.XtraEditors.LabelControl();
-            this.lblGameNo3 = new DevExpress.XtraEditors.LabelControl();
-            this.lblGameNo2 = new DevExpress.XtraEditors.LabelControl();
-            this.lblGameNo1 = new DevExpress.XtraEditors.LabelControl();
-            this.lblMonthlyGameRank = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblMonlyBestGame = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lblGameNo1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblGameNo2 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblGameNo3 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblGameNo4 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblGameNo5 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -116,6 +116,7 @@
             this.lblSeat.Size = new System.Drawing.Size(231, 25);
             this.lblSeat.TabIndex = 12;
             this.lblSeat.Text = "좌석 : ";
+            
             // 
             // lblRank
             // 
@@ -317,7 +318,7 @@
             this.layoutControl2.Controls.Add(this.lblGameNo3);
             this.layoutControl2.Controls.Add(this.lblGameNo2);
             this.layoutControl2.Controls.Add(this.lblGameNo1);
-            this.layoutControl2.Controls.Add(this.lblMonthlyGameRank);
+            this.layoutControl2.Controls.Add(this.labelControl1);
             this.layoutControl2.Location = new System.Drawing.Point(6, 6);
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl2.Name = "layoutControl2";
@@ -325,72 +326,6 @@
             this.layoutControl2.Size = new System.Drawing.Size(293, 563);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
-            // 
-            // lblGameNo5
-            // 
-            this.lblGameNo5.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameNo5.Appearance.Options.UseFont = true;
-            this.lblGameNo5.Location = new System.Drawing.Point(12, 190);
-            this.lblGameNo5.Name = "lblGameNo5";
-            this.lblGameNo5.Size = new System.Drawing.Size(27, 28);
-            this.lblGameNo5.StyleController = this.layoutControl2;
-            this.lblGameNo5.TabIndex = 10;
-            this.lblGameNo5.Text = "5. ";
-            // 
-            // lblGameNo4
-            // 
-            this.lblGameNo4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameNo4.Appearance.Options.UseFont = true;
-            this.lblGameNo4.Location = new System.Drawing.Point(12, 158);
-            this.lblGameNo4.Name = "lblGameNo4";
-            this.lblGameNo4.Size = new System.Drawing.Size(27, 28);
-            this.lblGameNo4.StyleController = this.layoutControl2;
-            this.lblGameNo4.TabIndex = 9;
-            this.lblGameNo4.Text = "4. ";
-            // 
-            // lblGameNo3
-            // 
-            this.lblGameNo3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameNo3.Appearance.Options.UseFont = true;
-            this.lblGameNo3.Location = new System.Drawing.Point(12, 126);
-            this.lblGameNo3.Name = "lblGameNo3";
-            this.lblGameNo3.Size = new System.Drawing.Size(27, 28);
-            this.lblGameNo3.StyleController = this.layoutControl2;
-            this.lblGameNo3.TabIndex = 8;
-            this.lblGameNo3.Text = "3. ";
-            // 
-            // lblGameNo2
-            // 
-            this.lblGameNo2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameNo2.Appearance.Options.UseFont = true;
-            this.lblGameNo2.Location = new System.Drawing.Point(12, 94);
-            this.lblGameNo2.Name = "lblGameNo2";
-            this.lblGameNo2.Size = new System.Drawing.Size(27, 28);
-            this.lblGameNo2.StyleController = this.layoutControl2;
-            this.lblGameNo2.TabIndex = 7;
-            this.lblGameNo2.Text = "2. ";
-            // 
-            // lblGameNo1
-            // 
-            this.lblGameNo1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameNo1.Appearance.Options.UseFont = true;
-            this.lblGameNo1.Location = new System.Drawing.Point(12, 62);
-            this.lblGameNo1.Name = "lblGameNo1";
-            this.lblGameNo1.Size = new System.Drawing.Size(27, 28);
-            this.lblGameNo1.StyleController = this.layoutControl2;
-            this.lblGameNo1.TabIndex = 6;
-            this.lblGameNo1.Text = "1. ";
-            // 
-            // lblMonthlyGameRank
-            // 
-            this.lblMonthlyGameRank.Appearance.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthlyGameRank.Appearance.Options.UseFont = true;
-            this.lblMonthlyGameRank.Location = new System.Drawing.Point(12, 12);
-            this.lblMonthlyGameRank.Name = "lblMonthlyGameRank";
-            this.lblMonthlyGameRank.Size = new System.Drawing.Size(209, 46);
-            this.lblMonthlyGameRank.StyleController = this.layoutControl2;
-            this.lblMonthlyGameRank.TabIndex = 4;
-            this.lblMonthlyGameRank.Text = "월간 게임순위";
             // 
             // layoutControlGroup1
             // 
@@ -408,11 +343,22 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(293, 563);
             this.layoutControlGroup1.TextVisible = false;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(209, 46);
+            this.labelControl1.StyleController = this.layoutControl2;
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "월간 게임순위";
+            // 
             // lblMonlyBestGame
             // 
             this.lblMonlyBestGame.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonlyBestGame.AppearanceItemCaption.Options.UseFont = true;
-            this.lblMonlyBestGame.Control = this.lblMonthlyGameRank;
+            this.lblMonlyBestGame.Control = this.labelControl1;
             this.lblMonlyBestGame.Location = new System.Drawing.Point(0, 0);
             this.lblMonlyBestGame.Name = "lblMonlyBestGame";
             this.lblMonlyBestGame.Size = new System.Drawing.Size(273, 50);
@@ -427,6 +373,17 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(273, 333);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // lblGameNo1
+            // 
+            this.lblGameNo1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameNo1.Appearance.Options.UseFont = true;
+            this.lblGameNo1.Location = new System.Drawing.Point(12, 62);
+            this.lblGameNo1.Name = "lblGameNo1";
+            this.lblGameNo1.Size = new System.Drawing.Size(27, 28);
+            this.lblGameNo1.StyleController = this.layoutControl2;
+            this.lblGameNo1.TabIndex = 6;
+            this.lblGameNo1.Text = "1. ";
+            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.lblGameNo1;
@@ -435,6 +392,17 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(273, 32);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
+            // 
+            // lblGameNo2
+            // 
+            this.lblGameNo2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameNo2.Appearance.Options.UseFont = true;
+            this.lblGameNo2.Location = new System.Drawing.Point(12, 94);
+            this.lblGameNo2.Name = "lblGameNo2";
+            this.lblGameNo2.Size = new System.Drawing.Size(27, 28);
+            this.lblGameNo2.StyleController = this.layoutControl2;
+            this.lblGameNo2.TabIndex = 7;
+            this.lblGameNo2.Text = "2. ";
             // 
             // layoutControlItem10
             // 
@@ -445,6 +413,18 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
+            // lblGameNo3
+            // 
+            this.lblGameNo3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameNo3.Appearance.Options.UseFont = true;
+            this.lblGameNo3.Location = new System.Drawing.Point(12, 126);
+            this.lblGameNo3.Name = "lblGameNo3";
+            this.lblGameNo3.Size = new System.Drawing.Size(27, 28);
+            this.lblGameNo3.StyleController = this.layoutControl2;
+            this.lblGameNo3.TabIndex = 8;
+            this.lblGameNo3.Text = "3. ";
+         
+            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.lblGameNo3;
@@ -454,6 +434,17 @@
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
+            // lblGameNo4
+            // 
+            this.lblGameNo4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameNo4.Appearance.Options.UseFont = true;
+            this.lblGameNo4.Location = new System.Drawing.Point(12, 158);
+            this.lblGameNo4.Name = "lblGameNo4";
+            this.lblGameNo4.Size = new System.Drawing.Size(27, 28);
+            this.lblGameNo4.StyleController = this.layoutControl2;
+            this.lblGameNo4.TabIndex = 9;
+            this.lblGameNo4.Text = "4. ";
+            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.lblGameNo4;
@@ -462,6 +453,17 @@
             this.layoutControlItem13.Size = new System.Drawing.Size(273, 32);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
+            // 
+            // lblGameNo5
+            // 
+            this.lblGameNo5.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameNo5.Appearance.Options.UseFont = true;
+            this.lblGameNo5.Location = new System.Drawing.Point(12, 190);
+            this.lblGameNo5.Name = "lblGameNo5";
+            this.lblGameNo5.Size = new System.Drawing.Size(27, 28);
+            this.lblGameNo5.StyleController = this.layoutControl2;
+            this.lblGameNo5.TabIndex = 10;
+            this.lblGameNo5.Text = "5. ";
             // 
             // layoutControlItem14
             // 
@@ -535,7 +537,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         protected System.Windows.Forms.Label lblSeat;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraEditors.LabelControl lblMonthlyGameRank;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControlItem lblMonlyBestGame;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.LabelControl lblGameNo5;

@@ -22,6 +22,15 @@ namespace Dbdata
             Delete(product);
         }
 
+        public int? GetByName(string Name)
+        {
+            PCUIEntities context = CreateContext();
+            var query = from x in context.Products
+                        where x.Name == Name
+                        select x.ProductID;
+            return query.FirstOrDefault();
+        }
+
         public List<Product> getbycode(int codeId)
         {
             PCUIEntities context = CreateContext();

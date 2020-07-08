@@ -21,10 +21,14 @@ namespace Dbdata
         public int Count { get; set; }
         public System.DateTime OrderTime { get; set; }
         public int CodeID { get; set; }
-    
+        public bool buyed { get; set; }
+
+        public string ProductName { get; set; }
+        public int ProductPrice { get; set; }
+
         public virtual Code Code { get; set; }
-        public virtual Product Product { get; set; }
-        public virtual Seat Seat { get; set; }
         public virtual Customer Customer { get; set; }
+        public virtual Seat Seat { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

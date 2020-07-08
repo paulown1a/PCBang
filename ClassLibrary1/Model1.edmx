@@ -73,6 +73,7 @@
           <Property Name="Count" Type="int" Nullable="false" />
           <Property Name="OrderTime" Type="datetime" Nullable="false" />
           <Property Name="CodeID" Type="int" Nullable="false" />
+          <Property Name="buyed" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -82,6 +83,8 @@
           <Property Name="CodeID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="In stock" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Seat">
           <Key>
@@ -92,7 +95,9 @@
           <Property Name="CustomerID" Type="int" />
         </EntityType>
         <Association Name="FK_Game_Code">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Code" Type="Self.Code" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Game" Type="Self.Game" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Code">
@@ -116,7 +121,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_게임 이용내역_회원">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GameUsingList" Type="Self.GameUsingList" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -152,7 +159,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_구매_etc">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Code" Type="Self.Code" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Code">
@@ -188,7 +197,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_구매_회원">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -200,7 +211,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_상품_etc">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Code" Type="Self.Code" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Code">
@@ -212,7 +225,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_좌석_회원">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -318,8 +333,8 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Games" Relationship="Self.FK_Game_Code" FromRole="Code" ToRole="Game" />
           <NavigationProperty Name="GameGenres" Relationship="Self.FK_게임장르_etc" FromRole="Code" ToRole="GameGenre" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_etc" FromRole="Code" ToRole="Order" />
-          <NavigationProperty Name="Products" Relationship="Self.FK_상품_etc" FromRole="Code" ToRole="Product" />
+          <NavigationProperty Name="Orders" Relationship="PCUIModel.FK_구매_etc" FromRole="Code" ToRole="Order" />
+          <NavigationProperty Name="Products" Relationship="PCUIModel.FK_상품_etc" FromRole="Code" ToRole="Product" />
         </EntityType>
         <EntityType Name="Game">
           <Key>
@@ -355,33 +370,6 @@
           <NavigationProperty Name="Game" Relationship="Self.FK_게임_이용내역_게임" FromRole="GameUsingList" ToRole="Game" />
           <NavigationProperty Name="Customer" Relationship="PCUIModel.FK_게임_이용내역_회원" FromRole="GameUsingList" ToRole="Customer" />
         </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SeatID" Type="Int32" />
-          <Property Name="CustomerID" Type="Int32" Nullable="false" />
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
-          <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CodeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Code" Relationship="Self.FK_구매_etc" FromRole="Order" ToRole="Code" />
-          <NavigationProperty Name="Product" Relationship="Self.FK_구매_상품" FromRole="Order" ToRole="Product" />
-          <NavigationProperty Name="Seat" Relationship="Self.FK_구매_좌석" FromRole="Order" ToRole="Seat" />
-          <NavigationProperty Name="Customer" Relationship="PCUIModel.FK_구매_회원" FromRole="Order" ToRole="Customer" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="CodeID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Price" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Code" Relationship="Self.FK_상품_etc" FromRole="Product" ToRole="Code" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_상품" FromRole="Product" ToRole="Order" />
-        </EntityType>
         <EntityType Name="Seat">
           <Key>
             <PropertyRef Name="SeatID" />
@@ -390,8 +378,8 @@
           <Property Name="Breakdown" Type="Boolean" Nullable="false" />
           <Property Name="CustomerID" Type="Int32" />
           <NavigationProperty Name="Chattings" Relationship="Self.FK_채팅_좌석" FromRole="Seat" ToRole="Chatting" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_구매_좌석" FromRole="Seat" ToRole="Order" />
           <NavigationProperty Name="Customer" Relationship="PCUIModel.FK_좌석_회원" FromRole="Seat" ToRole="Customer" />
+          <NavigationProperty Name="Orders" Relationship="PCUIModel.FK_구매_좌석" FromRole="Seat" ToRole="Order" />
         </EntityType>
         <Association Name="FK_채팅_좌석">
           <End Role="Seat" Type="Self.Seat" Multiplicity="1" />
@@ -429,30 +417,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_구매_etc">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="CodeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_상품_etc">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeID" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="CodeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_게임_이용내역_게임">
           <End Role="Game" Type="Self.Game" Multiplicity="1" />
           <End Role="GameUsingList" Type="Self.GameUsingList" Multiplicity="*" />
@@ -477,38 +441,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_구매_상품">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_구매_좌석">
-          <End Role="Seat" Type="Self.Seat" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Seat">
-              <PropertyRef Name="SeatID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="SeatID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="PCUIEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Chattings" EntityType="Self.Chatting" />
           <EntitySet Name="Codes" EntityType="Self.Code" />
           <EntitySet Name="Games" EntityType="Self.Game" />
           <EntitySet Name="GameGenres" EntityType="Self.GameGenre" />
           <EntitySet Name="GameUsingLists" EntityType="Self.GameUsingList" />
-          <EntitySet Name="Orders" EntityType="Self.Order" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Seats" EntityType="Self.Seat" />
           <AssociationSet Name="FK_채팅_좌석" Association="Self.FK_채팅_좌석">
             <End Role="Seat" EntitySet="Seats" />
@@ -522,14 +460,6 @@
             <End Role="Code" EntitySet="Codes" />
             <End Role="GameGenre" EntitySet="GameGenres" />
           </AssociationSet>
-          <AssociationSet Name="FK_구매_etc" Association="Self.FK_구매_etc">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_상품_etc" Association="Self.FK_상품_etc">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
           <AssociationSet Name="FK_게임_이용내역_게임" Association="Self.FK_게임_이용내역_게임">
             <End Role="Game" EntitySet="Games" />
             <End Role="GameUsingList" EntitySet="GameUsingLists" />
@@ -538,26 +468,36 @@
             <End Role="Game" EntitySet="Games" />
             <End Role="GameGenre" EntitySet="GameGenres" />
           </AssociationSet>
-          <AssociationSet Name="FK_구매_상품" Association="Self.FK_구매_상품">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_구매_좌석" Association="Self.FK_구매_좌석">
-            <End Role="Seat" EntitySet="Seats" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
           <EntitySet Name="Customers" EntityType="PCUIModel.Customer" />
           <AssociationSet Name="FK_게임_이용내역_회원" Association="PCUIModel.FK_게임_이용내역_회원">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="GameUsingList" EntitySet="GameUsingLists" />
           </AssociationSet>
+          <AssociationSet Name="FK_좌석_회원" Association="PCUIModel.FK_좌석_회원">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Seat" EntitySet="Seats" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="PCUIModel.Order" />
+          <AssociationSet Name="FK_구매_etc" Association="PCUIModel.FK_구매_etc">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
           <AssociationSet Name="FK_구매_회원" Association="PCUIModel.FK_구매_회원">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_좌석_회원" Association="PCUIModel.FK_좌석_회원">
-            <End Role="Customer" EntitySet="Customers" />
+          <AssociationSet Name="FK_구매_좌석" Association="PCUIModel.FK_구매_좌석">
             <End Role="Seat" EntitySet="Seats" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="Products" EntityType="PCUIModel.Product" />
+          <AssociationSet Name="FK_상품_etc" Association="PCUIModel.FK_상품_etc">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_구매_상품" Association="PCUIModel.FK_구매_상품">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Customer">
@@ -572,8 +512,8 @@
           <Property Name="Payment" Type="Int32" Nullable="false" />
           <Property Name="RemainingTime" Type="Int32" Nullable="false" />
           <NavigationProperty Name="GameUsingLists" Relationship="PCUIModel.FK_게임_이용내역_회원" FromRole="Customer" ToRole="GameUsingList" />
-          <NavigationProperty Name="Orders" Relationship="PCUIModel.FK_구매_회원" FromRole="Customer" ToRole="Order" />
           <NavigationProperty Name="Seats" Relationship="PCUIModel.FK_좌석_회원" FromRole="Customer" ToRole="Seat" />
+          <NavigationProperty Name="Orders" Relationship="PCUIModel.FK_구매_회원" FromRole="Customer" ToRole="Order" />
         </EntityType>
         <Association Name="FK_게임_이용내역_회원">
           <End Type="PCUIModel.Customer" Role="Customer" Multiplicity="1" />
@@ -587,8 +527,53 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_좌석_회원">
+          <End Type="PCUIModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="PCUIModel.Seat" Role="Seat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Seat">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeatID" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <Property Name="buyed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="PCUIModel.FK_구매_etc" FromRole="Order" ToRole="Code" />
+          <NavigationProperty Name="Customer" Relationship="PCUIModel.FK_구매_회원" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Seat" Relationship="PCUIModel.FK_구매_좌석" FromRole="Order" ToRole="Seat" />
+          <NavigationProperty Name="Product" Relationship="PCUIModel.FK_구매_상품" FromRole="Order" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_구매_etc">
+          <End Type="PCUIModel.Code" Role="Code" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PCUIModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_구매_회원">
-          <End Type="PCUIModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="PCUIModel.Customer" Role="Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="PCUIModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -599,15 +584,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_좌석_회원">
-          <End Type="PCUIModel.Customer" Role="Customer" Multiplicity="0..1" />
-          <End Type="PCUIModel.Seat" Role="Seat" Multiplicity="*" />
+        <Association Name="FK_구매_좌석">
+          <End Type="PCUIModel.Seat" Role="Seat" Multiplicity="0..1" />
+          <End Type="PCUIModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="CustomerID" />
+            <Principal Role="Seat">
+              <PropertyRef Name="SeatID" />
             </Principal>
-            <Dependent Role="Seat">
-              <PropertyRef Name="CustomerID" />
+            <Dependent Role="Order">
+              <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="In_stock" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="PCUIModel.FK_상품_etc" FromRole="Product" ToRole="Code" />
+          <NavigationProperty Name="Orders" Relationship="PCUIModel.FK_구매_상품" FromRole="Product" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_상품_etc">
+          <End Type="PCUIModel.Code" Role="Code" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PCUIModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_구매_상품">
+          <End Type="PCUIModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="PCUIModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -665,29 +689,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="PCUIModel.Order">
-              <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
-                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="PCUIModel.Product">
-              <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Seats">
             <EntityTypeMapping TypeName="PCUIModel.Seat">
               <MappingFragment StoreEntitySet="Seat">
@@ -707,6 +708,32 @@
                 <ScalarProperty Name="Rank" ColumnName="Rank" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="PCUIModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="buyed" ColumnName="buyed" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="PCUIModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="In_stock" ColumnName="In stock" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

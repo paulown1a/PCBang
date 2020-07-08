@@ -43,7 +43,6 @@ namespace MainPage
             lblRemainingTime.Text += customer.RemainingTime.ToString();
             lblSeat.Text += seatNumber;
 
-            
             DataRepository.Seat.Update(seatNumber, customer.CustomerID);
 
         }
@@ -73,7 +72,7 @@ namespace MainPage
 
         private void lblTime_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCall_Click(object sender, EventArgs e)
