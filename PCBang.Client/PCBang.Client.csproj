@@ -75,6 +75,12 @@
     <Compile Include="FoodOrderForm.Designer.cs">
       <DependentUpon>FoodOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeDisplay.Designer.cs">
+      <DependentUpon>HomeDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="FoodOrderForm.resx">
       <DependentUpon>FoodOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeDisplay.resx">
+      <DependentUpon>HomeDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

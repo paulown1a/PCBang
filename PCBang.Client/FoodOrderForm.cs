@@ -13,6 +13,9 @@ using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
 using PC_Project.Data;
 using loginform;
+using PC_Project.Client;
+using DevExpress.Printing.ExportHelpers;
+using DevExpress.XtraGrid.Views.Card;
 
 namespace PC_Room
 {
@@ -21,7 +24,7 @@ namespace PC_Room
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Panel leftBorderBtnSecond;
-        private string seatNumber;
+        private int seatNumber;
         private int customerID;
 
         public FoodOrderForm()
@@ -38,7 +41,7 @@ namespace PC_Room
 
         public FoodOrderForm(string seatNumber, int customerID) : this()
         {
-            this.seatNumber = seatNumber;
+            this.seatNumber = int.Parse(seatNumber);
             this.customerID = customerID;
         }
 
@@ -97,12 +100,15 @@ namespace PC_Room
         private void FoodBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender,RGBColors.color4);
-           
+            GridFood.BringToFront();
+            bdsProduct.DataSource = DataRepository.Product.Getbycode(102);
         }
 
         private void BeverageBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            GridFood.BringToFront();
+            bdsProduct.DataSource = DataRepository.Product.Getbycode(104);
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -115,10 +121,12 @@ namespace PC_Room
         {
             DisableButton();
             leftBorderBtnSecond.Visible=false;
+            leftBorderBtn.Visible = false;
         }
 
         private void HomeIcon_Click(object sender, EventArgs e)
         {
+            pnHome.BringToFront();
             Reset();
            
         }
@@ -151,17 +159,21 @@ namespace PC_Room
         private void SnackBtn_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            GridFood.BringToFront();
+            bdsProduct.DataSource = DataRepository.Product.Getbycode(103);
         }
 
         private void TicketBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            GridFood.BringToFront();
+            bdsProduct.DataSource = DataRepository.Product.Getbycode(101);
         }
 
         private void gridControl1_Load(object sender, EventArgs e)
         {
             List<Product> products =
-                DataRepository.Product.getbycode(102);
+                DataRepository.Product.Getbycode(102);
             bdsProduct.DataSource = products;
         }
 
@@ -177,7 +189,7 @@ namespace PC_Room
 
             order.ProductID = e.ProductId;
             order.Count = e.Count;
-            order.SeatID = int.Parse(seatNumber);
+            order.SeatID = seatNumber;
             order.CustomerID = customerID;
             order.OrderTime = DateTime.Now;
             order.buyed = false;
@@ -188,12 +200,28 @@ namespace PC_Room
         private void FoodOrderForm_Load(object sender, EventArgs e)
         {
             //uscProduct1.SetProductData(DataRepository.Product.Get(4));
+            
 
         }
 
-        private void cardView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+
+        private void GridFood_DoubleClick(object sender, EventArgs e)
         {
-            //Product focusedProducct = (Product)cardView1.GetRow(e.FocusedRowHandle)
+           
+            Product product = bdsProduct.Current as Product;
+            if (product == null)
+                return;
+            Order order = new Order();
+            order.CodeID = null;
+            order.CustomerID = customerID;
+            order.ProductID = product.ProductID;
+            order.SeatID = seatNumber;
+            order.buyed = false;
+            order.OrderTime = DateTime.Now;
+            order.Count = 1;
+            DataRepository.Order.Insert(order);
+            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+
         }
     }
 }

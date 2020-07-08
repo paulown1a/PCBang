@@ -34,6 +34,22 @@ namespace PC_Project.Data
             foreach (var x in list)
             {
                 x.Order.ProductName = x.ProductName;
+                x.Order.ProductPrice = x.ProductPrice;
+            }
+
+            return list.ConvertAll(x => x.Order);
+        }
+        public List<Order> GetWithProduct(bool buyed, int customerId)
+        {
+            PCBangEntities context = CreateContext();
+            var query = from x in context.Orders
+                        where x.buyed == buyed && x.CustomerID==customerId 
+                        select new { Order = x, ProductName = x.Product.Name, ProductPrice = x.Product.Price };
+            var list = query.ToList();
+
+            foreach (var x in list)
+            {
+                x.Order.ProductName = x.ProductName;
                 x.Order.ProductPrice= x.ProductPrice;
             }
 

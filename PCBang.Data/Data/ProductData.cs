@@ -33,7 +33,7 @@ namespace PC_Project.Data
             return query.FirstOrDefault();
         }
 
-        public List<Product> getbycode(int codeId)
+        public List<Product> Getbycode(int codeId)
         {
             PCBangEntities context = CreateContext();
 
