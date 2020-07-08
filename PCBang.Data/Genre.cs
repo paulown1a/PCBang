@@ -12,24 +12,19 @@ namespace PC_Project.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Code
+    public partial class Genre
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Code()
+        public Genre()
         {
-            this.Games = new HashSet<Game>();
-            this.Orders = new HashSet<Order>();
-            this.Products = new HashSet<Product>();
+            this.GameGenres = new HashSet<GameGenre>();
         }
     
-        public int CodeID { get; set; }
+        public int GenreID { get; set; }
         public string Name { get; set; }
+        public byte[] Photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Game> Games { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<GameGenre> GameGenres { get; set; }
     }
 }

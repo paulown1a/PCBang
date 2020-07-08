@@ -83,6 +83,10 @@
     <Compile Include="GameUsingList.cs">
       <DependentUpon>PCBang.tt</DependentUpon>
     </Compile>
+    <Compile Include="Genre.cs">
+      <DependentUpon>PCBang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GenreData.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>PCBang.tt</DependentUpon>
     </Compile>
