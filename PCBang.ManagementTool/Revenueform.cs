@@ -21,7 +21,7 @@ namespace ManagerForm
 
         private void Revenueform_Load(object sender, EventArgs e)
         {
-            var orders = DataRepository.Order.GetWithProduct();
+            var orders = DataRepository.Order.GetWithProduct(true);
             orderBindingSource.DataSource = orders;
         }
 

@@ -29,11 +29,11 @@ namespace PC_Project.Data
                 return;
             Delete(order);
         }
-        public List<Order> GetWithProduct()
+        public List<Order> GetWithProduct(bool buyed)
         {
             PCBangEntities context = CreateContext();
             var query = from x in context.Orders
-                        where x.buyed == true
+                        where x.buyed == buyed
                         select x;
             var query2 = from x in context.Products
                          select x;

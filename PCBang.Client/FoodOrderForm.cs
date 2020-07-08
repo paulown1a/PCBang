@@ -186,7 +186,7 @@ namespace PC_Room
             order.OrderTime = DateTime.Now;
             order.buyed = false;
             DataRepository.Order.Insert(order);
-            OrderBnd.DataSource = DataRepository.Order.GetWithProduct();
+            OrderBnd.DataSource = DataRepository.Order.GetWithProduct(false);
         }
 
         private void FoodOrderForm_Load(object sender, EventArgs e)
