@@ -43,5 +43,11 @@ namespace PC_Project.Data
             Update(seat);
         }
 
+        public bool LoginCheck(int customerID)
+        {
+            PCBangEntities context = CreateContext();
+
+            return context.Seats.FirstOrDefault(a => a.CustomerID == customerID) == null ? false : true;
+        }
     }
 }

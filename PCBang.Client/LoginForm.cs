@@ -33,10 +33,13 @@ namespace loginform
                 return;
             }
 
-            //CustomerData Customer = new CustomerData();
             Customer customer = DataRepository.Customer.Login(txbID.Text, txbPassword.Text);
             if (customer == null)
                 MessageBox.Show("사용자 정보가 올바르지 않습니다.");
+            else if(DataRepository.Seat.LoginCheck(customer.CustomerID))
+                    MessageBox.Show("이미 사용중인 사용자 입니다.");
+            
+            
             else
             {
                 MessageBox.Show("로그인 되었습니다.");
