@@ -40,10 +40,7 @@
             this.ExitBtn = new FontAwesome.Sharp.IconButton();
             this.CalulatorPn = new System.Windows.Forms.Panel();
             this.CalculateGd = new System.Windows.Forms.DataGridView();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderBnd = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BuyBtn = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.colProductID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,12 +55,26 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.SeatIdbtn = new System.Windows.Forms.Label();
             this.uscProduct1 = new loginform.productIcon();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seatIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buyedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MenuPn.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             this.CalulatorPn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CalculateGd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderBnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
@@ -253,10 +264,17 @@
             this.CalculateGd.AutoGenerateColumns = false;
             this.CalculateGd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CalculateGd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductName,
-            this.ProductPrice,
-            this.countDataGridViewTextBoxColumn});
-            this.CalculateGd.DataSource = this.OrderBnd;
+            this.productNameDataGridViewTextBoxColumn1,
+            this.productPriceDataGridViewTextBoxColumn,
+            this.orderIDDataGridViewTextBoxColumn,
+            this.seatIDDataGridViewTextBoxColumn,
+            this.customerIDDataGridViewTextBoxColumn,
+            this.productIDDataGridViewTextBoxColumn,
+            this.countDataGridViewTextBoxColumn,
+            this.orderTimeDataGridViewTextBoxColumn,
+            this.codeIDDataGridViewTextBoxColumn,
+            this.buyedDataGridViewCheckBoxColumn});
+            this.CalculateGd.DataSource = this.orderBindingSource;
             this.CalculateGd.Location = new System.Drawing.Point(24, 20);
             this.CalculateGd.Name = "CalculateGd";
             this.CalculateGd.ReadOnly = true;
@@ -264,36 +282,9 @@
             this.CalculateGd.Size = new System.Drawing.Size(427, 237);
             this.CalculateGd.TabIndex = 6;
             // 
-            // ProductName
+            // orderBindingSource
             // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 125;
-            // 
-            // ProductPrice
-            // 
-            this.ProductPrice.DataPropertyName = "ProductPrice";
-            this.ProductPrice.HeaderText = "ProductPrice";
-            this.ProductPrice.MinimumWidth = 6;
-            this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.ReadOnly = true;
-            this.ProductPrice.Width = 125;
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
-            this.countDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.ReadOnly = true;
-            this.countDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // OrderBnd
-            // 
-            //this.OrderBnd.DataSource = typeof(Dbdata.Order);
+            this.orderBindingSource.DataSource = typeof(PC_Project.Data.Order);
             // 
             // BuyBtn
             // 
@@ -373,18 +364,6 @@
             this.colOrders1.Name = "colOrders1";
             this.colOrders1.Width = 94;
             // 
-            // productDataBindingSource
-            // 
-  
-            // 
-            // productBindingSource
-            // 
-            
-            // 
-            // productBindingSource1
-            // 
-
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.SeatIdbtn);
@@ -413,6 +392,130 @@
             this.uscProduct1.OrderBtnClicked += new System.EventHandler<loginform.productIcon.OrderBtnClickedEventArgs>(this.productIcon1_OrderBtnClicked);
             this.uscProduct1.Click += new System.EventHandler(this.productIcon1_Click);
             // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.DataPropertyName = "ProductPrice";
+            this.ProductPrice.HeaderText = "ProductPrice";
+            this.ProductPrice.MinimumWidth = 6;
+            this.ProductPrice.Name = "ProductPrice";
+            this.ProductPrice.ReadOnly = true;
+            this.ProductPrice.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Count";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // SeatID
+            // 
+            this.SeatID.DataPropertyName = "SeatID";
+            this.SeatID.HeaderText = "SeatID";
+            this.SeatID.MinimumWidth = 6;
+            this.SeatID.Name = "SeatID";
+            this.SeatID.ReadOnly = true;
+            this.SeatID.Width = 125;
+            // 
+            // productNameDataGridViewTextBoxColumn1
+            // 
+            this.productNameDataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn1.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.productNameDataGridViewTextBoxColumn1.Name = "productNameDataGridViewTextBoxColumn1";
+            this.productNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.productNameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "ProductPrice";
+            this.productPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productPriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // seatIDDataGridViewTextBoxColumn
+            // 
+            this.seatIDDataGridViewTextBoxColumn.DataPropertyName = "SeatID";
+            this.seatIDDataGridViewTextBoxColumn.HeaderText = "SeatID";
+            this.seatIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seatIDDataGridViewTextBoxColumn.Name = "seatIDDataGridViewTextBoxColumn";
+            this.seatIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.seatIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
+            this.countDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.countDataGridViewTextBoxColumn.ReadOnly = true;
+            this.countDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // orderTimeDataGridViewTextBoxColumn
+            // 
+            this.orderTimeDataGridViewTextBoxColumn.DataPropertyName = "OrderTime";
+            this.orderTimeDataGridViewTextBoxColumn.HeaderText = "OrderTime";
+            this.orderTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderTimeDataGridViewTextBoxColumn.Name = "orderTimeDataGridViewTextBoxColumn";
+            this.orderTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // codeIDDataGridViewTextBoxColumn
+            // 
+            this.codeIDDataGridViewTextBoxColumn.DataPropertyName = "CodeID";
+            this.codeIDDataGridViewTextBoxColumn.HeaderText = "CodeID";
+            this.codeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codeIDDataGridViewTextBoxColumn.Name = "codeIDDataGridViewTextBoxColumn";
+            this.codeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codeIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // buyedDataGridViewCheckBoxColumn
+            // 
+            this.buyedDataGridViewCheckBoxColumn.DataPropertyName = "buyed";
+            this.buyedDataGridViewCheckBoxColumn.HeaderText = "buyed";
+            this.buyedDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.buyedDataGridViewCheckBoxColumn.Name = "buyedDataGridViewCheckBoxColumn";
+            this.buyedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.buyedDataGridViewCheckBoxColumn.Width = 125;
+            // 
             // FoodOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -433,7 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             this.CalulatorPn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CalculateGd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderBnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
@@ -465,13 +568,24 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCode1;
         private DevExpress.XtraGrid.Columns.GridColumn colOrders1;
         private System.Windows.Forms.DataGridView CalculateGd;
-        private System.Windows.Forms.BindingSource OrderBnd;
+        private System.Windows.Forms.BindingSource orderBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource1;
         private System.Windows.Forms.Panel panel1;
         private loginform.productIcon uscProduct1;
         private System.Windows.Forms.Label SeatIdbtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seatIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn buyedDataGridViewCheckBoxColumn;
     }
 }
