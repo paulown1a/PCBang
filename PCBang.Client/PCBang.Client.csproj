@@ -132,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="XtraUserControl1.resx">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
@@ -154,6 +155,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\CD_logo.png" />
+    <None Include="images\FPS_logo.png" />
+    <None Include="images\RPG_logo.jpg" />
     <Content Include="loginform.csproj.user" />
   </ItemGroup>
   <ItemGroup>

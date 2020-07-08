@@ -30,7 +30,6 @@ namespace MainPage
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             timer1_Tick(sender, e);
 
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -42,6 +41,16 @@ namespace MainPage
             lblPayamount.Text += customer.Payment.ToString();
             lblRemainingTime.Text += customer.RemainingTime.ToString();
             lblSeat.Text += seatNumber;
+
+           
+            btnRPGGame.StyleController = null;
+            btnRPGGame.LookAndFeel.UseDefaultLookAndFeel = false;
+            btnRPGGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+
+            btnCDGame.StyleController = null;
+            btnCDGame.LookAndFeel.UseDefaultLookAndFeel = false;
+            btnCDGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+
 
             DataRepository.Seat.Update(seatNumber, customer.CustomerID);
 
