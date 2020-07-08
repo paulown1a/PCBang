@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChattingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChattingForm.Designer.cs">
+      <DependentUpon>ChattingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FoodOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="XtraUserControl1.Designer.cs">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChattingForm.resx">
+      <DependentUpon>ChattingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FoodOrderForm.resx">
       <DependentUpon>FoodOrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +146,7 @@
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PC_Project.Data.Chatting.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Order.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Product.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Seat.datasource" />
