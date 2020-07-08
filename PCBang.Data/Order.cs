@@ -20,7 +20,12 @@ namespace PC_Project.Data
         public int ProductID { get; set; }
         public int Count { get; set; }
         public System.DateTime OrderTime { get; set; }
-        public int CodeID { get; set; }
+        public Nullable<int> CodeID { get; set; }
         public bool buyed { get; set; }
+    
+        public virtual Code Code { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Seat Seat { get; set; }
     }
 }

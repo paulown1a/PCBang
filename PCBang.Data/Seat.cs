@@ -18,6 +18,7 @@ namespace PC_Project.Data
         public Seat()
         {
             this.Chattings = new HashSet<Chatting>();
+            this.Orders = new HashSet<Order>();
         }
     
         public int SeatID { get; set; }
@@ -27,5 +28,7 @@ namespace PC_Project.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chatting> Chattings { get; set; }
         public virtual Customer Customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

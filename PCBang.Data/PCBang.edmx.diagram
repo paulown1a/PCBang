@@ -4,24 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ec04a221f2914dc2b4242ba9ce58ff50" Name="Diagram1">
-        <EntityTypeShape EntityType="PCBangModel.Chatting" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Code" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Customer" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Game" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.GameGenre" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.GameUsingList" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Order" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Product" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Seat" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+      <Diagram DiagramId="72d6009983194daba837e8cb5c9bbed2" Name="Diagram1">
+        <EntityTypeShape EntityType="PCBangModel.Chatting" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.Code" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.Customer" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.Game" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.GameGenre" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.GameUsingList" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.Order" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.Product" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBangModel.Seat" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
         <AssociationConnector Association="PCBangModel.FK_채팅_좌석" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_Game_Code" ManuallyRouted="false" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Code1" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_게임장르_etc" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_상품_etc" ManuallyRouted="false" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_게임_이용내역_회원" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_좌석_회원" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_게임_이용내역_게임" ManuallyRouted="false" />
         <AssociationConnector Association="PCBangModel.FK_게임장르_게임" ManuallyRouted="false" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Seat" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

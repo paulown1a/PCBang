@@ -18,6 +18,7 @@ namespace PC_Project.Data
         public Code()
         {
             this.Games = new HashSet<Game>();
+            this.Orders = new HashSet<Order>();
             this.GameGenres = new HashSet<GameGenre>();
             this.Products = new HashSet<Product>();
         }
@@ -27,6 +28,8 @@ namespace PC_Project.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Game> Games { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameGenre> GameGenres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -35,13 +35,12 @@ namespace PC_Project.Data
             var query = from x in context.Orders
                         where x.buyed == buyed
                         select x;
-            var query2 = from x in context.Products
-                         select x;
             var orders = query.ToList();
+
             foreach (var order in orders)
             {
-                order.ProductName = query2.FirstOrDefault(x => x.ProductID == order.ProductID).Name;
-                order.ProductPrice = query2.FirstOrDefault(x => x.ProductID == order.ProductID).Price;
+                order.ProductName = context.Products.FirstOrDefault(x => x.ProductID == order.ProductID).Name;
+                order.ProductPrice = context.Products.FirstOrDefault(x => x.ProductID == order.ProductID).Price;
             }
 
             return orders;

@@ -110,11 +110,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="PCBang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PCBang.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="PCBang.edmx.diagram">
       <DependentUpon>PCBang.edmx</DependentUpon>
     </None>

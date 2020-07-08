@@ -17,6 +17,7 @@ namespace PC_Project.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
+            this.Orders = new HashSet<Order>();
             this.GameUsingLists = new HashSet<GameUsingList>();
             this.Seats = new HashSet<Seat>();
         }
@@ -29,6 +30,8 @@ namespace PC_Project.Data
         public int Payment { get; set; }
         public int RemainingTime { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameUsingList> GameUsingLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

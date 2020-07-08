@@ -14,13 +14,20 @@ namespace PC_Project.Data
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
         public int ProductID { get; set; }
         public int CodeID { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
         public byte[] Photo { get; set; }
-        public bool In_stock { get; set; }
     
         public virtual Code Code { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
