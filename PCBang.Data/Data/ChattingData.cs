@@ -41,5 +41,20 @@ namespace PC_Project.Data
                         select x;
             return query.ToList();
         }
+
+        public void UpdateAll(bool sent)
+        {
+            PCBangEntities context = CreateContext();
+
+            var query = from x in context.Chattings
+                        where x.Sent == sent && x.Checked == false
+                        select x;
+            var chattings = query.ToList();
+            foreach (var chatting in chattings)
+            {
+                chatting.Checked = true;
+                Update(chatting);
+            }
+        }
     }
 }

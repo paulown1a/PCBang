@@ -22,18 +22,20 @@ namespace ManagerForm
 
         private void ManagerChattingform_Load(object sender, EventArgs e)
         {
-            seatBindingSource.DataSource = DataRepository.Seat.GetUsing();
-            chattingBindingSource.DataSource = DataRepository.Chatting.GetNotRead(true);
+            dbsSeat.DataSource = DataRepository.Seat.GetUsing();
+            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
         }
 
         private void cbbSeat_DropDown(object sender, EventArgs e)
         {
-            seatBindingSource.DataSource = DataRepository.Seat.GetUsing();
+            dbsSeat.DataSource = DataRepository.Seat.GetUsing();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DataRepository.Chatting.UpdateAll(true);
             Close();
+            
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -60,6 +62,16 @@ namespace ManagerForm
                 btnSend_Click(this, e);
                 txbText.Select(0, 0);
             }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            Chatting chatting = dbsChatting.Current as Chatting;
+            chatting.Checked = true;
+            DataRepository.Chatting.Update(chatting);
+
+            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
+
         }
     }
 }

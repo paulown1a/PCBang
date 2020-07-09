@@ -24,12 +24,12 @@ namespace ManagerForm
         private void gridControl1_Load(object sender, EventArgs e)
         {
             List<Seat> seats = DataRepository.Seat.GetAll();
-            seatBindingSource.DataSource = seats;
+            bdsSeat.DataSource = seats;
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-            Seat seat = seatBindingSource.Current as Seat;
+            Seat seat = bdsSeat.Current as Seat;
 
             if (seat.CustomerID == null)
                 return;
@@ -40,7 +40,7 @@ namespace ManagerForm
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            Seat seat = seatBindingSource.Current as Seat;
+            Seat seat = bdsSeat.Current as Seat;
 
             if (seat == null)
                 return;

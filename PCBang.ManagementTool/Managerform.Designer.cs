@@ -61,7 +61,7 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsSeat = new System.Windows.Forms.BindingSource(this.components);
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBreakdown = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -91,7 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -404,7 +404,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.seatBindingSource;
+            this.gridControl1.DataSource = this.bdsSeat;
             this.gridControl1.Location = new System.Drawing.Point(291, 12);
             this.gridControl1.MainView = this.cardView1;
             this.gridControl1.Name = "gridControl1";
@@ -520,7 +520,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -553,7 +553,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private System.Windows.Forms.BindingSource seatBindingSource;
+        private System.Windows.Forms.BindingSource bdsSeat;
         private DevExpress.XtraEditors.LabelControl lblRemainingTime;
         private DevExpress.XtraEditors.LabelControl lblSeat;
         private DevExpress.XtraEditors.LabelControl lblId;
