@@ -38,27 +38,28 @@
             this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.chattingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colChecked = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.좌석 = new DevExpress.XtraLayout.LayoutControlItem();
             this.내용 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chattingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.좌석)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.내용)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -71,6 +72,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(986, 0, 812, 500);
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(925, 207);
             this.layoutControl1.TabIndex = 0;
@@ -129,6 +131,49 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // chattingBindingSource
+            // 
+            this.chattingBindingSource.DataSource = typeof(PC_Project.Data.Chatting);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colChecked,
+            this.colSeatID,
+            this.colText});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colChecked
+            // 
+            this.colChecked.FieldName = "확인";
+            this.colChecked.MinWidth = 25;
+            this.colChecked.Name = "colChecked";
+            this.colChecked.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.colChecked.Visible = true;
+            this.colChecked.VisibleIndex = 0;
+            this.colChecked.Width = 35;
+            // 
+            // colSeatID
+            // 
+            this.colSeatID.FieldName = "좌석";
+            this.colSeatID.MinWidth = 25;
+            this.colSeatID.Name = "colSeatID";
+            this.colSeatID.OptionsColumn.AllowEdit = false;
+            this.colSeatID.Visible = true;
+            this.colSeatID.VisibleIndex = 1;
+            this.colSeatID.Width = 50;
+            // 
+            // colText
+            // 
+            this.colText.FieldName = "내용";
+            this.colText.MinWidth = 25;
+            this.colText.Name = "colText";
+            this.colText.OptionsColumn.AllowEdit = false;
+            this.colText.Visible = true;
+            this.colText.VisibleIndex = 2;
+            this.colText.Width = 335;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -186,34 +231,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSeatID,
-            this.colText});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colSeatID
-            // 
-            this.colSeatID.FieldName = "좌석";
-            this.colSeatID.MinWidth = 25;
-            this.colSeatID.Name = "colSeatID";
-            this.colSeatID.OptionsColumn.AllowEdit = false;
-            this.colSeatID.Visible = true;
-            this.colSeatID.VisibleIndex = 0;
-            this.colSeatID.Width = 50;
-            // 
-            // colText
-            // 
-            this.colText.FieldName = "내용";
-            this.colText.MinWidth = 25;
-            this.colText.Name = "colText";
-            this.colText.OptionsColumn.AllowEdit = false;
-            this.colText.Visible = true;
-            this.colText.VisibleIndex = 1;
-            this.colText.Width = 303;
-            // 
             // ManagerChattingform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -229,13 +246,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chattingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.좌석)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.내용)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -250,7 +267,6 @@
     private System.Windows.Forms.ComboBox cbbSeat;
     private System.Windows.Forms.BindingSource seatBindingSource;
     private DevExpress.XtraGrid.GridControl gridControl1;
-    private System.Windows.Forms.BindingSource chattingBindingSource;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     private DevExpress.XtraLayout.LayoutControlItem 좌석;
     private DevExpress.XtraLayout.LayoutControlItem 내용;
@@ -259,5 +275,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
         private DevExpress.XtraGrid.Columns.GridColumn colText;
+        private System.Windows.Forms.BindingSource chattingBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colChecked;
     }
 }
