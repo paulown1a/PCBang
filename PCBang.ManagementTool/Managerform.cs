@@ -80,5 +80,11 @@ namespace ManagerForm
             Revenueform revenueform = new Revenueform();
             revenueform.Show();
         }
+
+        private void btnChatting_Click(object sender, EventArgs e)
+        {
+            ManagerChattingform managerChattingform = new ManagerChattingform();
+            managerChattingform.Show();
+        }
     }
 }
