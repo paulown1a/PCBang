@@ -85,6 +85,8 @@ namespace MainPage
         private void btnCall_Click(object sender, EventArgs e)
         {
             MessageBox.Show("직원호출");
+            PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
+            chatting.Show();
         }
 
         private void btnFoodOrder_Click(object sender, EventArgs e)
