@@ -5,14 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PC_Project.Data;
 
 namespace ManagerForm
 {
-
     public partial class ManagerChattingform : DevExpress.XtraEditors.XtraForm
     {
         public ManagerChattingform()

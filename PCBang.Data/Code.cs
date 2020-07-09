@@ -20,6 +20,7 @@ namespace PC_Project.Data
             this.Games = new HashSet<Game>();
             this.Orders = new HashSet<Order>();
             this.Products = new HashSet<Product>();
+            this.GameGenres = new HashSet<GameGenre>();
         }
     
         public int CodeID { get; set; }
@@ -31,5 +32,7 @@ namespace PC_Project.Data
         public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GameGenre> GameGenres { get; set; }
     }
 }

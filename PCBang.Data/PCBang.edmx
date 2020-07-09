@@ -46,10 +46,10 @@
         <EntityType Name="GameGenre">
           <Key>
             <PropertyRef Name="GameID" />
-            <PropertyRef Name="GenreID" />
+            <PropertyRef Name="CodeID" />
           </Key>
           <Property Name="GameID" Type="int" Nullable="false" />
-          <Property Name="GenreID" Type="int" Nullable="false" />
+          <Property Name="CodeID" Type="int" Nullable="false" />
           <Property Name="Dummy" Type="bit" />
         </EntityType>
         <EntityType Name="GameUsingList">
@@ -61,14 +61,6 @@
           <Property Name="CustomerID" Type="int" Nullable="false" />
           <Property Name="UsedTime" Type="int" />
           <Property Name="StartTime" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Genre">
-          <Key>
-            <PropertyRef Name="GenreID" />
-          </Key>
-          <Property Name="GenreID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -115,17 +107,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GameGenre_Genre">
-          <End Role="Genre" Type="Self.Genre" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <Association Name="FK_GameGenre_Code">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
           <End Role="GameGenre" Type="Self.GameGenre" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Genre">
-              <PropertyRef Name="GenreID" />
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
             </Principal>
             <Dependent Role="GameGenre">
-              <PropertyRef Name="GenreID" />
+              <PropertyRef Name="CodeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -262,7 +252,6 @@
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameGenre" EntityType="Self.GameGenre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameUsingList" EntityType="Self.GameUsingList" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seat" EntityType="Self.Seat" Schema="dbo" store:Type="Tables" />
@@ -270,8 +259,8 @@
             <End Role="Code" EntitySet="Code" />
             <End Role="Game" EntitySet="Game" />
           </AssociationSet>
-          <AssociationSet Name="FK_GameGenre_Genre" Association="Self.FK_GameGenre_Genre">
-            <End Role="Genre" EntitySet="Genre" />
+          <AssociationSet Name="FK_GameGenre_Code" Association="Self.FK_GameGenre_Code">
+            <End Role="Code" EntitySet="Code" />
             <End Role="GameGenre" EntitySet="GameGenre" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Code1" Association="Self.FK_Order_Code1">
@@ -325,7 +314,6 @@
           <EntitySet Name="Customers" EntityType="PCBangModel.Customer" />
           <EntitySet Name="Games" EntityType="PCBangModel.Game" />
           <EntitySet Name="GameUsingLists" EntityType="PCBangModel.GameUsingList" />
-          <EntitySet Name="Genres" EntityType="PCBangModel.Genre" />
           <EntitySet Name="Orders" EntityType="PCBangModel.Order" />
           <EntitySet Name="Products" EntityType="PCBangModel.Product" />
           <EntitySet Name="Seats" EntityType="PCBangModel.Seat" />
@@ -366,10 +354,6 @@
             <End Role="Game" EntitySet="Games" />
             <End Role="GameGenre" EntitySet="GameGenres" />
           </AssociationSet>
-          <AssociationSet Name="FK_GameGenre_Genre" Association="PCBangModel.FK_GameGenre_Genre">
-            <End Role="Genre" EntitySet="Genres" />
-            <End Role="GameGenre" EntitySet="GameGenres" />
-          </AssociationSet>
           <AssociationSet Name="FK_Order_Product" Association="PCBangModel.FK_Order_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="Order" EntitySet="Orders" />
@@ -377,6 +361,10 @@
           <AssociationSet Name="FK_Order_Seat" Association="PCBangModel.FK_Order_Seat">
             <End Role="Seat" EntitySet="Seats" />
             <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameGenre_Code" Association="PCBangModel.FK_GameGenre_Code">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="GameGenre" EntitySet="GameGenres" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chatting">
@@ -400,6 +388,7 @@
           <NavigationProperty Name="Games" Relationship="PCBangModel.FK_Game_Code" FromRole="Code" ToRole="Game" />
           <NavigationProperty Name="Orders" Relationship="PCBangModel.FK_Order_Code1" FromRole="Code" ToRole="Order" />
           <NavigationProperty Name="Products" Relationship="PCBangModel.FK_상품_etc" FromRole="Code" ToRole="Product" />
+          <NavigationProperty Name="GameGenres" Relationship="PCBangModel.FK_GameGenre_Code" FromRole="Code" ToRole="GameGenre" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -438,15 +427,6 @@
           <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Customer" Relationship="PCBangModel.FK_게임_이용내역_회원" FromRole="GameUsingList" ToRole="Customer" />
           <NavigationProperty Name="Game" Relationship="PCBangModel.FK_게임_이용내역_게임" FromRole="GameUsingList" ToRole="Game" />
-        </EntityType>
-        <EntityType Name="Genre">
-          <Key>
-            <PropertyRef Name="GenreID" />
-          </Key>
-          <Property Name="GenreID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="GameGenres" Relationship="PCBangModel.FK_GameGenre_Genre" FromRole="Genre" ToRole="GameGenre" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -491,13 +471,13 @@
         <EntityType Name="GameGenre">
           <Key>
             <PropertyRef Name="GameID" />
-            <PropertyRef Name="GenreID" />
+            <PropertyRef Name="CodeID" />
           </Key>
           <Property Name="GameID" Type="Int32" Nullable="false" />
-          <Property Name="GenreID" Type="Int32" Nullable="false" />
           <Property Name="Dummy" Type="Boolean" />
           <NavigationProperty Name="Game" Relationship="PCBangModel.FK_게임장르_게임" FromRole="GameGenre" ToRole="Game" />
-          <NavigationProperty Name="Genre" Relationship="PCBangModel.FK_GameGenre_Genre" FromRole="GameGenre" ToRole="Genre" />
+          <Property Name="CodeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="PCBangModel.FK_GameGenre_Code" FromRole="GameGenre" ToRole="Code" />
         </EntityType>
         <Association Name="FK_채팅_좌석">
           <End Type="PCBangModel.Seat" Role="Seat" Multiplicity="1" />
@@ -615,20 +595,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GameGenre_Genre">
-          <End Type="PCBangModel.Genre" Role="Genre" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="PCBangModel.GameGenre" Role="GameGenre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Genre">
-              <PropertyRef Name="GenreID" />
-            </Principal>
-            <Dependent Role="GameGenre">
-              <PropertyRef Name="GenreID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Order_Product">
           <End Type="PCBangModel.Product" Role="Product" Multiplicity="1" />
           <End Type="PCBangModel.Order" Role="Order" Multiplicity="*" />
@@ -650,6 +616,18 @@
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameGenre_Code">
+          <End Type="PCBangModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="PCBangModel.GameGenre" Role="GameGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeID" />
+            </Principal>
+            <Dependent Role="GameGenre">
+              <PropertyRef Name="CodeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -711,15 +689,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Genres">
-            <EntityTypeMapping TypeName="PCBangModel.Genre">
-              <MappingFragment StoreEntitySet="Genre">
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="GenreID" ColumnName="GenreID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="PCBangModel.Order">
               <MappingFragment StoreEntitySet="Order">
@@ -757,8 +726,8 @@
           <EntitySetMapping Name="GameGenres">
             <EntityTypeMapping TypeName="PCBangModel.GameGenre">
               <MappingFragment StoreEntitySet="GameGenre">
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
                 <ScalarProperty Name="Dummy" ColumnName="Dummy" />
-                <ScalarProperty Name="GenreID" ColumnName="GenreID" />
                 <ScalarProperty Name="GameID" ColumnName="GameID" />
               </MappingFragment>
             </EntityTypeMapping>
