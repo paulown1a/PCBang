@@ -398,10 +398,10 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(209, 46);
+            this.labelControl1.Size = new System.Drawing.Size(132, 46);
             this.labelControl1.StyleController = this.layoutControl2;
             this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "월간 게임순위";
+            this.labelControl1.Text = "게임순위";
             // 
             // layoutControlGroup1
             // 

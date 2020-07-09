@@ -15,10 +15,13 @@ namespace ManagerForm
         public ManagerLoginform()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+
             if (txtPassword.Text == "1234")
             {
                 MessageBox.Show("로그인 되었습니다.");

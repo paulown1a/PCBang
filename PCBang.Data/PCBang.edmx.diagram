@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="PCBangModel.Code" Width="1.5" PointX="3" PointY="12.625" />
         <EntityTypeShape EntityType="PCBangModel.Customer" Width="1.5" PointX="0.75" PointY="6.25" />
         <EntityTypeShape EntityType="PCBangModel.Game" Width="1.5" PointX="8.75" PointY="4.5" />
-        <EntityTypeShape EntityType="PCBangModel.GameUsingList" Width="1.5" PointX="3" PointY="6.625" />
         <EntityTypeShape EntityType="PCBangModel.Order" Width="1.5" PointX="5.25" PointY="5.375" />
         <EntityTypeShape EntityType="PCBangModel.Product" Width="1.5" PointX="3" PointY="3.5" />
         <EntityTypeShape EntityType="PCBangModel.Seat" Width="1.5" PointX="3" PointY="9.625" />
@@ -19,13 +18,14 @@
         <AssociationConnector Association="PCBangModel.FK_Order_Code1" />
         <AssociationConnector Association="PCBangModel.FK_상품_etc" />
         <AssociationConnector Association="PCBangModel.FK_Order_Customer" />
-        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_회원" />
         <AssociationConnector Association="PCBangModel.FK_좌석_회원" />
-        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_게임" />
         <AssociationConnector Association="PCBangModel.FK_게임장르_게임" />
         <AssociationConnector Association="PCBangModel.FK_Order_Product" />
         <AssociationConnector Association="PCBangModel.FK_Order_Seat" />
         <AssociationConnector Association="PCBangModel.FK_GameGenre_Code" />
+        <EntityTypeShape EntityType="PCBangModel.GameUsingList" Width="1.5" PointX="11" PointY="5.75" />
+        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_회원" />
+        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_게임" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

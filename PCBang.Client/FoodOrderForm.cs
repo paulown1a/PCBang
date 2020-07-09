@@ -19,7 +19,7 @@ using DevExpress.XtraGrid.Views.Card;
 
 namespace PC_Room
 {
-    public partial class FoodOrderForm : Form
+    public partial class FoodOrderForm :Form
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -30,13 +30,14 @@ namespace PC_Room
         public FoodOrderForm()
         {
             InitializeComponent();
+            
             leftBorderBtn = new Panel();
             leftBorderBtnSecond = new Panel();
             leftBorderBtn.Size = new Size(7, 48);
             leftBorderBtnSecond.Size = new Size(7, 48);
             MenuPn.Controls.Add(leftBorderBtn);
             CalulatorPn.Controls.Add(leftBorderBtnSecond);
-
+            
         }
 
         public FoodOrderForm(string seatNumber, int customerID) : this()

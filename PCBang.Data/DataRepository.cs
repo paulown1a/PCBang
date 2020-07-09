@@ -16,5 +16,7 @@ namespace PC_Project.Data
         public static ChattingData Chatting { get; } = new ChattingData();
         public static GameData Game { get; set; } = new GameData();
         public static GameGenreData GameGenre { get; set; } = new GameGenreData();
+
+        public static GameUsingListData GameUsingList { get; set; } = new GameUsingListData();
     }
 }

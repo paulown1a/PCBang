@@ -21,13 +21,14 @@ namespace MainPage
         private Customer customer;
         private string seatNumber;
         private int genreId = 0;
-        
+        //private List<DevExpress.XtraEditors.LabelControl> lblGameList;
 
         public MainPageForm(Customer customer, string seatNumber)
         {
             InitializeComponent();
             this.customer = customer;
             this.seatNumber = seatNumber;
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -35,6 +36,8 @@ namespace MainPage
 
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
+
+
             lblName.Text += customer.Name.ToString();
             lblID.Text += customer.LoginID.ToString();
             lblRank.Text += customer.Rank.ToString();
@@ -75,25 +78,26 @@ namespace MainPage
 
         private void Exit()
         {
-            MessageBox.Show("종료합니다");
+            
             timer1.Stop();
             DataRepository.Seat.Update(seatNumber);
             DataRepository.Customer.Update(customer);
+            DataRepository.Chatting.UpdateAll(false, int.Parse(seatNumber));
             Application.Exit();
         }
 
         private void btnCall_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("직원호출");
+            
             PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
-            chatting.Show();
+            chatting.ShowDialog();
         }
 
         private void btnFoodOrder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("음식주문");
+           
             FoodOrderForm Foodorder = new FoodOrderForm(seatNumber, customer.CustomerID);
-            Foodorder.Show();
+            Foodorder.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -144,10 +148,24 @@ namespace MainPage
 
         private void grdGames_DoubleClick(object sender, EventArgs e)
         {
+            
             Game game = gameBindingSource.Current as Game;
             if (game == null)
                 return;
-            MessageBox.Show(game.ToString());
+            GameUsingList gameUsingList = new GameUsingList();
+            gameUsingList.GameID = game.GameID;
+            gameUsingList.CustomerID = customer.CustomerID;
+            gameUsingList.StartTime = DateTime.Now;
+
+            DataRepository.GameUsingList.Insert(gameUsingList);
+
+            
+            Dictionary<Game, int> topGames = DataRepository.GameUsingList.TopFiveGame();
+            lblGameNo1.Text = topGames[0] != null ?$"{1 }. {topGames[0].Name}": $"{1 }. ";
+            lblGameNo2.Text = topGames[1] != null ?$"{2 }. {topGames[1].Name}": $"{2 }. ";
+            lblGameNo3.Text = topGames[2] != null ?$"{3 }. {topGames[2].Name}": $"{3 }. ";
+            lblGameNo4.Text = topGames[3] != null ?$"{4 }. {topGames[3].Name}": $"{4 }. ";
+            lblGameNo5.Text = topGames[4] != null ?$"{5 }. {topGames[4].Name}": $"{5 }. ";
         }
     }
 }

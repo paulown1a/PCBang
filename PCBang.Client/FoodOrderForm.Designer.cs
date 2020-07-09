@@ -101,7 +101,7 @@
             this.TicketBtn.FlatAppearance.BorderSize = 0;
             this.TicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TicketBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.TicketBtn.Font = new System.Drawing.Font("Hobo BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TicketBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TicketBtn.IconChar = FontAwesome.Sharp.IconChar.FireAlt;
             this.TicketBtn.IconColor = System.Drawing.Color.Ivory;
@@ -126,7 +126,7 @@
             this.SnackBtn.FlatAppearance.BorderSize = 0;
             this.SnackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SnackBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.SnackBtn.Font = new System.Drawing.Font("Hobo BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SnackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SnackBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.SnackBtn.IconChar = FontAwesome.Sharp.IconChar.Disease;
             this.SnackBtn.IconColor = System.Drawing.Color.Ivory;
@@ -151,7 +151,7 @@
             this.BeverageBtn.FlatAppearance.BorderSize = 0;
             this.BeverageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BeverageBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BeverageBtn.Font = new System.Drawing.Font("Hobo BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BeverageBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BeverageBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BeverageBtn.IconChar = FontAwesome.Sharp.IconChar.WineGlassAlt;
             this.BeverageBtn.IconColor = System.Drawing.Color.Ivory;
@@ -177,7 +177,7 @@
             this.FoodBtn.FlatAppearance.BorderSize = 0;
             this.FoodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoodBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.FoodBtn.Font = new System.Drawing.Font("Hobo BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FoodBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoodBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FoodBtn.IconChar = FontAwesome.Sharp.IconChar.PizzaSlice;
             this.FoodBtn.IconColor = System.Drawing.Color.Ivory;
@@ -330,7 +330,7 @@
             this.BuyBtn.FlatAppearance.BorderSize = 0;
             this.BuyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuyBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BuyBtn.Font = new System.Drawing.Font("Hobo BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuyBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BuyBtn.IconChar = FontAwesome.Sharp.IconChar.Hotjar;
             this.BuyBtn.IconColor = System.Drawing.Color.Ivory;
@@ -448,7 +448,7 @@
             // 
             // cardView1
             // 
-            this.cardView1.Appearance.Card.Font = new System.Drawing.Font("Expo M", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cardView1.Appearance.Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cardView1.Appearance.Card.Options.UseFont = true;
             this.cardView1.Appearance.FieldCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.cardView1.AppearancePrint.CardCaption.Options.UseTextOptions = true;
@@ -541,6 +541,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.CalulatorPn);
             this.Controls.Add(this.MenuPn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FoodOrderForm";
