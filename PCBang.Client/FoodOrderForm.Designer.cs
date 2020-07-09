@@ -57,12 +57,12 @@
             this.bdsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.SeatIdbtn = new System.Windows.Forms.Label();
+            this.pnHome = new PC_Project.Client.HomeDisplay();
             this.GridFood = new DevExpress.XtraGrid.GridControl();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhoto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pnHome = new PC_Project.Client.HomeDisplay();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -336,7 +336,7 @@
             this.BuyBtn.IconColor = System.Drawing.Color.Ivory;
             this.BuyBtn.IconSize = 30;
             this.BuyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuyBtn.Location = new System.Drawing.Point(487, 178);
+            this.BuyBtn.Location = new System.Drawing.Point(487, 181);
             this.BuyBtn.Name = "BuyBtn";
             this.BuyBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BuyBtn.Rotation = 0D;
@@ -357,7 +357,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(220, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(917, 14);
+            this.panel4.Size = new System.Drawing.Size(917, 15);
             this.panel4.TabIndex = 4;
             // 
             // colProductID
@@ -409,12 +409,12 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.SeatIdbtn);
-            this.panel1.Controls.Add(this.GridFood);
             this.panel1.Controls.Add(this.pnHome);
+            this.panel1.Controls.Add(this.GridFood);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(220, 14);
+            this.panel1.Location = new System.Drawing.Point(220, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 487);
+            this.panel1.Size = new System.Drawing.Size(917, 486);
             this.panel1.TabIndex = 5;
             // 
             // SeatIdbtn
@@ -425,6 +425,14 @@
             this.SeatIdbtn.Size = new System.Drawing.Size(0, 15);
             this.SeatIdbtn.TabIndex = 1;
             // 
+            // pnHome
+            // 
+            this.pnHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnHome.Location = new System.Drawing.Point(0, 0);
+            this.pnHome.Name = "pnHome";
+            this.pnHome.Size = new System.Drawing.Size(917, 486);
+            this.pnHome.TabIndex = 3;
+            // 
             // GridFood
             // 
             this.GridFood.DataSource = this.bdsProduct;
@@ -432,7 +440,7 @@
             this.GridFood.Location = new System.Drawing.Point(0, 0);
             this.GridFood.MainView = this.cardView1;
             this.GridFood.Name = "GridFood";
-            this.GridFood.Size = new System.Drawing.Size(917, 487);
+            this.GridFood.Size = new System.Drawing.Size(917, 486);
             this.GridFood.TabIndex = 2;
             this.GridFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1});
@@ -482,21 +490,12 @@
             // 
             // colPhoto
             // 
-            this.colPhoto.DisplayFormat.FormatString = "c0";
-            this.colPhoto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colPhoto.FieldName = "Photo";
             this.colPhoto.MinWidth = 25;
             this.colPhoto.Name = "colPhoto";
             this.colPhoto.Visible = true;
             this.colPhoto.VisibleIndex = 2;
             this.colPhoto.Width = 94;
-            // 
-            // pnHome
-            // 
-            this.pnHome.Location = new System.Drawing.Point(6, 3);
-            this.pnHome.Name = "pnHome";
-            this.pnHome.Size = new System.Drawing.Size(908, 463);
-            this.pnHome.TabIndex = 3;
             // 
             // productNameDataGridViewTextBoxColumn
             // 

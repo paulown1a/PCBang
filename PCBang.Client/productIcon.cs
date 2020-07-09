@@ -24,7 +24,7 @@ namespace loginform
             Enabled = false;
 
             if (DataRepository.Product.GetByName(lblName.Text) != null)
-                OnOrderBtnClicked(DataRepository.Product.GetByName(lblName.Text).Value, (int)btnCount.Value);
+                OnOrderBtnClicked(DataRepository.Product.GetByName(lblName.Text).Value);
             Enabled = true;
         }
 
@@ -44,9 +44,9 @@ namespace loginform
                 OrderBtnClicked(this, e);
         }
 
-        private OrderBtnClickedEventArgs OnOrderBtnClicked(int productId, int count)
+        private OrderBtnClickedEventArgs OnOrderBtnClicked(int productId)
         {
-            OrderBtnClickedEventArgs args = new OrderBtnClickedEventArgs(productId, count);
+            OrderBtnClickedEventArgs args = new OrderBtnClickedEventArgs(productId);
             OnOrderBtnClicked(args);
 
             return args;
@@ -63,23 +63,17 @@ namespace loginform
         public class OrderBtnClickedEventArgs : EventArgs
         {
             public int ProductId { get; set; }
-            public int Count { get; set; }
-
             public OrderBtnClickedEventArgs()
             {
             }
 
-            public OrderBtnClickedEventArgs(int productId, int count)
+            public OrderBtnClickedEventArgs(int productId)
             {
                 ProductId = productId;
-                Count = count;
             }
         }
         #endregion
 
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

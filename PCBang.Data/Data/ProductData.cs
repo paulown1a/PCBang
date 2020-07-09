@@ -44,7 +44,7 @@ namespace PC_Project.Data
             return query.ToList();
         }
 
-        public void AddPhoth(int productId, string filePath)
+        public void AddPhoto(int productId, string filePath)
         {
             var product = Get(productId);
 

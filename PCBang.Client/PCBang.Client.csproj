@@ -163,9 +163,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="loginform.csproj.user" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\PCBang.Data\PCBang.Data.csproj">
       <Project>{63B1E8F8-F63E-4DD3-9E45-6612096BB9C3}</Project>
       <Name>PCBang.Data</Name>

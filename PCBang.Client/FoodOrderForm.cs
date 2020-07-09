@@ -144,6 +144,7 @@ namespace PC_Room
         private void BuyBtn_Click(object sender, EventArgs e)
         {
             //ActivateButton(sender, RGBColors.color6);
+
         }
 
         private void BuyBtn_MouseHover(object sender, EventArgs e)
@@ -178,24 +179,19 @@ namespace PC_Room
             bdsProduct.DataSource = products;
         }
 
-        private void productIcon1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void productIcon1_OrderBtnClicked(object sender, loginform.ProductIcon.OrderBtnClickedEventArgs e)
         {
 
             Order order = new Order();
 
             order.ProductID = e.ProductId;
-            order.Count = e.Count;
+
             order.SeatID = seatNumber;
             order.CustomerID = customerID;
             order.OrderTime = DateTime.Now;
             order.buyed = false;
             DataRepository.Order.Insert(order);
-            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false);
+
         }
 
         private void FoodOrderForm_Load(object sender, EventArgs e)
@@ -224,5 +220,6 @@ namespace PC_Room
             bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
 
         }
+       
     }
 }
