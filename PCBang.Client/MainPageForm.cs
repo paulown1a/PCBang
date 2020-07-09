@@ -37,6 +37,12 @@ namespace MainPage
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
+            List<Game> topGames = DataRepository.Game.TopFiveGame();
+            lblGameNo1.Text = topGames[0] != null ? $"{1 }. {topGames[0].Name}" : $"{1 }. ";
+            lblGameNo2.Text = topGames[1] != null ? $"{2 }. {topGames[1].Name}" : $"{2 }. ";
+            lblGameNo3.Text = topGames[2] != null ? $"{3 }. {topGames[2].Name}" : $"{3 }. ";
+            lblGameNo4.Text = topGames[3] != null ? $"{4 }. {topGames[3].Name}" : $"{4 }. ";
+            lblGameNo5.Text = topGames[4] != null ? $"{5 }. {topGames[4].Name}" : $"{5 }. ";
 
             lblName.Text += customer.Name.ToString();
             lblID.Text += customer.LoginID.ToString();
@@ -148,19 +154,12 @@ namespace MainPage
 
         private void grdGames_DoubleClick(object sender, EventArgs e)
         {
-            
             Game game = gameBindingSource.Current as Game;
             if (game == null)
                 return;
-            GameUsingList gameUsingList = new GameUsingList();
-            gameUsingList.GameID = game.GameID;
-            gameUsingList.CustomerID = customer.CustomerID;
-            gameUsingList.StartTime = DateTime.Now;
+            DataRepository.Game.ClickGame(game);
 
-            DataRepository.GameUsingList.Insert(gameUsingList);
-
-            
-            Dictionary<Game, int> topGames = DataRepository.GameUsingList.TopFiveGame();
+            List<Game> topGames = DataRepository.Game.TopFiveGame();
             lblGameNo1.Text = topGames[0] != null ?$"{1 }. {topGames[0].Name}": $"{1 }. ";
             lblGameNo2.Text = topGames[1] != null ?$"{2 }. {topGames[1].Name}": $"{2 }. ";
             lblGameNo3.Text = topGames[2] != null ?$"{3 }. {topGames[2].Name}": $"{3 }. ";

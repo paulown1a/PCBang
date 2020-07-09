@@ -22,5 +22,19 @@ namespace PC_Project.Data
                 return;
             Delete(Game);
         }
+
+        public void ClickGame(Game game)
+        {
+            Game target = Get(game.GameID);
+            target.PlayCount++;
+            Update(target);
+        }
+
+        public List<Game> TopFiveGame()
+        {
+            PCBangEntities context = CreateContext();
+            List<Game> games = GetAll();
+            return games.OrderByDescending(x => x.PlayCount).ToList();
+        }
     }
 }

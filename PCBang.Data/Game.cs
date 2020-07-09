@@ -35,6 +35,8 @@ public partial class Game
 
     public int CodeID { get; set; }
 
+    public int PlayCount { get; set; }
+
 
 
     public virtual Code Code { get; set; }

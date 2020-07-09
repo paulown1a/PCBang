@@ -22,22 +22,5 @@ namespace PC_Project.Data
                 return;
             Delete(gameUsingList);
         }
-
-        public Dictionary<Game> TopFiveGame()
-        {
-            PCBangEntities context = CreateContext();
-            var query = from x in context.GameUsingLists
-                        select x.Game;
-            Dictionary<Game, int> count = new Dictionary<Game, int>();
-            var games = query.ToList();
-            foreach (var game in games)
-                if (count.ContainsKey(game))
-                    count[game]++;
-                else
-                    count.Add(game, 1);
-            count.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-                return count;
-            
-        }
     }
 }
