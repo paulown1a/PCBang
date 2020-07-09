@@ -534,6 +534,7 @@
             this.grdGames.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1});
             this.grdGames.Visible = false;
+            this.grdGames.DoubleClick += new System.EventHandler(this.grdGames_DoubleClick);
             // 
             // gameBindingSource
             // 
@@ -549,6 +550,8 @@
             // 
             // colName
             // 
+            this.colName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colName.AppearanceCell.Options.UseFont = true;
             this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";

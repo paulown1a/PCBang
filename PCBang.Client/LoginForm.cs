@@ -38,8 +38,10 @@ namespace loginform
                 MessageBox.Show("사용자 정보가 올바르지 않습니다.");
             else if(DataRepository.Seat.LoginCheck(customer.CustomerID))
                     MessageBox.Show("이미 사용중인 사용자 입니다.");
-            
-            
+            else if(customer.RemainingTime <=0 )
+                MessageBox.Show("잔여시간이 부족합니다.");
+
+
             else
             {
                 MessageBox.Show("로그인 되었습니다.");

@@ -139,5 +139,13 @@ namespace MainPage
                 this.genreId = genreId;
             }
         }
+
+        private void grdGames_DoubleClick(object sender, EventArgs e)
+        {
+            Game game = gameBindingSource.Current as Game;
+            if (game == null)
+                return;
+            MessageBox.Show(game.ToString());
+        }
     }
 }
