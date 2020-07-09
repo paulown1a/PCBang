@@ -145,6 +145,9 @@ namespace PC_Room
         {
             //ActivateButton(sender, RGBColors.color6);
 
+            BillForm billform = new BillForm(customerID);
+            billform.ShowDialog(); 
+            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
         }
 
         private void BuyBtn_MouseHover(object sender, EventArgs e)
@@ -220,6 +223,5 @@ namespace PC_Room
             bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
 
         }
-       
     }
 }

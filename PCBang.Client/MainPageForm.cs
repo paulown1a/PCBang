@@ -148,6 +148,7 @@ namespace MainPage
             if (game == null)
                 return;
             MessageBox.Show(game.ToString());
+            
         }
     }
 }
