@@ -43,16 +43,6 @@ namespace PC_Project.Data
             return query.ToList();
         }
 
-        public List<Chatting> GetNotRead(bool sent, int seatid)
-        {
-            PCBangEntities context = CreateContext();
-
-            var query = from x in context.Chattings
-                        where x.Sent == sent && x.Checked == false && x.SeatID == seatid
-                        select x;
-            return query.ToList();
-        }
-
         public void UpdateAll(bool sent)
         {
             PCBangEntities context = CreateContext();

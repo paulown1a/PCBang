@@ -9,15 +9,15 @@ namespace PC_Project.Data
 {
     public class GameGenreData : EntitiyData<GameGenre>
     {
-        public GameGenre Get(int gameId, int genreId)
+        public GameGenre Get(int gameId, int codeId)
         {
             PCBangEntities context = CreateContext();
-            return context.GameGenres.FirstOrDefault(a => a.GameID == gameId && a.GenreID == genreId);
+            return context.GameGenres.FirstOrDefault(a => a.GameID == gameId && a.CodeID == codeId);
         }
 
-        public void Delete(int gameId, int genreId)
+        public void Delete(int gameId, int codeId)
         {
-            GameGenre gameGenre = Get(gameId, genreId);
+            GameGenre gameGenre = Get(gameId, codeId);
             if (gameGenre == null)
                 return;
             Delete(gameGenre);
