@@ -28,6 +28,7 @@ namespace PC_Project.Data
             var query = from x in context.Chattings
                         where x.Sent == sent && x.Checked == false
                         select x;
+
             return query.ToList();
         }
 
