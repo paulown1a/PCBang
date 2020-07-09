@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lblSeat = new System.Windows.Forms.Label();
             this.lblRank = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.btnCDGame = new DevExpress.XtraEditors.SimpleButton();
             this.btnRPGGame = new DevExpress.XtraEditors.SimpleButton();
             this.btnFPSGame = new DevExpress.XtraEditors.SimpleButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -190,7 +192,6 @@
             this.lblRemainingTime.Size = new System.Drawing.Size(231, 25);
             this.lblRemainingTime.TabIndex = 5;
             this.lblRemainingTime.Text = "남은시간 : ";
-            this.lblRemainingTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // btnExit
             // 
@@ -484,6 +485,7 @@
             this.btnCDGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnCDGame.Size = new System.Drawing.Size(350, 350);
             this.btnCDGame.TabIndex = 4;
+            this.btnCDGame.Visible = false;
             // 
             // btnRPGGame
             // 
@@ -495,6 +497,7 @@
             this.btnRPGGame.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.btnRPGGame.Size = new System.Drawing.Size(350, 350);
             this.btnRPGGame.TabIndex = 3;
+            this.btnRPGGame.Visible = false;
             // 
             // btnFPSGame
             // 
@@ -505,6 +508,13 @@
             this.btnFPSGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnFPSGame.Size = new System.Drawing.Size(350, 350);
             this.btnFPSGame.TabIndex = 2;
+            this.btnFPSGame.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainPageForm
             // 
@@ -535,7 +545,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            this.layoutControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblMonlyBestGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -589,6 +598,7 @@
         private DevExpress.XtraEditors.SimpleButton btnFPSGame;
         private DevExpress.XtraEditors.SimpleButton btnRPGGame;
         private DevExpress.XtraEditors.SimpleButton btnCDGame;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

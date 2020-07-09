@@ -10,6 +10,7 @@ namespace PC_Project.Data
     {
         public static SeatData Seat { get; } = new SeatData();
         public static CustomerData Customer { get; } = new CustomerData();
+
         public static ProductData Product { get; } = new ProductData();
         public static CodeData Code { get; } = new CodeData();
         public static OrderData Order { get; } = new OrderData();

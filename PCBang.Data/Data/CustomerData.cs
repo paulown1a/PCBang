@@ -56,5 +56,7 @@ namespace PC_Project.Data
 
             Insert(newCustomer);
         }
+
+        
     }
 }
