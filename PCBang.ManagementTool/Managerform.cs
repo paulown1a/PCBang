@@ -52,6 +52,13 @@ namespace ManagerForm
                 lblName.Text = customer.Name;
                 lblId.Text = customer.LoginID.ToString();
                 lblRemainingTime.Text = customer.RemainingTime.ToString();
+
+                if (MessageBox.Show("탈출하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    seat.CustomerID = null;
+                    DataRepository.Seat.Update(seat);
+                    MessageBox.Show("긴급탈출!!");
+                }
             }
             else
             {
