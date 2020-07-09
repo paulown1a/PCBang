@@ -33,7 +33,7 @@ namespace PC_Project.Data
             return query.FirstOrDefault();
         }
 
-        public List<Product> getbycode(int codeId)
+        public List<Product> Getbycode(int codeId)
         {
             PCBangEntities context = CreateContext();
 
@@ -43,7 +43,8 @@ namespace PC_Project.Data
             //select new { album = x, artistname = x.artist.name };
             return query.ToList();
         }
-        public void AddPhoth(int productId, string filePath)
+
+        public void AddPhoto(int productId, string filePath)
         {
             var product = Get(productId);
 
