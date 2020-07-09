@@ -35,9 +35,9 @@
             this.btnSend = new System.Windows.Forms.Button();
             this.txbText = new System.Windows.Forms.RichTextBox();
             this.cbbSeat = new System.Windows.Forms.ComboBox();
-            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.chattingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbsSeat = new System.Windows.Forms.BindingSource(this.components);
+            this.grvChatting = new DevExpress.XtraGrid.GridControl();
+            this.dbsChatting = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,9 +49,9 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chattingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvChatting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsChatting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -67,7 +67,7 @@
             this.layoutControl1.Controls.Add(this.btnSend);
             this.layoutControl1.Controls.Add(this.txbText);
             this.layoutControl1.Controls.Add(this.cbbSeat);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.grvChatting);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -107,7 +107,7 @@
             // 
             // cbbSeat
             // 
-            this.cbbSeat.DataSource = this.seatBindingSource;
+            this.cbbSeat.DataSource = this.dbsSeat;
             this.cbbSeat.DisplayMember = "SeatID";
             this.cbbSeat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSeat.FormattingEnabled = true;
@@ -118,50 +118,49 @@
             this.cbbSeat.ValueMember = "SeatID";
             this.cbbSeat.DropDown += new System.EventHandler(this.cbbSeat_DropDown);
             // 
-            // seatBindingSource
+            // grvChatting
             // 
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.chattingBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(463, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(450, 183);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvChatting.DataSource = this.dbsChatting;
+            this.grvChatting.Location = new System.Drawing.Point(463, 12);
+            this.grvChatting.MainView = this.gridView1;
+            this.grvChatting.Name = "grvChatting";
+            this.grvChatting.Size = new System.Drawing.Size(450, 183);
+            this.grvChatting.TabIndex = 4;
+            this.grvChatting.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.grvChatting.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
-            // chattingBindingSource
+            // dbsChatting
             // 
-             // 
+            this.dbsChatting.DataSource = typeof(PC_Project.Data.Chatting);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSeatID,
             this.colText});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.grvChatting;
             this.gridView1.Name = "gridView1";
             // 
             // colSeatID
             // 
-            this.colSeatID.FieldName = "좌석";
+            this.colSeatID.FieldName = "SeatID";
             this.colSeatID.MinWidth = 25;
             this.colSeatID.Name = "colSeatID";
             this.colSeatID.OptionsColumn.AllowEdit = false;
             this.colSeatID.Visible = true;
             this.colSeatID.VisibleIndex = 0;
-            this.colSeatID.Width = 50;
+            this.colSeatID.Width = 60;
             // 
             // colText
             // 
-            this.colText.FieldName = "내용";
+            this.colText.FieldName = "Text";
             this.colText.MinWidth = 25;
             this.colText.Name = "colText";
             this.colText.OptionsColumn.AllowEdit = false;
             this.colText.Visible = true;
             this.colText.VisibleIndex = 1;
-            this.colText.Width = 303;
+            this.colText.Width = 360;
             // 
             // Root
             // 
@@ -179,7 +178,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Control = this.grvChatting;
             this.layoutControlItem1.Location = new System.Drawing.Point(451, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(454, 187);
@@ -232,9 +231,9 @@
             this.Load += new System.EventHandler(this.ManagerChattingform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chattingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvChatting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsChatting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -254,16 +253,16 @@
     private System.Windows.Forms.Button btnSend;
     private System.Windows.Forms.RichTextBox txbText;
     private System.Windows.Forms.ComboBox cbbSeat;
-    private System.Windows.Forms.BindingSource seatBindingSource;
-    private DevExpress.XtraGrid.GridControl gridControl1;
-    private System.Windows.Forms.BindingSource chattingBindingSource;
+    private System.Windows.Forms.BindingSource dbsSeat;
+    private DevExpress.XtraGrid.GridControl grvChatting;
+    private System.Windows.Forms.BindingSource dbsChatting;
     private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-    private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
-    private DevExpress.XtraGrid.Columns.GridColumn colText;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     private DevExpress.XtraLayout.LayoutControlItem 좌석;
     private DevExpress.XtraLayout.LayoutControlItem 내용;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-}
+        private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
+        private DevExpress.XtraGrid.Columns.GridColumn colText;
+    }
 }

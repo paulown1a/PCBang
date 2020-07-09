@@ -22,5 +22,14 @@ namespace PC_Project.Data
                 return;
             Delete(gameGenre);
         }
+
+        public List<Game> GetbyGenre(int codeId)
+        {
+                PCBangEntities context = CreateContext();
+            var query = from x in context.GameGenres
+                        where x.CodeID == codeId
+                        select x.Game;
+            return query.ToList();
+        }
     }
 }

@@ -20,7 +20,8 @@ namespace MainPage
     {
         private Customer customer;
         private string seatNumber;
-        System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
+        private int genreId = 0;
+        
 
         public MainPageForm(Customer customer, string seatNumber)
         {
@@ -30,12 +31,10 @@ namespace MainPage
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            timer1_Tick(sender, e);
+            timer1.Start();
 
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
-
             lblName.Text += customer.Name.ToString();
             lblID.Text += customer.LoginID.ToString();
             lblRank.Text += customer.Rank.ToString();
@@ -43,26 +42,30 @@ namespace MainPage
             lblRemainingTime.Text += customer.RemainingTime.ToString();
             lblSeat.Text += seatNumber;
 
+
+            btnFPSGame.StyleController = null;
+            btnFPSGame.LookAndFeel.UseDefaultLookAndFeel = false;
+            btnFPSGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+
+
+            btnRPGGame.StyleController = null;
+            btnRPGGame.LookAndFeel.UseDefaultLookAndFeel = false;
+            btnRPGGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+
+            btnCDGame.StyleController = null;
+            btnCDGame.LookAndFeel.UseDefaultLookAndFeel = false;
+            btnCDGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+
             DataRepository.Seat.Update(seatNumber, customer.CustomerID);
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Interval = 2000;
-            customer.RemainingTime--;
-         timer1.Start(); //타이머를 발동시킨다.
-        }
-
-
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("사용을 종료하시겠습니까?", "사용종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("종료합니다");
-                DataRepository.Seat.Update(seatNumber);
-                Application.Exit();
+                Exit();
+                
             }
             else
             {
@@ -70,14 +73,20 @@ namespace MainPage
             }
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
+        private void Exit()
         {
-
+            MessageBox.Show("종료합니다");
+            timer1.Stop();
+            DataRepository.Seat.Update(seatNumber);
+            DataRepository.Customer.Update(customer);
+            Application.Exit();
         }
 
         private void btnCall_Click(object sender, EventArgs e)
         {
             MessageBox.Show("직원호출");
+            PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
+            chatting.Show();
         }
 
         private void btnFoodOrder_Click(object sender, EventArgs e)
@@ -85,6 +94,60 @@ namespace MainPage
             MessageBox.Show("음식주문");
             FoodOrderForm Foodorder = new FoodOrderForm(seatNumber, customer.CustomerID);
             Foodorder.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            customer.RemainingTime--;
+            lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString();
+            if (customer.RemainingTime == 0)
+            {
+                MessageBox.Show("사용시간이 종료되었습니다.");
+                Exit();          
+            }
+        }
+
+        private void btnCDGame_Click(object sender, EventArgs e)
+        {
+            CallGames(201);
+        }
+
+        private void btnRPGGame_Click(object sender, EventArgs e)
+        {
+            CallGames(203);
+        }
+
+        private void btnFPSGame_Click(object sender, EventArgs e)
+        {
+            CallGames(202);
+        }
+
+        private void CallGames(int genreId)
+        {
+            if (this.genreId == 0)
+            {
+                gameBindingSource.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
+                this.genreId = genreId;
+                grdGames.Visible = true;
+            }
+            else if(genreId == this.genreId)
+            {
+                grdGames.Visible = false;
+                this.genreId = 0;
+            }
+            else
+            {
+                gameBindingSource.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
+                this.genreId = genreId;
+            }
+        }
+
+        private void grdGames_DoubleClick(object sender, EventArgs e)
+        {
+            Game game = gameBindingSource.Current as Game;
+            if (game == null)
+                return;
+            MessageBox.Show(game.ToString());
         }
     }
 }

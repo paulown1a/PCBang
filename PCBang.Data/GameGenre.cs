@@ -15,10 +15,10 @@ namespace PC_Project.Data
     public partial class GameGenre
     {
         public int GameID { get; set; }
-        public int CodeID { get; set; }
         public Nullable<bool> Dummy { get; set; }
+        public int CodeID { get; set; }
     
-        public virtual Code Code { get; set; }
         public virtual Game Game { get; set; }
+        public virtual Code Code { get; set; }
     }
 }

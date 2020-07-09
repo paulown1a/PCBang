@@ -14,6 +14,7 @@ namespace PC_Project.Data
         public static CodeData Code { get; } = new CodeData();
         public static OrderData Order { get; } = new OrderData();
         public static ChattingData Chatting { get; } = new ChattingData();
-        public static ProductData Products { get; set; } = new ProductData();
+        public static GameData Game { get; set; } = new GameData();
+        public static GameGenreData GameGenre { get; set; } = new GameGenreData();
     }
 }
