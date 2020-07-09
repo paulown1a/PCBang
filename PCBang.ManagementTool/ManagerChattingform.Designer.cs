@@ -39,14 +39,14 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dbsChatting = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.좌석 = new DevExpress.XtraLayout.LayoutControlItem();
             this.내용 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbsSeat)).BeginInit();
@@ -142,6 +142,26 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
+            // colSeatID
+            // 
+            this.colSeatID.FieldName = "SeatID";
+            this.colSeatID.MinWidth = 25;
+            this.colSeatID.Name = "colSeatID";
+            this.colSeatID.OptionsColumn.AllowEdit = false;
+            this.colSeatID.Visible = true;
+            this.colSeatID.VisibleIndex = 0;
+            this.colSeatID.Width = 60;
+            // 
+            // colText
+            // 
+            this.colText.FieldName = "Text";
+            this.colText.MinWidth = 25;
+            this.colText.Name = "colText";
+            this.colText.OptionsColumn.AllowEdit = false;
+            this.colText.Visible = true;
+            this.colText.VisibleIndex = 1;
+            this.colText.Width = 360;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -198,26 +218,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(206, 29);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
-            // 
-            // colSeatID
-            // 
-            this.colSeatID.FieldName = "좌석";
-            this.colSeatID.MinWidth = 25;
-            this.colSeatID.Name = "colSeatID";
-            this.colSeatID.OptionsColumn.AllowEdit = false;
-            this.colSeatID.Visible = true;
-            this.colSeatID.VisibleIndex = 0;
-            this.colSeatID.Width = 50;
-            // 
-            // colText
-            // 
-            this.colText.FieldName = "내용";
-            this.colText.MinWidth = 25;
-            this.colText.Name = "colText";
-            this.colText.OptionsColumn.AllowEdit = false;
-            this.colText.Visible = true;
-            this.colText.VisibleIndex = 1;
-            this.colText.Width = 370;
             // 
             // ManagerChattingform
             // 

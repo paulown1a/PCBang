@@ -67,6 +67,8 @@ namespace ManagerForm
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
             Chatting chatting = dbsChatting.Current as Chatting;
+            if (chatting == null)
+                return;
             chatting.Checked = true;
             DataRepository.Chatting.Update(chatting);
 
