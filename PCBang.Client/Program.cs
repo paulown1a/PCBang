@@ -20,7 +20,7 @@ namespace PC_Project.Client
             Application.SetCompatibleTextRenderingDefault(false);
             ProcessKiller.Instance.Start();
 
-            Application.Run(new ChattingForm(1));
+            Application.Run(new ChattingForm(5));
             
         }
     }

@@ -34,5 +34,17 @@ namespace PC_Project.Client
         {
             bdsChatting.DataSource = DataRepository.Chatting.GetNotRead(false, SeatId);
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Chatting chatting = new Chatting();
+            chatting.Checked = false;
+            chatting.Sent = true;
+            chatting.Text = txbText.Text;
+            chatting.SendTIme = DateTime.Now;
+            chatting.SeatID = SeatId;
+            DataRepository.Chatting.Insert(chatting);
+            MessageBox.Show("발송되었습니다.");
+        }
     }
 }

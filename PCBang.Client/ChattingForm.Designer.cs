@@ -30,29 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txbText = new System.Windows.Forms.TextBox();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnClose = new System.Windows.Forms.Button();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.txbText = new System.Windows.Forms.TextBox();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bdsChatting = new System.Windows.Forms.BindingSource(this.components);
-            this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsChatting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChatting)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -69,6 +69,76 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(402, 413);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(386, 25);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "닫기";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(12, 413);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(386, 25);
+            this.btnSend.TabIndex = 6;
+            this.btnSend.Text = "보내기";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // txbText
+            // 
+            this.txbText.Location = new System.Drawing.Point(12, 384);
+            this.txbText.Name = "txbText";
+            this.txbText.Size = new System.Drawing.Size(776, 25);
+            this.txbText.TabIndex = 5;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.bdsChatting;
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(776, 368);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // bdsChatting
+            // 
+            this.bdsChatting.DataSource = typeof(PC_Project.Data.Chatting);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSent,
+            this.colText});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colSent
+            // 
+            this.colSent.FieldName = "Sent";
+            this.colSent.MinWidth = 25;
+            this.colSent.Name = "colSent";
+            this.colSent.OptionsColumn.AllowEdit = false;
+            this.colSent.Visible = true;
+            this.colSent.VisibleIndex = 0;
+            this.colSent.Width = 111;
+            // 
+            // colText
+            // 
+            this.colText.FieldName = "Text";
+            this.colText.MinWidth = 25;
+            this.colText.Name = "colText";
+            this.colText.OptionsColumn.AllowEdit = false;
+            this.colText.Visible = true;
+            this.colText.VisibleIndex = 1;
+            this.colText.Width = 635;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -82,25 +152,6 @@
             this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
             // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.bdsChatting;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(776, 368);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSent,
-            this.colText});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControl1;
@@ -109,13 +160,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(780, 372);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // txbText
-            // 
-            this.txbText.Location = new System.Drawing.Point(12, 384);
-            this.txbText.Name = "txbText";
-            this.txbText.Size = new System.Drawing.Size(776, 25);
-            this.txbText.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -126,15 +170,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(12, 413);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(386, 25);
-            this.btnSend.TabIndex = 6;
-            this.btnSend.Text = "보내기";
-            this.btnSend.UseVisualStyleBackColor = true;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSend;
@@ -144,16 +179,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(402, 413);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(386, 25);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "닫기";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnClose;
@@ -162,30 +187,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(390, 29);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // bdsChatting
-            // 
-            this.bdsChatting.DataSource = typeof(PC_Project.Data.Chatting);
-            // 
-            // colText
-            // 
-            this.colText.FieldName = "Text";
-            this.colText.MinWidth = 25;
-            this.colText.Name = "colText";
-            this.colText.OptionsColumn.AllowEdit = false;
-            this.colText.Visible = true;
-            this.colText.VisibleIndex = 1;
-            this.colText.Width = 635;
-            // 
-            // colSent
-            // 
-            this.colSent.FieldName = "Sent";
-            this.colSent.MinWidth = 25;
-            this.colSent.Name = "colSent";
-            this.colSent.OptionsColumn.AllowEdit = false;
-            this.colSent.Visible = true;
-            this.colSent.VisibleIndex = 0;
-            this.colSent.Width = 111;
             // 
             // ChattingForm
             // 
@@ -198,14 +199,14 @@
             this.Load += new System.EventHandler(this.ChattingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsChatting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChatting)).EndInit();
             this.ResumeLayout(false);
 
         }
