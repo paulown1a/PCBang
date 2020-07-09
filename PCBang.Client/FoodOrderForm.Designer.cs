@@ -39,7 +39,13 @@
             this.HomeIcon = new System.Windows.Forms.PictureBox();
             this.ExitBtn = new FontAwesome.Sharp.IconButton();
             this.CalulatorPn = new System.Windows.Forms.Panel();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bdsOrder = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BuyBtn = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.colProductID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,23 +67,17 @@
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MenuPn.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             this.CalulatorPn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPn
@@ -230,11 +230,11 @@
             this.ExitBtn.IconColor = System.Drawing.Color.Ivory;
             this.ExitBtn.IconSize = 30;
             this.ExitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExitBtn.Location = new System.Drawing.Point(705, 197);
+            this.ExitBtn.Location = new System.Drawing.Point(713, 181);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ExitBtn.Rotation = 0D;
-            this.ExitBtn.Size = new System.Drawing.Size(209, 60);
+            this.ExitBtn.Size = new System.Drawing.Size(200, 60);
             this.ExitBtn.TabIndex = 4;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,9 +256,73 @@
             this.CalulatorPn.Size = new System.Drawing.Size(917, 269);
             this.CalulatorPn.TabIndex = 3;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.bdsOrder;
+            this.gridControl1.Location = new System.Drawing.Point(6, 21);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(475, 226);
+            this.gridControl1.TabIndex = 7;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
             // bdsOrder
             // 
             this.bdsOrder.DataSource = typeof(PC_Project.Data.Order);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProductName,
+            this.colProductPrice,
+            this.colSeatID,
+            this.colCustomerID});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.MinWidth = 25;
+            this.colProductName.Name = "colProductName";
+            this.colProductName.OptionsColumn.ReadOnly = true;
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 0;
+            this.colProductName.Width = 94;
+            // 
+            // colProductPrice
+            // 
+            this.colProductPrice.DisplayFormat.FormatString = "C0";
+            this.colProductPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colProductPrice.FieldName = "ProductPrice";
+            this.colProductPrice.MinWidth = 25;
+            this.colProductPrice.Name = "colProductPrice";
+            this.colProductPrice.OptionsColumn.ReadOnly = true;
+            this.colProductPrice.Visible = true;
+            this.colProductPrice.VisibleIndex = 1;
+            this.colProductPrice.Width = 94;
+            // 
+            // colSeatID
+            // 
+            this.colSeatID.FieldName = "SeatID";
+            this.colSeatID.MinWidth = 25;
+            this.colSeatID.Name = "colSeatID";
+            this.colSeatID.OptionsColumn.ReadOnly = true;
+            this.colSeatID.Visible = true;
+            this.colSeatID.VisibleIndex = 2;
+            this.colSeatID.Width = 94;
+            // 
+            // colCustomerID
+            // 
+            this.colCustomerID.FieldName = "CustomerID";
+            this.colCustomerID.MinWidth = 25;
+            this.colCustomerID.Name = "colCustomerID";
+            this.colCustomerID.OptionsColumn.ReadOnly = true;
+            this.colCustomerID.Visible = true;
+            this.colCustomerID.VisibleIndex = 3;
+            this.colCustomerID.Width = 94;
             // 
             // BuyBtn
             // 
@@ -272,7 +336,7 @@
             this.BuyBtn.IconColor = System.Drawing.Color.Ivory;
             this.BuyBtn.IconSize = 30;
             this.BuyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuyBtn.Location = new System.Drawing.Point(479, 197);
+            this.BuyBtn.Location = new System.Drawing.Point(487, 178);
             this.BuyBtn.Name = "BuyBtn";
             this.BuyBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BuyBtn.Rotation = 0D;
@@ -468,65 +532,6 @@
             this.SeatID.ReadOnly = true;
             this.SeatID.Width = 125;
             // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.bdsOrder;
-            this.gridControl1.Location = new System.Drawing.Point(6, 18);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(475, 226);
-            this.gridControl1.TabIndex = 7;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colProductName,
-            this.colProductPrice,
-            this.colSeatID,
-            this.colCustomerID});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colProductName
-            // 
-            this.colProductName.FieldName = "ProductName";
-            this.colProductName.MinWidth = 25;
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 0;
-            this.colProductName.Width = 94;
-            // 
-            // colProductPrice
-            // 
-            this.colProductPrice.DisplayFormat.FormatString = "C0";
-            this.colProductPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colProductPrice.FieldName = "ProductPrice";
-            this.colProductPrice.MinWidth = 25;
-            this.colProductPrice.Name = "colProductPrice";
-            this.colProductPrice.Visible = true;
-            this.colProductPrice.VisibleIndex = 1;
-            this.colProductPrice.Width = 94;
-            // 
-            // colSeatID
-            // 
-            this.colSeatID.FieldName = "SeatID";
-            this.colSeatID.MinWidth = 25;
-            this.colSeatID.Name = "colSeatID";
-            this.colSeatID.Visible = true;
-            this.colSeatID.VisibleIndex = 2;
-            this.colSeatID.Width = 94;
-            // 
-            // colCustomerID
-            // 
-            this.colCustomerID.FieldName = "CustomerID";
-            this.colCustomerID.MinWidth = 25;
-            this.colCustomerID.Name = "colCustomerID";
-            this.colCustomerID.Visible = true;
-            this.colCustomerID.VisibleIndex = 3;
-            this.colCustomerID.Width = 94;
-            // 
             // FoodOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -540,20 +545,21 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FoodOrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ORDER FOOD";
             this.Load += new System.EventHandler(this.FoodOrderForm_Load);
             this.MenuPn.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             this.CalulatorPn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

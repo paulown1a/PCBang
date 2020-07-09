@@ -172,6 +172,7 @@ namespace PC_Room
 
         private void gridControl1_Load(object sender, EventArgs e)
         {
+            
             List<Product> products =
                 DataRepository.Product.Getbycode(102);
             bdsProduct.DataSource = products;
@@ -200,8 +201,8 @@ namespace PC_Room
         private void FoodOrderForm_Load(object sender, EventArgs e)
         {
             //uscProduct1.SetProductData(DataRepository.Product.Get(4));
-            
-
+            pnHome.BringToFront();
+            ControlBox = false;
         }
 
 
