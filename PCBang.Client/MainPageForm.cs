@@ -56,7 +56,6 @@ namespace MainPage
             btnFPSGame.LookAndFeel.UseDefaultLookAndFeel = false;
             btnFPSGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
 
-
             btnRPGGame.StyleController = null;
             btnRPGGame.LookAndFeel.UseDefaultLookAndFeel = false;
             btnRPGGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -74,7 +73,6 @@ namespace MainPage
             if (MessageBox.Show("사용을 종료하시겠습니까?", "사용종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Exit();
-                
             }
             else
             {
