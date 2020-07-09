@@ -31,7 +31,7 @@ namespace ManagerForm
         {
             Seat seat = seatBindingSource.Current as Seat;
 
-            if (seat.CustomerID == null)
+            if (seat.CustomerID == null) 
                 return;
 
             AddTimeform addTimeform = new AddTimeform(seat.CustomerID);
