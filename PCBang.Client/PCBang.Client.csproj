@@ -69,11 +69,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BIllForm.cs">
+    <Compile Include="ChattingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BIllForm.Designer.cs">
-      <DependentUpon>BIllForm.cs</DependentUpon>
+    <Compile Include="ChattingForm.Designer.cs">
+      <DependentUpon>ChattingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FoodOrderForm.cs">
       <SubType>Form</SubType>
@@ -114,8 +114,8 @@
     <Compile Include="XtraUserControl1.Designer.cs">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BIllForm.resx">
-      <DependentUpon>BIllForm.cs</DependentUpon>
+    <EmbeddedResource Include="ChattingForm.resx">
+      <DependentUpon>ChattingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FoodOrderForm.resx">
       <DependentUpon>FoodOrderForm.cs</DependentUpon>
@@ -146,6 +146,7 @@
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PC_Project.Data.Chatting.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Order.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Product.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Seat.datasource" />

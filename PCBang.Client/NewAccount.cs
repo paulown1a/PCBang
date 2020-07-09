@@ -13,6 +13,7 @@ using System.Runtime.Remoting;
 using DevExpress.Utils.VisualEffects;
 using PC_Project.Data;
 //hi
+//hi2
 namespace loginform
 {
     public partial class NewAccountForm : Form
