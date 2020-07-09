@@ -69,6 +69,10 @@
             this.btnRPGGame = new DevExpress.XtraEditors.SimpleButton();
             this.btnFPSGame = new DevExpress.XtraEditors.SimpleButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.grdGames = new DevExpress.XtraGrid.GridControl();
+            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -92,6 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGames)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -119,7 +126,7 @@
             this.lblSeat.Location = new System.Drawing.Point(245, 128);
             this.lblSeat.Name = "lblSeat";
             this.lblSeat.Size = new System.Drawing.Size(231, 25);
-            this.lblSeat.TabIndex = 12;
+            this.lblSeat.TabIndex = 1;
             this.lblSeat.Text = "좌석 : ";
             // 
             // lblRank
@@ -128,7 +135,7 @@
             this.lblRank.Location = new System.Drawing.Point(245, 99);
             this.lblRank.Name = "lblRank";
             this.lblRank.Size = new System.Drawing.Size(231, 25);
-            this.lblRank.TabIndex = 11;
+            this.lblRank.TabIndex = 1;
             this.lblRank.Text = "등급 : ";
             // 
             // lblID
@@ -137,7 +144,7 @@
             this.lblID.Location = new System.Drawing.Point(245, 41);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(231, 25);
-            this.lblID.TabIndex = 10;
+            this.lblID.TabIndex = 1;
             this.lblID.Text = "아이디 : ";
             // 
             // lblName
@@ -146,7 +153,7 @@
             this.lblName.Location = new System.Drawing.Point(245, 12);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(231, 25);
-            this.lblName.TabIndex = 9;
+            this.lblName.TabIndex = 1;
             this.lblName.Text = "이름 : ";
             // 
             // lblPayamount
@@ -155,7 +162,7 @@
             this.lblPayamount.Location = new System.Drawing.Point(245, 157);
             this.lblPayamount.Name = "lblPayamount";
             this.lblPayamount.Size = new System.Drawing.Size(231, 497);
-            this.lblPayamount.TabIndex = 8;
+            this.lblPayamount.TabIndex = 1;
             this.lblPayamount.Text = "금액 : ";
             // 
             // btnCall
@@ -167,7 +174,7 @@
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(231, 34);
             this.btnCall.StyleController = this.layoutControl1;
-            this.btnCall.TabIndex = 7;
+            this.btnCall.TabIndex = 0;
             this.btnCall.Text = "직원호출";
             this.btnCall.Click += new System.EventHandler(this.btnCall_Click);
             // 
@@ -180,7 +187,7 @@
             this.btnFoodOrder.Name = "btnFoodOrder";
             this.btnFoodOrder.Size = new System.Drawing.Size(231, 34);
             this.btnFoodOrder.StyleController = this.layoutControl1;
-            this.btnFoodOrder.TabIndex = 6;
+            this.btnFoodOrder.TabIndex = 2;
             this.btnFoodOrder.Text = "음식주문";
             this.btnFoodOrder.Click += new System.EventHandler(this.btnFoodOrder_Click);
             // 
@@ -190,7 +197,7 @@
             this.lblRemainingTime.Location = new System.Drawing.Point(245, 70);
             this.lblRemainingTime.Name = "lblRemainingTime";
             this.lblRemainingTime.Size = new System.Drawing.Size(231, 25);
-            this.lblRemainingTime.TabIndex = 5;
+            this.lblRemainingTime.TabIndex = 1;
             this.lblRemainingTime.Text = "남은시간 : ";
             // 
             // btnExit
@@ -202,7 +209,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(231, 34);
             this.btnExit.StyleController = this.layoutControl1;
-            this.btnExit.TabIndex = 4;
+            this.btnExit.TabIndex = 3;
             this.btnExit.Text = "사용종료";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
@@ -485,7 +492,7 @@
             this.btnCDGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnCDGame.Size = new System.Drawing.Size(350, 350);
             this.btnCDGame.TabIndex = 4;
-            this.btnCDGame.Visible = false;
+            this.btnCDGame.Click += new System.EventHandler(this.btnCDGame_Click);
             // 
             // btnRPGGame
             // 
@@ -497,7 +504,7 @@
             this.btnRPGGame.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.btnRPGGame.Size = new System.Drawing.Size(350, 350);
             this.btnRPGGame.TabIndex = 3;
-            this.btnRPGGame.Visible = false;
+            this.btnRPGGame.Click += new System.EventHandler(this.btnRPGGame_Click);
             // 
             // btnFPSGame
             // 
@@ -508,7 +515,7 @@
             this.btnFPSGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnFPSGame.Size = new System.Drawing.Size(350, 350);
             this.btnFPSGame.TabIndex = 2;
-            this.btnFPSGame.Visible = false;
+            this.btnFPSGame.Click += new System.EventHandler(this.btnFPSGame_Click);
             // 
             // timer1
             // 
@@ -516,11 +523,45 @@
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // grdGames
+            // 
+            this.grdGames.DataSource = this.gameBindingSource;
+            this.grdGames.Location = new System.Drawing.Point(311, 22);
+            this.grdGames.MainView = this.cardView1;
+            this.grdGames.Name = "grdGames";
+            this.grdGames.Size = new System.Drawing.Size(932, 600);
+            this.grdGames.TabIndex = 5;
+            this.grdGames.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.cardView1});
+            this.grdGames.Visible = false;
+            // 
+            // gameBindingSource
+            // 
+            this.gameBindingSource.DataSource = typeof(PC_Project.Data.Game);
+            // 
+            // cardView1
+            // 
+            this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName});
+            this.cardView1.GridControl = this.grdGames;
+            this.cardView1.Name = "cardView1";
+            this.cardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.MinWidth = 25;
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 94;
+            // 
             // MainPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1737, 1031);
+            this.Controls.Add(this.grdGames);
             this.Controls.Add(this.btnCDGame);
             this.Controls.Add(this.btnRPGGame);
             this.Controls.Add(this.btnFPSGame);
@@ -553,6 +594,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGames)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,6 +643,10 @@
         private DevExpress.XtraEditors.SimpleButton btnRPGGame;
         private DevExpress.XtraEditors.SimpleButton btnCDGame;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraGrid.GridControl grdGames;
+        private DevExpress.XtraGrid.Views.Card.CardView cardView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private System.Windows.Forms.BindingSource gameBindingSource;
     }
 }
 

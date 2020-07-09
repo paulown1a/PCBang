@@ -20,7 +20,7 @@ namespace MainPage
     {
         private Customer customer;
         private string seatNumber;
-   
+        private int genreId = 0;
         
 
         public MainPageForm(Customer customer, string seatNumber)
@@ -79,7 +79,7 @@ namespace MainPage
             timer1.Stop();
             DataRepository.Seat.Update(seatNumber);
             DataRepository.Customer.Update(customer);
-                Application.Exit();
+            Application.Exit();
         }
 
         private void btnCall_Click(object sender, EventArgs e)
@@ -102,6 +102,41 @@ namespace MainPage
             {
                 MessageBox.Show("사용시간이 종료되었습니다.");
                 Exit();          
+            }
+        }
+
+        private void btnCDGame_Click(object sender, EventArgs e)
+        {
+            CallGames(201);
+        }
+
+        private void btnRPGGame_Click(object sender, EventArgs e)
+        {
+            CallGames(203);
+        }
+
+        private void btnFPSGame_Click(object sender, EventArgs e)
+        {
+            CallGames(202);
+        }
+
+        private void CallGames(int genreId)
+        {
+            if (this.genreId == 0)
+            {
+                gameBindingSource.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
+                this.genreId = genreId;
+                grdGames.Visible = true;
+            }
+            else if(genreId == this.genreId)
+            {
+                grdGames.Visible = false;
+                this.genreId = 0;
+            }
+            else
+            {
+                gameBindingSource.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
+                this.genreId = genreId;
             }
         }
     }
