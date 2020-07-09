@@ -22,8 +22,8 @@ namespace ManagerForm
 
         private void ManagerChattingform_Load(object sender, EventArgs e)
         {
-            seatBindingSource.DataSource = DataRepository.Seat.GetUsing();
             chattingBindingSource.DataSource = DataRepository.Chatting.GetNotRead(true);
+            seatBindingSource.DataSource = DataRepository.Seat.GetUsing();
         }
 
         private void cbbSeat_DropDown(object sender, EventArgs e)

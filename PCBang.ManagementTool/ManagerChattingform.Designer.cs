@@ -39,9 +39,9 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.chattingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colChecked = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChecked = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.좌석 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -144,35 +144,32 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // colChecked
-            // 
-            this.colChecked.FieldName = "확인";
-            this.colChecked.MinWidth = 25;
-            this.colChecked.Name = "colChecked";
-            this.colChecked.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
-            this.colChecked.Visible = true;
-            this.colChecked.VisibleIndex = 0;
-            this.colChecked.Width = 35;
-            // 
             // colSeatID
             // 
-            this.colSeatID.FieldName = "좌석";
+            this.colSeatID.FieldName = "SeatID";
             this.colSeatID.MinWidth = 25;
             this.colSeatID.Name = "colSeatID";
-            this.colSeatID.OptionsColumn.AllowEdit = false;
             this.colSeatID.Visible = true;
             this.colSeatID.VisibleIndex = 1;
             this.colSeatID.Width = 50;
             // 
             // colText
             // 
-            this.colText.FieldName = "내용";
+            this.colText.FieldName = "Text";
             this.colText.MinWidth = 25;
             this.colText.Name = "colText";
-            this.colText.OptionsColumn.AllowEdit = false;
             this.colText.Visible = true;
             this.colText.VisibleIndex = 2;
-            this.colText.Width = 335;
+            this.colText.Width = 66;
+            // 
+            // colChecked
+            // 
+            this.colChecked.FieldName = "Checked";
+            this.colChecked.MinWidth = 25;
+            this.colChecked.Name = "colChecked";
+            this.colChecked.Visible = true;
+            this.colChecked.VisibleIndex = 0;
+            this.colChecked.Width = 35;
             // 
             // Root
             // 
@@ -273,9 +270,9 @@
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource chattingBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
         private DevExpress.XtraGrid.Columns.GridColumn colText;
-        private System.Windows.Forms.BindingSource chattingBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colChecked;
     }
 }
