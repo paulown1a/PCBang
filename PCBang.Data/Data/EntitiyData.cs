@@ -40,6 +40,15 @@ namespace PC_Project.Data
             context.SaveChanges();
         }
 
+        public void Update(List<T> entities)
+        {
+            PCBangEntities context = CreateContext();
+            context.Entry(entities).State = EntityState.Modified;
+/*            foreach (var entity in entities)
+                context.Entry(entity).State = EntityState.Modified;*/
+            context.SaveChanges();
+        }
+
         public void Delete(T entity)
         {
             PCBangEntities context = CreateContext();

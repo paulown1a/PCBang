@@ -43,7 +43,6 @@ namespace PC_Project.Data
             //select new { album = x, artistname = x.artist.name };
             return query.ToList();
         }
-
         public void AddPhoth(int productId, string filePath)
         {
             var product = Get(productId);

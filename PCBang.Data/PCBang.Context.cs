@@ -29,10 +29,10 @@ namespace PC_Project.Data
         public virtual DbSet<Code> Codes { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Game> Games { get; set; }
-        public virtual DbSet<GameGenre> GameGenres { get; set; }
         public virtual DbSet<GameUsingList> GameUsingLists { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
+        public virtual DbSet<GameGenre> GameGenres { get; set; }
     }
 }

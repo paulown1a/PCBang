@@ -5,27 +5,27 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="72d6009983194daba837e8cb5c9bbed2" Name="Diagram1">
-        <EntityTypeShape EntityType="PCBangModel.Chatting" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Code" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Customer" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Game" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.GameGenre" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.GameUsingList" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Order" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Product" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBangModel.Seat" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <AssociationConnector Association="PCBangModel.FK_채팅_좌석" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_Game_Code" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_Order_Code1" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_게임장르_etc" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_상품_etc" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_Order_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_회원" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_좌석_회원" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_게임" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_게임장르_게임" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_Order_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="PCBangModel.FK_Order_Seat" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PCBangModel.Chatting" Width="1.5" PointX="5.25" PointY="9.5" />
+        <EntityTypeShape EntityType="PCBangModel.Code" Width="1.5" PointX="3" PointY="12.625" />
+        <EntityTypeShape EntityType="PCBangModel.Customer" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="PCBangModel.Game" Width="1.5" PointX="8.75" PointY="4.5" />
+        <EntityTypeShape EntityType="PCBangModel.GameUsingList" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="PCBangModel.Order" Width="1.5" PointX="5.25" PointY="5.375" />
+        <EntityTypeShape EntityType="PCBangModel.Product" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="PCBangModel.Seat" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="PCBangModel.GameGenre" Width="1.5" PointX="8.375" PointY="1.5" />
+        <AssociationConnector Association="PCBangModel.FK_채팅_좌석" />
+        <AssociationConnector Association="PCBangModel.FK_Game_Code" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Code1" />
+        <AssociationConnector Association="PCBangModel.FK_상품_etc" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Customer" />
+        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_회원" />
+        <AssociationConnector Association="PCBangModel.FK_좌석_회원" />
+        <AssociationConnector Association="PCBangModel.FK_게임_이용내역_게임" />
+        <AssociationConnector Association="PCBangModel.FK_게임장르_게임" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Product" />
+        <AssociationConnector Association="PCBangModel.FK_Order_Seat" />
+        <AssociationConnector Association="PCBangModel.FK_GameGenre_Code" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
