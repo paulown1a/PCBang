@@ -546,6 +546,7 @@
             this.colName});
             this.cardView1.GridControl = this.grdGames;
             this.cardView1.Name = "cardView1";
+            this.cardView1.OptionsView.ShowCardCaption = false;
             this.cardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
             // colName

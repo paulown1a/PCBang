@@ -32,7 +32,9 @@ namespace PC_Project.Client
 
         private void ChattingForm_Load(object sender, EventArgs e)
         {
+            ChattingTimer.Start();
             bdsChatting.DataSource = DataRepository.Chatting.GetNotRead(false, SeatId);
+
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -44,7 +46,21 @@ namespace PC_Project.Client
             chatting.SendTIme = DateTime.Now;
             chatting.SeatID = SeatId;
             DataRepository.Chatting.Insert(chatting);
+
             MessageBox.Show("발송되었습니다.");
+        }
+
+        private void ChattingTimer_Tick(object sender, EventArgs e)
+        {
+            bdsChatting.DataSource = DataRepository.Chatting.GetNotRead(false, SeatId);
+        }
+
+        private void txbText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnSend_Click(this, e);
+            }
         }
     }
 }

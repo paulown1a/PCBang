@@ -80,16 +80,16 @@ namespace MainPage
 
         private void Exit()
         {
-            MessageBox.Show("종료합니다");
             timer1.Stop();
             DataRepository.Seat.Update(seatNumber);
             DataRepository.Customer.Update(customer);
+            DataRepository.Chatting.UpdateAll(false, int.Parse(seatNumber));
             Application.Exit();
         }
 
         private void btnCall_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("직원호출");
+         
             PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
             chatting.Show();
         }
