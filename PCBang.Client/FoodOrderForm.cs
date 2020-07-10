@@ -56,6 +56,7 @@ namespace PC_Room
             public static Color color5 = Color.FromArgb(199, 93, 204);
             public static Color color6 = Color.FromArgb(255, 113, 85);
             public static Color color7 = Color.FromArgb(165, 229, 158);
+            public static Color color8 = Color.FromArgb(252, 202, 65);
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -71,7 +72,7 @@ namespace PC_Room
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                if(senderBtn==ExitBtn || senderBtn== BuyBtn)
+                if(senderBtn==ExitBtn || senderBtn== BuyBtn || senderBtn==btnClear)
                 {
                     leftBorderBtnSecond.BackColor = color;
                     leftBorderBtnSecond.Location = new Point(currentBtn.Location.X, currentBtn.Location.Y);
@@ -147,8 +148,8 @@ namespace PC_Room
         {
             //ActivateButton(sender, RGBColors.color6);
 
-            if (!DataRepository.Order.GetWithProduct(false, customer.CustomerID).Any())
-            {
+            if (DataRepository.Order.GetWithProduct(false, customer.CustomerID).Count==0)
+            { 
                 MessageBox.Show("상품을 골라 주세요");
                 return;
             }
@@ -241,5 +242,35 @@ namespace PC_Room
             bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
 
         }
+
+        private void gridBIll_DoubleClick(object sender, EventArgs e)
+        {
+            
+            Order order = bdsOrder.Current as Order;
+            if (order == null)
+                return;
+            DataRepository.Order.Delete(order);
+            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Order order = bdsOrder.Current as Order;
+            if (order == null)
+                return;
+            DataRepository.Order.DeleteOrder(customer.CustomerID);
+            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
+        }
+
+        private void btnClear_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color8);
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
     }
 }
