@@ -100,7 +100,6 @@ namespace loginform
             this.cbbSeat.DisplayMember = "SeatID";
             this.cbbSeat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSeat.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cbbSeat.FormattingEnabled = true;
             this.cbbSeat.Location = new System.Drawing.Point(75, 121);
             this.cbbSeat.Name = "cbbSeat";
             this.cbbSeat.Size = new System.Drawing.Size(268, 26);
