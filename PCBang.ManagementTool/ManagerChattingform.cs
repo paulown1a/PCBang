@@ -23,7 +23,7 @@ namespace ManagerForm
         private void ManagerChattingform_Load(object sender, EventArgs e)
         {
             dbsSeat.DataSource = DataRepository.Seat.GetUsing();
-            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
+            dbsChatting.DataSource = DataRepository.Chatting.GetAll();
             timer1.Start();
         }
 
@@ -34,7 +34,6 @@ namespace ManagerForm
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DataRepository.Chatting.DeleteAll(true);
             Close();
         }
 
@@ -51,7 +50,6 @@ namespace ManagerForm
             DataRepository.Chatting.Insert(chatting);
             txbText.Text = "";
             txbText.Select(0, 0);
-            MessageBox.Show("발송되었습니다.");
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -78,7 +76,7 @@ namespace ManagerForm
         private void timer1_Tick(object sender, EventArgs e)
         {
             dbsSeat.DataSource = DataRepository.Seat.GetUsing();
-            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
+            dbsChatting.DataSource = DataRepository.Chatting.GetAll();
         }
     }
 }
