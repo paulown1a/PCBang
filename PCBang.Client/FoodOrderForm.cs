@@ -30,6 +30,7 @@ namespace PC_Room
         public FoodOrderForm()
         {
             InitializeComponent();
+            CenterToScreen();
             
             leftBorderBtn = new Panel();
             leftBorderBtnSecond = new Panel();

@@ -61,7 +61,7 @@ namespace loginform
         {
             NewAccountForm NewAccount = new NewAccountForm();
             NewAccount.ShowDialog();
-            //NewAccount.CenterToScreen();
+            
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

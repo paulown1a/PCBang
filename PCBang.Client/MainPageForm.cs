@@ -82,7 +82,6 @@ namespace MainPage
 
         private void Exit()
         {
-            
             timer1.Stop();
             DataRepository.Seat.Update(seatNumber);
             DataRepository.Customer.Update(customer);
@@ -164,5 +163,7 @@ namespace MainPage
             lblGameNo4.Text = topGames[3] != null ?$"{4 }. {topGames[3].Name}": $"{4 }. ";
             lblGameNo5.Text = topGames[4] != null ?$"{5 }. {topGames[4].Name}": $"{5 }. ";
         }
+
+        
     }
 }
