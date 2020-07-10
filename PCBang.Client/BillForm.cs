@@ -39,10 +39,13 @@ namespace PC_Project.Client
             Enabled = false;
             List<Order> orders = DataRepository.Order.GetWithProduct(false,customer.CustomerID);
             customer.Payment += DataRepository.Order.GetTotalPrice(false, customer.CustomerID);
+
+            
             foreach (Order order in orders)
             {
+                //MessageBox.Show(Regex.Replace(order.ProductName, @"\D",""));
                 if (DataRepository.Order.CheckItem(order) == 101)
-                    customer.RemainingTime += int.Parse(Regex.Split(order.ProductName, @"\D")[1]);
+                    customer.RemainingTime += int.Parse(Regex.Replace(order.ProductName, @"\D", ""))*60;
                 order.buyed = true;
                 DataRepository.Order.Update(order);
             }
