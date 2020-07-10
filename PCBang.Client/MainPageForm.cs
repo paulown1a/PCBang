@@ -112,7 +112,7 @@ namespace MainPage
         {
          
             PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
-            chatting.Show();
+            chatting.ShowDialog();
         }
 
         private void btnFoodOrder_Click(object sender, EventArgs e)
@@ -157,7 +157,6 @@ namespace MainPage
                 timer1.Stop();
                 customer.RemainingTime = 0;
                 MessageBox.Show("사용시간이 종료되었습니다.");
-                
                 timer1.Start();
                 Exit();          
             }
@@ -217,7 +216,6 @@ namespace MainPage
         private void timer2_Tick(object sender, EventArgs e)
         {
             pausedTime++;
-
         }
     }
 }
