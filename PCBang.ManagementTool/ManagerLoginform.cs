@@ -24,7 +24,6 @@ namespace ManagerForm
 
             if (txtPassword.Text == "1234")
             {
-                MessageBox.Show("로그인 되었습니다.");
                 Managerform manager = new Managerform();
                 ShowInTaskbar = false;
                 Opacity = 0;
