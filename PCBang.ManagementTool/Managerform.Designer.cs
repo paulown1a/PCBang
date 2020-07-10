@@ -33,6 +33,7 @@
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnChatting = new DevExpress.XtraEditors.SimpleButton();
             this.btnManageProducts = new DevExpress.XtraEditors.SimpleButton();
             this.btnRevenue = new DevExpress.XtraEditors.SimpleButton();
             this.lblRemainingTime = new DevExpress.XtraEditors.LabelControl();
@@ -62,6 +63,7 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.grvSeat = new DevExpress.XtraGrid.GridControl();
             this.bdsSeat = new System.Windows.Forms.BindingSource(this.components);
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
@@ -71,8 +73,7 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnChatting = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -95,13 +96,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel1
@@ -148,6 +149,16 @@
             this.layoutControl2.Size = new System.Drawing.Size(275, 451);
             this.layoutControl2.TabIndex = 4;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // btnChatting
+            // 
+            this.btnChatting.Location = new System.Drawing.Point(12, 288);
+            this.btnChatting.Name = "btnChatting";
+            this.btnChatting.Size = new System.Drawing.Size(251, 27);
+            this.btnChatting.StyleController = this.layoutControl2;
+            this.btnChatting.TabIndex = 14;
+            this.btnChatting.Text = "채팅내역";
+            this.btnChatting.Click += new System.EventHandler(this.btnChatting_Click);
             // 
             // btnManageProducts
             // 
@@ -430,6 +441,15 @@
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.btnChatting;
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 276);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(255, 31);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
             // grvSeat
             // 
             this.grvSeat.DataSource = this.bdsSeat;
@@ -514,24 +534,10 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // btnChatting
+            // timer1
             // 
-            this.btnChatting.Location = new System.Drawing.Point(12, 288);
-            this.btnChatting.Name = "btnChatting";
-            this.btnChatting.Size = new System.Drawing.Size(251, 27);
-            this.btnChatting.StyleController = this.layoutControl2;
-            this.btnChatting.TabIndex = 14;
-            this.btnChatting.Text = "채팅내역";
-            this.btnChatting.Click += new System.EventHandler(this.btnChatting_Click);
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.btnChatting;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 276);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(255, 31);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Managerform
             // 
@@ -563,13 +569,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -619,5 +625,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraEditors.SimpleButton btnChatting;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private System.Windows.Forms.Timer timer1;
     }
 }

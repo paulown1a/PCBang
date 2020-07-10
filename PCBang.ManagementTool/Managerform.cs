@@ -93,5 +93,11 @@ namespace ManagerForm
             ManagerChattingform managerChattingform = new ManagerChattingform();
             managerChattingform.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            List<Seat> seats = DataRepository.Seat.GetAll();
+            bdsSeat.DataSource = seats;
+        }
     }
 }

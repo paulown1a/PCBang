@@ -47,6 +47,7 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.내용 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbsSeat)).BeginInit();
@@ -218,6 +219,11 @@
             this.내용.Size = new System.Drawing.Size(469, 29);
             this.내용.TextSize = new System.Drawing.Size(26, 18);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ManagerChattingform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -263,5 +269,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colText;
         private System.Windows.Forms.TextBox txbText;
         private DevExpress.XtraLayout.LayoutControlItem 내용;
+        private System.Windows.Forms.Timer timer1;
     }
 }

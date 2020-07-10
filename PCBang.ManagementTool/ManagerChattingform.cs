@@ -72,5 +72,11 @@ namespace ManagerForm
                 
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dbsSeat.DataSource = DataRepository.Seat.GetUsing();
+            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
+        }
     }
 }
