@@ -34,6 +34,7 @@ namespace loginform
             this.lblNewAccount = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbSeat = new System.Windows.Forms.ComboBox();
+            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbID = new System.Windows.Forms.TextBox();
@@ -47,9 +48,9 @@ namespace loginform
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.좌석번호 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.비밀번호)).BeginInit();
@@ -59,7 +60,6 @@ namespace loginform
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.좌석번호)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewAccount
@@ -108,6 +108,10 @@ namespace loginform
             this.cbbSeat.ValueMember = "SeatID";
             this.cbbSeat.SelectedIndexChanged += new System.EventHandler(this.cbbSeat_SelectedIndexChanged);
             // 
+            // seatBindingSource
+            // 
+            this.seatBindingSource.DataSource = typeof(PC_Project.Data.Seat);
+            // 
             // btnLogin
             // 
             this.btnLogin.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -123,7 +127,7 @@ namespace loginform
             this.btnLogin.StyleController = this.layoutControl1;
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "로그인";
-            this.btnLogin.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.bntLogin_Click);
             // 
             // txbPassword
             // 
@@ -133,6 +137,7 @@ namespace loginform
             this.txbPassword.Size = new System.Drawing.Size(269, 25);
             this.txbPassword.TabIndex = 4;
             this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
+            this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassword_KeyDown);
             // 
             // txbID
             // 
@@ -255,10 +260,6 @@ namespace loginform
             this.좌석번호.Size = new System.Drawing.Size(347, 36);
             this.좌석번호.TextSize = new System.Drawing.Size(64, 24);
             // 
-            // seatBindingSource
-            // 
-            this.seatBindingSource.DataSource = typeof(PC_Project.Data.Seat);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -271,6 +272,7 @@ namespace loginform
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.비밀번호)).EndInit();
@@ -280,7 +282,6 @@ namespace loginform
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.좌석번호)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
