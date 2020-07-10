@@ -145,7 +145,7 @@ namespace PC_Room
         {
             //ActivateButton(sender, RGBColors.color6);
 
-            if (DataRepository.Order.GetWithProduct(false, customerID) == null)
+            if (!DataRepository.Order.GetWithProduct(false, customerID).Any())
             {
                 MessageBox.Show("상품을 골라 주세요");
                 return;
