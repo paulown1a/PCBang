@@ -147,6 +147,18 @@ namespace PC_Room
         {
             //ActivateButton(sender, RGBColors.color6);
 
+            if (!DataRepository.Order.GetWithProduct(false, customerID).Any())
+            {
+                MessageBox.Show("상품을 골라 주세요");
+                return;
+            }
+            else
+            {
+                BillForm billform = new BillForm(customerID);
+                billform.ShowDialog();
+                bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+            }
+                
         }
 
         private void BuyBtn_MouseHover(object sender, EventArgs e)
@@ -222,6 +234,5 @@ namespace PC_Room
             bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
 
         }
-       
     }
 }

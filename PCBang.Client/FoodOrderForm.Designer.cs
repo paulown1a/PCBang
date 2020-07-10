@@ -39,7 +39,7 @@
             this.HomeIcon = new System.Windows.Forms.PictureBox();
             this.ExitBtn = new FontAwesome.Sharp.IconButton();
             this.CalulatorPn = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridBIll = new DevExpress.XtraGrid.GridControl();
             this.bdsOrder = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,12 +57,12 @@
             this.bdsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.SeatIdbtn = new System.Windows.Forms.Label();
-            this.pnHome = new PC_Project.Client.HomeDisplay();
             this.GridFood = new DevExpress.XtraGrid.GridControl();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhoto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pnHome = new PC_Project.Client.HomeDisplay();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +71,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             this.CalulatorPn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBIll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).BeginInit();
@@ -247,7 +247,7 @@
             // CalulatorPn
             // 
             this.CalulatorPn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.CalulatorPn.Controls.Add(this.gridControl1);
+            this.CalulatorPn.Controls.Add(this.gridBIll);
             this.CalulatorPn.Controls.Add(this.ExitBtn);
             this.CalulatorPn.Controls.Add(this.BuyBtn);
             this.CalulatorPn.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -256,15 +256,15 @@
             this.CalulatorPn.Size = new System.Drawing.Size(917, 269);
             this.CalulatorPn.TabIndex = 3;
             // 
-            // gridControl1
+            // gridBIll
             // 
-            this.gridControl1.DataSource = this.bdsOrder;
-            this.gridControl1.Location = new System.Drawing.Point(6, 21);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(475, 226);
-            this.gridControl1.TabIndex = 7;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridBIll.DataSource = this.bdsOrder;
+            this.gridBIll.Location = new System.Drawing.Point(6, 21);
+            this.gridBIll.MainView = this.gridView1;
+            this.gridBIll.Name = "gridBIll";
+            this.gridBIll.Size = new System.Drawing.Size(475, 226);
+            this.gridBIll.TabIndex = 7;
+            this.gridBIll.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // bdsOrder
@@ -278,7 +278,7 @@
             this.colProductPrice,
             this.colSeatID,
             this.colCustomerID});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridBIll;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -409,8 +409,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.SeatIdbtn);
-            this.panel1.Controls.Add(this.pnHome);
             this.panel1.Controls.Add(this.GridFood);
+            this.panel1.Controls.Add(this.pnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(220, 15);
             this.panel1.Name = "panel1";
@@ -424,14 +424,6 @@
             this.SeatIdbtn.Name = "SeatIdbtn";
             this.SeatIdbtn.Size = new System.Drawing.Size(0, 15);
             this.SeatIdbtn.TabIndex = 1;
-            // 
-            // pnHome
-            // 
-            this.pnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnHome.Location = new System.Drawing.Point(0, 0);
-            this.pnHome.Name = "pnHome";
-            this.pnHome.Size = new System.Drawing.Size(917, 486);
-            this.pnHome.TabIndex = 3;
             // 
             // GridFood
             // 
@@ -473,6 +465,7 @@
             this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             this.colName.Width = 94;
@@ -484,6 +477,7 @@
             this.colPrice.FieldName = "Price";
             this.colPrice.MinWidth = 25;
             this.colPrice.Name = "colPrice";
+            this.colPrice.OptionsColumn.AllowEdit = false;
             this.colPrice.Visible = true;
             this.colPrice.VisibleIndex = 1;
             this.colPrice.Width = 94;
@@ -493,9 +487,18 @@
             this.colPhoto.FieldName = "Photo";
             this.colPhoto.MinWidth = 25;
             this.colPhoto.Name = "colPhoto";
+            this.colPhoto.OptionsColumn.AllowEdit = false;
             this.colPhoto.Visible = true;
             this.colPhoto.VisibleIndex = 2;
             this.colPhoto.Width = 94;
+            // 
+            // pnHome
+            // 
+            this.pnHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnHome.Location = new System.Drawing.Point(0, 0);
+            this.pnHome.Name = "pnHome";
+            this.pnHome.Size = new System.Drawing.Size(917, 486);
+            this.pnHome.TabIndex = 3;
             // 
             // productNameDataGridViewTextBoxColumn
             // 
@@ -552,7 +555,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             this.CalulatorPn.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBIll)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).EndInit();
@@ -597,7 +600,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colPhoto;
         private PC_Project.Client.HomeDisplay pnHome;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridBIll;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colProductName;
         private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;

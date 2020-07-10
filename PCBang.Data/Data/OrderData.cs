@@ -39,6 +39,21 @@ namespace PC_Project.Data
 
             return list.ConvertAll(x => x.Order);
         }
+        public int GetTotalPrice(bool buyed, int customerId)
+        {
+            PCBangEntities context = CreateContext();
+            var query = from x in context.Orders
+                        where x.buyed == buyed && x.CustomerID == customerId
+                        select x.Product.Price;
+            var list = query.ToList();
+            int sum = 0;
+            foreach (var x in list)
+            {
+                sum += x;
+            }
+
+            return sum;
+        }
         public List<Order> GetWithProduct(bool buyed, int customerId)
         {
             PCBangEntities context = CreateContext();
