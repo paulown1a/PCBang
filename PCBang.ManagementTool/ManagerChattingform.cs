@@ -57,11 +57,8 @@ namespace ManagerForm
             Chatting chatting = dbsChatting.Current as Chatting;
             if (chatting == null)
                 return;
-            chatting.Checked = true;
-            DataRepository.Chatting.Update(chatting);
 
-            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
-
+            dbsChatting.DataSource = DataRepository.Chatting.GetAll();
         }
 
         private void txbText_KeyDown(object sender, KeyEventArgs e)
