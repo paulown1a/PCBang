@@ -99,5 +99,11 @@ namespace ManagerForm
             List<Seat> seats = DataRepository.Seat.GetAll();
             bdsSeat.DataSource = seats;
         }
+
+        private void btnManageProducts_Click(object sender, EventArgs e)
+        {
+            ManageProductform manageProductform = new ManageProductform();
+            manageProductform.Show();
+        }
     }
 }

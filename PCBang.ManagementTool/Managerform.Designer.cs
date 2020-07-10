@@ -168,6 +168,7 @@
             this.btnManageProducts.StyleController = this.layoutControl2;
             this.btnManageProducts.TabIndex = 13;
             this.btnManageProducts.Text = "제품관리";
+            this.btnManageProducts.Click += new System.EventHandler(this.btnManageProducts_Click);
             // 
             // btnRevenue
             // 
@@ -474,6 +475,7 @@
             this.cardView1.GridControl = this.grvSeat;
             this.cardView1.Name = "cardView1";
             this.cardView1.OptionsView.ShowCardCaption = false;
+            this.cardView1.OptionsView.ShowQuickCustomizeButton = false;
             // 
             // colSeatID
             // 

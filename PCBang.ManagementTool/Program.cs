@@ -17,7 +17,7 @@ namespace ManagerForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Managerform());
+            Application.Run(new ManagerLoginform());
         }
     }
 }
