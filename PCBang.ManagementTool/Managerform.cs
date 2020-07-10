@@ -13,7 +13,7 @@ using PC_Project.Data;
 
 namespace ManagerForm
 {
-
+    //hi
     public partial class Managerform : DevExpress.XtraEditors.XtraForm
     {
         public Managerform()
