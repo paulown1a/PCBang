@@ -48,7 +48,7 @@ namespace PC_Project.Client
             DataRepository.Chatting.Insert(chatting);
             txbText.Text = "";
             txbText.Select(0, 0);
-
+            //.//
             MessageBox.Show("발송되었습니다.");
         }
 
