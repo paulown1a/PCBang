@@ -72,5 +72,20 @@ namespace PC_Project.Data
                 Update(chatting);
             }
         }
+
+        public void DeleteAll(bool sent, int seatid)
+        {
+            PCBangEntities context = CreateContext();
+
+            var query = from x in context.Chattings
+                        where x.Sent == sent && x.Checked == false && x.SeatID == seatid
+                        select x;
+            var chattings = query.ToList();
+            foreach (var chatting in chattings)
+            {
+                
+                Delete(chatting);
+            }
+        }
     }
 }

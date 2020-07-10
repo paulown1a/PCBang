@@ -83,7 +83,7 @@ namespace MainPage
             timer1.Stop();
             DataRepository.Seat.Update(seatNumber);
             DataRepository.Customer.Update(customer);
-            DataRepository.Chatting.UpdateAll(false, int.Parse(seatNumber));
+            DataRepository.Chatting.DeleteAll(false, int.Parse(seatNumber));
             Application.Exit();
         }
 
