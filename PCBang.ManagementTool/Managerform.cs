@@ -52,6 +52,7 @@ namespace ManagerForm
                 lblName.Text = customer.Name;
                 lblId.Text = customer.LoginID.ToString();
                 lblRemainingTime.Text = customer.RemainingTime.ToString();
+                lblRank.Text = customer.Rank.ToString();
 
                 if (MessageBox.Show("탈출하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -65,8 +66,9 @@ namespace ManagerForm
                 lblName.Text = "--";
                 lblId.Text = "--";
                 lblRemainingTime.Text = "--";
+                lblRank.Text = "--";
             }
-        }
+            }
 
         private void btnAddtime_Click(object sender, EventArgs e)
         {
