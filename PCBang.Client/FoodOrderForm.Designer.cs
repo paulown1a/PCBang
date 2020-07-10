@@ -45,8 +45,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BuyBtn = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.colProductID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -304,9 +302,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colProductName,
-            this.colProductPrice,
-            this.colSeatID,
-            this.colCustomerID});
+            this.colProductPrice});
             this.gridView1.GridControl = this.gridBIll;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -334,28 +330,6 @@
             this.colProductPrice.Visible = true;
             this.colProductPrice.VisibleIndex = 1;
             this.colProductPrice.Width = 94;
-            // 
-            // colSeatID
-            // 
-            this.colSeatID.FieldName = "SeatID";
-            this.colSeatID.MinWidth = 25;
-            this.colSeatID.Name = "colSeatID";
-            this.colSeatID.OptionsColumn.AllowEdit = false;
-            this.colSeatID.OptionsColumn.ReadOnly = true;
-            this.colSeatID.Visible = true;
-            this.colSeatID.VisibleIndex = 2;
-            this.colSeatID.Width = 94;
-            // 
-            // colCustomerID
-            // 
-            this.colCustomerID.FieldName = "CustomerID";
-            this.colCustomerID.MinWidth = 25;
-            this.colCustomerID.Name = "colCustomerID";
-            this.colCustomerID.OptionsColumn.AllowEdit = false;
-            this.colCustomerID.OptionsColumn.ReadOnly = true;
-            this.colCustomerID.Visible = true;
-            this.colCustomerID.VisibleIndex = 3;
-            this.colCustomerID.Width = 94;
             // 
             // BuyBtn
             // 
@@ -643,8 +617,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colProductName;
         private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
         private FontAwesome.Sharp.IconButton btnClear;
     }
 }
