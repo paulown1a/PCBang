@@ -25,7 +25,7 @@ namespace PC_Room
         private Panel leftBorderBtn;
         private Panel leftBorderBtnSecond;
         private int seatNumber;
-        private int customerID;
+        private Customer customer;
 
         public FoodOrderForm()
         {
@@ -41,10 +41,10 @@ namespace PC_Room
             
         }
 
-        public FoodOrderForm(string seatNumber, int customerID) : this()
+        public FoodOrderForm(string seatNumber, Customer customer) : this()
         {
             this.seatNumber = int.Parse(seatNumber);
-            this.customerID = customerID;
+            this.customer = customer;
         }
 
         private struct RGBColors
@@ -115,7 +115,7 @@ namespace PC_Room
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            DataRepository.Order.DeleteOrder(customerID);
+            DataRepository.Order.DeleteOrder(customer.CustomerID);
             Close();
         }
 
@@ -147,16 +147,16 @@ namespace PC_Room
         {
             //ActivateButton(sender, RGBColors.color6);
 
-            if (!DataRepository.Order.GetWithProduct(false, customerID).Any())
+            if (!DataRepository.Order.GetWithProduct(false, customer.CustomerID).Any())
             {
                 MessageBox.Show("상품을 골라 주세요");
                 return;
             }
             else
             {
-                BillForm billform = new BillForm(customerID);
+                BillForm billform = new BillForm(customer);
                 var res=billform.ShowDialog();
-                bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+                bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
                 if (res==DialogResult.OK)
                 {
                     var orderagain = new FoodOrderForm();
@@ -208,7 +208,7 @@ namespace PC_Room
             order.ProductID = e.ProductId;
 
             order.SeatID = seatNumber;
-            order.CustomerID = customerID;
+            order.CustomerID = customer.CustomerID;
             order.OrderTime = DateTime.Now;
             order.buyed = false;
             DataRepository.Order.Insert(order);
@@ -231,14 +231,14 @@ namespace PC_Room
                 return;
             Order order = new Order();
             order.CodeID = null;
-            order.CustomerID = customerID;
+            order.CustomerID = customer.CustomerID;
             order.ProductID = product.ProductID;
             order.SeatID = seatNumber;
             order.buyed = false;
             order.OrderTime = DateTime.Now;
             order.Count = 1;
             DataRepository.Order.Insert(order);
-            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
 
         }
     }
