@@ -23,6 +23,7 @@ namespace MainPage
         private Customer customer;
         private string seatNumber;
         private int genreId = 0;
+        private int pausedTime = 0;
         
         
         public MainPageForm(Customer customer, string seatNumber)
@@ -79,15 +80,30 @@ namespace MainPage
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
+            Enabled = false;
+            pausedTime = 0;
+            timer1.Stop();
+            timer2.Start();
+            
+            
             if (MessageBox.Show("사용을 종료하시겠습니까?", "사용종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Exit();
             }
             else
             {
+                
+                timer2.Stop();
+
+                customer.RemainingTime -= pausedTime;
+                lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
+                timer1.Start();
+                Enabled = true;
                 return;
             }
+
         }
+
 
         private void Exit()
         {
@@ -134,7 +150,6 @@ namespace MainPage
                 customer.Rank = 4;
             else if (TotalPayment >= 150000)
                 customer.Rank = 5;
-            
 
         }
 
@@ -145,9 +160,12 @@ namespace MainPage
             lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
             if (customer.RemainingTime == 0)
             {
+                timer1.Stop();
                 MessageBox.Show("사용시간이 종료되었습니다.");
+                timer1.Start();
                 Exit();          
             }
+
         }
 
         private void btnCDGame_Click(object sender, EventArgs e)
@@ -198,6 +216,12 @@ namespace MainPage
             lblGameNo3.Text = topGames[2] != null ? $"{3 }. {topGames[2].Name}" : $"{3 }. ";
             lblGameNo4.Text = topGames[3] != null ? $"{4 }. {topGames[3].Name}" : $"{4 }. ";
             lblGameNo5.Text = topGames[4] != null ? $"{5 }. {topGames[4].Name}" : $"{5 }. ";
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            pausedTime++;
+
         }
     }
 }
