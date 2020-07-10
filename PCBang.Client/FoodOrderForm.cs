@@ -150,9 +150,13 @@ namespace PC_Room
                 MessageBox.Show("상품을 골라 주세요");
                 return;
             }
-            BillForm billform = new BillForm(customerID);
-            billform.ShowDialog(); 
-            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+            else
+            {
+                BillForm billform = new BillForm(customerID);
+                billform.ShowDialog();
+                bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+            }
+                
         }
 
         private void BuyBtn_MouseHover(object sender, EventArgs e)
