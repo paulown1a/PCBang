@@ -112,7 +112,7 @@ namespace MainPage
         {
          
             PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
-            chatting.Show();
+            chatting.ShowDialog();
         }
 
         private void btnFoodOrder_Click(object sender, EventArgs e)
