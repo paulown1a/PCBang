@@ -156,6 +156,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PC_Project.Data.Chatting.datasource" />
+    <None Include="Properties\DataSources\PC_Project.Data.Code.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Order.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Product.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Seat.datasource" />

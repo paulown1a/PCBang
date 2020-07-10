@@ -30,6 +30,7 @@ namespace PC_Project.Client
 
         private void BillForm_Load(object sender, EventArgs e)
         {
+            bdsCode.DataSource = DataRepository.Code.GetAll().FindAll(x => x.CodeID < 100);
             bdsOrderinBill.DataSource = DataRepository.Order.GetWithProduct(false);
             lbTotal.Text += DataRepository.Order.GetTotalPrice(false, customer.CustomerID).ToString("C0");
         }
@@ -40,13 +41,13 @@ namespace PC_Project.Client
             List<Order> orders = DataRepository.Order.GetWithProduct(false,customer.CustomerID);
             customer.Payment += DataRepository.Order.GetTotalPrice(false, customer.CustomerID);
 
-            
             foreach (Order order in orders)
             {
                 //MessageBox.Show(Regex.Replace(order.ProductName, @"\D",""));
                 if (DataRepository.Order.CheckItem(order) == 101)
                     customer.RemainingTime += int.Parse(Regex.Replace(order.ProductName, @"\D", ""))*60;
                 order.buyed = true;
+                order.CodeID = (int)cbbCode.SelectedValue;
                 DataRepository.Order.Update(order);
             }
 

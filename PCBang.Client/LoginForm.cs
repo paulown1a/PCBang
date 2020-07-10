@@ -44,7 +44,6 @@ namespace loginform
 
             else
             {
-                MessageBox.Show("로그인 되었습니다.");
                 String seatNumber = cbbSeat.Text;
                 MainPageForm MainPage = new MainPageForm(customer, seatNumber);
                 MainPage.ShowDialog();

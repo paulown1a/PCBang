@@ -141,6 +141,7 @@
             this.colSendTIme.FieldName = "SendTIme";
             this.colSendTIme.MinWidth = 25;
             this.colSendTIme.Name = "colSendTIme";
+            this.colSendTIme.OptionsColumn.AllowEdit = false;
             this.colSendTIme.Visible = true;
             this.colSendTIme.VisibleIndex = 2;
             this.colSendTIme.Width = 186;
