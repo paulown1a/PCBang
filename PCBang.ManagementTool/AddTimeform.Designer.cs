@@ -46,6 +46,7 @@
             // 
             this.cbbCustomer.DataSource = this.customerBindingSource;
             this.cbbCustomer.DisplayMember = "LoginID";
+            this.cbbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCustomer.FormattingEnabled = true;
             this.cbbCustomer.Location = new System.Drawing.Point(12, 26);
             this.cbbCustomer.Name = "cbbCustomer";
@@ -53,13 +54,11 @@
             this.cbbCustomer.TabIndex = 0;
             this.cbbCustomer.ValueMember = "CustomerID";
             // 
-            // customerBindingSource
-            // 
-           // 
             // cbbTime
             // 
             this.cbbTime.DataSource = this.productBindingSource;
             this.cbbTime.DisplayMember = "Name";
+            this.cbbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTime.FormattingEnabled = true;
             this.cbbTime.Location = new System.Drawing.Point(168, 26);
             this.cbbTime.Name = "cbbTime";
@@ -68,9 +67,6 @@
             this.cbbTime.ValueMember = "ProductID";
             this.cbbTime.SelectedIndexChanged += new System.EventHandler(this.cbbTime_SelectedIndexChanged);
             // 
-            // productBindingSource
-            // 
-              // 
             // btnExecution
             // 
             this.btnExecution.Location = new System.Drawing.Point(103, 83);
@@ -95,6 +91,7 @@
             // 
             this.cbbCode.DataSource = this.codeBindingSource;
             this.cbbCode.DisplayMember = "Name";
+            this.cbbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCode.FormattingEnabled = true;
             this.cbbCode.Location = new System.Drawing.Point(334, 26);
             this.cbbCode.Name = "cbbCode";
@@ -102,9 +99,6 @@
             this.cbbCode.TabIndex = 4;
             this.cbbCode.ValueMember = "CodeID";
             // 
-            // codeBindingSource
-            // 
-             // 
             // AddTimeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);

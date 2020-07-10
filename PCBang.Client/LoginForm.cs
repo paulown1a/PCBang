@@ -20,7 +20,7 @@ namespace loginform
             CenterToScreen();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void bntLogin_Click(object sender, EventArgs e)
         {
             if (txbID.Text == "")
             {
@@ -73,6 +73,14 @@ namespace loginform
         private void cbbSeat_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void txbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+                bntLogin_Click(this, e);
+
         }
     }
 }

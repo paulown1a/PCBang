@@ -49,6 +49,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.내용 = new DevExpress.XtraLayout.LayoutControlItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.colSent = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbsSeat)).BeginInit();
@@ -140,7 +141,8 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSeatID,
             this.colText,
-            this.colSendTIme});
+            this.colSendTIme,
+            this.colSent});
             this.gridView1.GridControl = this.grvChatting;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -152,8 +154,8 @@
             this.colSeatID.Name = "colSeatID";
             this.colSeatID.OptionsColumn.AllowEdit = false;
             this.colSeatID.Visible = true;
-            this.colSeatID.VisibleIndex = 0;
-            this.colSeatID.Width = 50;
+            this.colSeatID.VisibleIndex = 1;
+            this.colSeatID.Width = 53;
             // 
             // colText
             // 
@@ -162,8 +164,8 @@
             this.colText.Name = "colText";
             this.colText.OptionsColumn.AllowEdit = false;
             this.colText.Visible = true;
-            this.colText.VisibleIndex = 1;
-            this.colText.Width = 276;
+            this.colText.VisibleIndex = 2;
+            this.colText.Width = 238;
             // 
             // colSendTIme
             // 
@@ -173,8 +175,8 @@
             this.colSendTIme.MinWidth = 25;
             this.colSendTIme.Name = "colSendTIme";
             this.colSendTIme.Visible = true;
-            this.colSendTIme.VisibleIndex = 2;
-            this.colSendTIme.Width = 109;
+            this.colSendTIme.VisibleIndex = 3;
+            this.colSendTIme.Width = 103;
             // 
             // Root
             // 
@@ -238,6 +240,15 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // colSent
+            // 
+            this.colSent.FieldName = "Sent";
+            this.colSent.MinWidth = 25;
+            this.colSent.Name = "colSent";
+            this.colSent.Visible = true;
+            this.colSent.VisibleIndex = 0;
+            this.colSent.Width = 41;
+            // 
             // ManagerChattingform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -285,5 +296,6 @@
         private DevExpress.XtraLayout.LayoutControlItem 내용;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraGrid.Columns.GridColumn colSendTIme;
+        private DevExpress.XtraGrid.Columns.GridColumn colSent;
     }
 }

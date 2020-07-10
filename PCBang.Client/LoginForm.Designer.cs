@@ -126,7 +126,7 @@ namespace loginform
             this.btnLogin.StyleController = this.layoutControl1;
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "로그인";
-            this.btnLogin.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.bntLogin_Click);
             // 
             // txbPassword
             // 
@@ -136,6 +136,7 @@ namespace loginform
             this.txbPassword.Size = new System.Drawing.Size(269, 25);
             this.txbPassword.TabIndex = 4;
             this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
+            this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassword_KeyDown);
             // 
             // txbID
             // 
