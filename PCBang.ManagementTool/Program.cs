@@ -1,5 +1,4 @@
-﻿using loginform;
-using Managerform;
+﻿using Managerform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace ManagerForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Managerform());
         }
     }
 }

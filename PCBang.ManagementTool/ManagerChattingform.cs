@@ -47,21 +47,9 @@ namespace ManagerForm
             chatting.SendTIme = DateTime.Now;
             chatting.SeatID = (int)cbbSeat.SelectedValue;
             DataRepository.Chatting.Insert(chatting);
+            txbText.Text = "";
+            txbText.Select(0, 0);
             MessageBox.Show("발송되었습니다.");
-        }
-
-        private void txbText_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void txbText_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnSend_Click(this, e);
-                txbText.Select(0, 0);
-            }
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -74,6 +62,21 @@ namespace ManagerForm
 
             dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
 
+        }
+
+        private void txbText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend_Click(this, e);
+                
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dbsSeat.DataSource = DataRepository.Seat.GetUsing();
+            dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
         }
     }
 }
