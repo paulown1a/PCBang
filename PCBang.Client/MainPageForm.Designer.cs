@@ -521,7 +521,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // grdGames
@@ -565,7 +565,7 @@
             // timer2
             // 
             this.timer2.Enabled = true;
-            this.timer2.Interval = 2000;
+            this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainPageForm

@@ -59,8 +59,6 @@ namespace MainPage
             lblGameNo4.Text = topGames[3] != null ? $"{4 }. {topGames[3].Name}" : $"{4 }. ";
             lblGameNo5.Text = topGames[4] != null ? $"{5 }. {topGames[4].Name}" : $"{5 }. ";
 
-
-
             btnFPSGame.StyleController = null;
             btnFPSGame.LookAndFeel.UseDefaultLookAndFeel = false;
             btnFPSGame.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -92,9 +90,7 @@ namespace MainPage
             }
             else
             {
-                
                 timer2.Stop();
-
                 customer.RemainingTime -= pausedTime;
                 lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
                 timer1.Start();
@@ -103,8 +99,6 @@ namespace MainPage
             }
 
         }
-
-
         private void Exit()
         {
             timer1.Stop();
@@ -158,10 +152,12 @@ namespace MainPage
             customer.RemainingTime--;
             DataRepository.Customer.Update(customer);
             lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
-            if (customer.RemainingTime == 0)
+            if (customer.RemainingTime <= 0)
             {
                 timer1.Stop();
+                customer.RemainingTime = 0;
                 MessageBox.Show("사용시간이 종료되었습니다.");
+                
                 timer1.Start();
                 Exit();          
             }
