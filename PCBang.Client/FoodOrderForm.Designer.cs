@@ -39,6 +39,7 @@
             this.HomeIcon = new System.Windows.Forms.PictureBox();
             this.ExitBtn = new FontAwesome.Sharp.IconButton();
             this.CalulatorPn = new System.Windows.Forms.Panel();
+            this.btnClear = new FontAwesome.Sharp.IconButton();
             this.gridBIll = new DevExpress.XtraGrid.GridControl();
             this.bdsOrder = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -58,7 +59,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.SeatIdbtn = new System.Windows.Forms.Label();
             this.GridFood = new DevExpress.XtraGrid.GridControl();
-            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.cardview1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhoto = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,7 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardview1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPn
@@ -247,6 +248,7 @@
             // CalulatorPn
             // 
             this.CalulatorPn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.CalulatorPn.Controls.Add(this.btnClear);
             this.CalulatorPn.Controls.Add(this.gridBIll);
             this.CalulatorPn.Controls.Add(this.ExitBtn);
             this.CalulatorPn.Controls.Add(this.BuyBtn);
@@ -255,6 +257,32 @@
             this.CalulatorPn.Name = "CalulatorPn";
             this.CalulatorPn.Size = new System.Drawing.Size(917, 269);
             this.CalulatorPn.TabIndex = 3;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Hotjar;
+            this.btnClear.IconColor = System.Drawing.Color.Ivory;
+            this.btnClear.IconSize = 30;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(487, 21);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClear.Rotation = 0D;
+            this.btnClear.Size = new System.Drawing.Size(220, 60);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
+            this.btnClear.MouseHover += new System.EventHandler(this.btnClear_MouseHover);
             // 
             // gridBIll
             // 
@@ -266,6 +294,7 @@
             this.gridBIll.TabIndex = 7;
             this.gridBIll.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridBIll.DoubleClick += new System.EventHandler(this.gridBIll_DoubleClick);
             // 
             // bdsOrder
             // 
@@ -287,6 +316,7 @@
             this.colProductName.FieldName = "ProductName";
             this.colProductName.MinWidth = 25;
             this.colProductName.Name = "colProductName";
+            this.colProductName.OptionsColumn.AllowEdit = false;
             this.colProductName.OptionsColumn.ReadOnly = true;
             this.colProductName.Visible = true;
             this.colProductName.VisibleIndex = 0;
@@ -299,6 +329,7 @@
             this.colProductPrice.FieldName = "ProductPrice";
             this.colProductPrice.MinWidth = 25;
             this.colProductPrice.Name = "colProductPrice";
+            this.colProductPrice.OptionsColumn.AllowEdit = false;
             this.colProductPrice.OptionsColumn.ReadOnly = true;
             this.colProductPrice.Visible = true;
             this.colProductPrice.VisibleIndex = 1;
@@ -309,6 +340,7 @@
             this.colSeatID.FieldName = "SeatID";
             this.colSeatID.MinWidth = 25;
             this.colSeatID.Name = "colSeatID";
+            this.colSeatID.OptionsColumn.AllowEdit = false;
             this.colSeatID.OptionsColumn.ReadOnly = true;
             this.colSeatID.Visible = true;
             this.colSeatID.VisibleIndex = 2;
@@ -319,6 +351,7 @@
             this.colCustomerID.FieldName = "CustomerID";
             this.colCustomerID.MinWidth = 25;
             this.colCustomerID.Name = "colCustomerID";
+            this.colCustomerID.OptionsColumn.AllowEdit = false;
             this.colCustomerID.OptionsColumn.ReadOnly = true;
             this.colCustomerID.Visible = true;
             this.colCustomerID.VisibleIndex = 3;
@@ -332,7 +365,7 @@
             this.BuyBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.BuyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuyBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BuyBtn.IconChar = FontAwesome.Sharp.IconChar.Hotjar;
+            this.BuyBtn.IconChar = FontAwesome.Sharp.IconChar.Coins;
             this.BuyBtn.IconColor = System.Drawing.Color.Ivory;
             this.BuyBtn.IconSize = 30;
             this.BuyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,48 +463,53 @@
             this.GridFood.DataSource = this.bdsProduct;
             this.GridFood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridFood.Location = new System.Drawing.Point(0, 0);
-            this.GridFood.MainView = this.cardView1;
+            this.GridFood.MainView = this.cardview1;
             this.GridFood.Name = "GridFood";
             this.GridFood.Size = new System.Drawing.Size(917, 486);
             this.GridFood.TabIndex = 2;
             this.GridFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardView1});
+            this.cardview1});
             this.GridFood.DoubleClick += new System.EventHandler(this.GridFood_DoubleClick);
             // 
-            // cardView1
+            // cardview1
             // 
-            this.cardView1.Appearance.Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cardView1.Appearance.Card.Options.UseFont = true;
-            this.cardView1.Appearance.FieldCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.cardView1.AppearancePrint.CardCaption.Options.UseTextOptions = true;
-            this.cardView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.cardView1.CardInterval = 20;
-            this.cardView1.CardScrollButtonBorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.cardView1.CardWidth = 250;
-            this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.cardview1.Appearance.Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cardview1.Appearance.Card.Options.UseFont = true;
+            this.cardview1.Appearance.FieldCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.cardview1.AppearancePrint.CardCaption.Options.UseTextOptions = true;
+            this.cardview1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.cardview1.CardInterval = 24;
+            this.cardview1.CardScrollButtonBorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.cardview1.CardWidth = 300;
+            this.cardview1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName,
             this.colPrice,
             this.colPhoto});
-            this.cardView1.DetailHeight = 400;
-            this.cardView1.GridControl = this.GridFood;
-            this.cardView1.Name = "cardView1";
-            this.cardView1.OptionsBehavior.ReadOnly = true;
-            this.cardView1.OptionsBehavior.Sizeable = false;
-            this.cardView1.OptionsView.ShowCardExpandButton = false;
-            this.cardView1.OptionsView.ShowQuickCustomizeButton = false;
+            this.cardview1.DetailHeight = 950;
+            this.cardview1.GridControl = this.GridFood;
+            this.cardview1.Name = "cardview1";
+            this.cardview1.OptionsBehavior.FieldAutoHeight = true;
+            this.cardview1.OptionsBehavior.ReadOnly = true;
+            this.cardview1.OptionsBehavior.Sizeable = false;
+            this.cardview1.OptionsView.ShowCardExpandButton = false;
+            this.cardview1.OptionsView.ShowQuickCustomizeButton = false;
             // 
             // colName
             // 
+            this.colName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.colName.AppearanceCell.Options.UseFont = true;
             this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
             this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
+            this.colName.VisibleIndex = 1;
             this.colName.Width = 94;
             // 
             // colPrice
             // 
+            this.colPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.colPrice.AppearanceCell.Options.UseFont = true;
             this.colPrice.DisplayFormat.FormatString = "c0";
             this.colPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colPrice.FieldName = "Price";
@@ -479,18 +517,19 @@
             this.colPrice.Name = "colPrice";
             this.colPrice.OptionsColumn.AllowEdit = false;
             this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 1;
+            this.colPrice.VisibleIndex = 2;
             this.colPrice.Width = 94;
             // 
             // colPhoto
             // 
             this.colPhoto.FieldName = "Photo";
-            this.colPhoto.MinWidth = 25;
+            this.colPhoto.MaxWidth = 500;
+            this.colPhoto.MinWidth = 500;
             this.colPhoto.Name = "colPhoto";
             this.colPhoto.OptionsColumn.AllowEdit = false;
             this.colPhoto.Visible = true;
-            this.colPhoto.VisibleIndex = 2;
-            this.colPhoto.Width = 94;
+            this.colPhoto.VisibleIndex = 0;
+            this.colPhoto.Width = 500;
             // 
             // pnHome
             // 
@@ -562,7 +601,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardview1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,7 +634,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatID;
         private DevExpress.XtraGrid.GridControl GridFood;
-        private DevExpress.XtraGrid.Views.Card.CardView cardView1;
+        private DevExpress.XtraGrid.Views.Card.CardView cardview1;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colPhoto;
@@ -606,5 +645,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
+        private FontAwesome.Sharp.IconButton btnClear;
     }
 }
