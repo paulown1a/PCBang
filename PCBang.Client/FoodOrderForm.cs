@@ -155,8 +155,15 @@ namespace PC_Room
             else
             {
                 BillForm billform = new BillForm(customerID);
-                billform.ShowDialog();
+                var res=billform.ShowDialog();
                 bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
+                if (res==DialogResult.OK)
+                {
+                    var orderagain = new FoodOrderForm();
+                    this.Visible = false;
+                    
+                    this.Close();
+                }
             }
                 
         }
