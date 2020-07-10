@@ -31,16 +31,11 @@ namespace MainPage
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
-            lblName.Text += customer.Name.ToString();
-            lblID.Text += customer.LoginID.ToString();
-            lblRank.Text += customer.Rank.ToString();
-            lblPayamount.Text += customer.Payment.ToString();
-            lblRemainingTime.Text += customer.RemainingTime.ToString();
-            lblSeat.Text += seatNumber;
+
+            timer1.Start();
+            LabelUpdate();
 
 
             btnFPSGame.StyleController = null;
@@ -91,14 +86,24 @@ namespace MainPage
 
         private void btnFoodOrder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("음식주문");
-            FoodOrderForm Foodorder = new FoodOrderForm(seatNumber, customer.CustomerID);
-            Foodorder.Show();
+            FoodOrderForm Foodorder = new FoodOrderForm(seatNumber, customer);
+            Foodorder.ShowDialog();
+            LabelUpdate();
+        }
+        public void LabelUpdate()
+        {
+            lblName.Text = "이름 : " + customer.Name.ToString();
+            lblID.Text = "아이디 : " + customer.LoginID.ToString();
+            lblSeat.Text = "좌석번호 : " + seatNumber;
+            lblRank.Text = "등급 : " + customer.Rank.ToString();
+            lblPayamount.Text = "금액 : " + customer.Payment.ToString();
+            lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             customer.RemainingTime--;
+            DataRepository.Customer.Update(customer);
             lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString();
             if (customer.RemainingTime == 0)
             {
@@ -148,7 +153,6 @@ namespace MainPage
             if (game == null)
                 return;
             MessageBox.Show(game.ToString());
-            
         }
     }
 }

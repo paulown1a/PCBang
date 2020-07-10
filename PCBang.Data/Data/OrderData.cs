@@ -39,6 +39,16 @@ namespace PC_Project.Data
 
             return list.ConvertAll(x => x.Order);
         }
+
+        public int CheckItem(Order order)
+        {
+            PCBangEntities context = CreateContext();
+            var query = from x in context.Orders
+                        where x.OrderID == order.OrderID
+                        select x.Product.CodeID;
+            return query.ToList()[0];
+        }
+
         public int GetTotalPrice(bool buyed, int customerId)
         {
             PCBangEntities context = CreateContext();
