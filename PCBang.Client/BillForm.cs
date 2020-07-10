@@ -56,7 +56,19 @@ namespace PC_Project.Client
             MessageBox.Show("주문이 완료되었습니다.");
             Close();
             Enabled = true;
-            
+
+            if (MessageBox.Show("추가주문을 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Close();
+
+            }
+            else
+            {
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
         }
 
         private void btnBillCancel_Click(object sender, EventArgs e)
