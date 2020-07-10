@@ -38,7 +38,7 @@ namespace PC_Project.Data
             PCBangEntities context = CreateContext();
 
             var query = from x in context.Chattings
-                        where x.Sent == sent && x.Checked == false && x.SeatID == seatId
+                        where x.SeatID == seatId
                         select x;
             return query.ToList();
         }
@@ -92,12 +92,11 @@ namespace PC_Project.Data
             PCBangEntities context = CreateContext();
 
             var query = from x in context.Chattings
-                        where x.Sent == sent && x.Checked == false && x.SeatID == seatid
+                        where x.SeatID == seatid
                         select x;
             var chattings = query.ToList();
             foreach (var chatting in chattings)
             {
-                
                 Delete(chatting);
             }
         }

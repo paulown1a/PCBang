@@ -38,6 +38,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSendTIme = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -117,7 +118,8 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colText,
-            this.colSendTIme});
+            this.colSendTIme,
+            this.colSent});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -129,7 +131,7 @@
             this.colText.Name = "colText";
             this.colText.OptionsColumn.AllowEdit = false;
             this.colText.Visible = true;
-            this.colText.VisibleIndex = 0;
+            this.colText.VisibleIndex = 1;
             this.colText.Width = 560;
             // 
             // colSendTIme
@@ -140,8 +142,18 @@
             this.colSendTIme.MinWidth = 25;
             this.colSendTIme.Name = "colSendTIme";
             this.colSendTIme.Visible = true;
-            this.colSendTIme.VisibleIndex = 1;
+            this.colSendTIme.VisibleIndex = 2;
             this.colSendTIme.Width = 186;
+            // 
+            // colSent
+            // 
+            this.colSent.FieldName = "Sent";
+            this.colSent.MinWidth = 25;
+            this.colSent.Name = "colSent";
+            this.colSent.OptionsColumn.AllowEdit = false;
+            this.colSent.Visible = true;
+            this.colSent.VisibleIndex = 0;
+            this.colSent.Width = 94;
             // 
             // Root
             // 
@@ -237,5 +249,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colText;
         private System.Windows.Forms.Timer ChattingTimer;
         private DevExpress.XtraGrid.Columns.GridColumn colSendTIme;
+        private DevExpress.XtraGrid.Columns.GridColumn colSent;
     }
 }
