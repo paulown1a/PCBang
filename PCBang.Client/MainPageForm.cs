@@ -13,6 +13,7 @@ using System.Timers;
 using Microsoft.Win32;
 using System.Drawing.Text;
 using PC_Project.Data;
+using DevExpress.Internal;
 
 namespace MainPage
 {
@@ -22,7 +23,7 @@ namespace MainPage
         private string seatNumber;
         private int genreId = 0;
         
-
+        
         public MainPageForm(Customer customer, string seatNumber)
         {
             InitializeComponent();
