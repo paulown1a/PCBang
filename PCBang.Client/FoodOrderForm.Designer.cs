@@ -465,6 +465,7 @@
             this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             this.colName.Width = 94;
@@ -476,6 +477,7 @@
             this.colPrice.FieldName = "Price";
             this.colPrice.MinWidth = 25;
             this.colPrice.Name = "colPrice";
+            this.colPrice.OptionsColumn.AllowEdit = false;
             this.colPrice.Visible = true;
             this.colPrice.VisibleIndex = 1;
             this.colPrice.Width = 94;
@@ -485,6 +487,7 @@
             this.colPhoto.FieldName = "Photo";
             this.colPhoto.MinWidth = 25;
             this.colPhoto.Name = "colPhoto";
+            this.colPhoto.OptionsColumn.AllowEdit = false;
             this.colPhoto.Visible = true;
             this.colPhoto.VisibleIndex = 2;
             this.colPhoto.Width = 94;

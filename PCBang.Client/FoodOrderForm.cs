@@ -145,6 +145,11 @@ namespace PC_Room
         {
             //ActivateButton(sender, RGBColors.color6);
 
+            if (DataRepository.Order.GetWithProduct(false, customerID) == null)
+            {
+                MessageBox.Show("상품을 골라 주세요");
+                return;
+            }
             BillForm billform = new BillForm(customerID);
             billform.ShowDialog(); 
             bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customerID);
