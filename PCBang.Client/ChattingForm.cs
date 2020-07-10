@@ -49,6 +49,7 @@ namespace PC_Project.Client
             txbText.Text = "";
             txbText.Select(0, 0);
             //.//
+            //.//
             MessageBox.Show("발송되었습니다.");
         }
 
