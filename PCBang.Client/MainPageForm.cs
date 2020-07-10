@@ -14,6 +14,7 @@ using Microsoft.Win32;
 using System.Drawing.Text;
 using PC_Project.Data;
 using DevExpress.Internal;
+using System.Linq.Expressions;
 
 namespace MainPage
 {
@@ -101,12 +102,29 @@ namespace MainPage
         }
         public void LabelUpdate()
         {
+            RankCheck(customer.Payment);
             lblName.Text = "이름 : " + customer.Name.ToString();
             lblID.Text = "아이디 : " + customer.LoginID.ToString();
             lblSeat.Text = "좌석번호 : " + seatNumber;
             lblRank.Text = "등급 : " + customer.Rank.ToString();
             lblPayamount.Text = "금액 : " + customer.Payment.ToString();
             lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
+        }
+
+        private void RankCheck(int TotalPayment)
+        {
+            if (TotalPayment >= 30000 && TotalPayment < 60000)
+                customer.Rank = 1;
+            else if (TotalPayment >= 60000 && TotalPayment < 90000)
+                customer.Rank = 2;
+            else if (TotalPayment >= 90000 && TotalPayment < 120000)
+                customer.Rank = 3;
+            else if (TotalPayment >= 120000 && TotalPayment < 150000)
+                customer.Rank = 4;
+            else if (TotalPayment >= 150000)
+                customer.Rank = 5;
+            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
