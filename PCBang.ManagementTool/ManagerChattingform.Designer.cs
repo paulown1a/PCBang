@@ -41,6 +41,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendTIme = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.좌석 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -138,9 +139,11 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSeatID,
-            this.colText});
+            this.colText,
+            this.colSendTIme});
             this.gridView1.GridControl = this.grvChatting;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colSeatID
             // 
@@ -150,7 +153,7 @@
             this.colSeatID.OptionsColumn.AllowEdit = false;
             this.colSeatID.Visible = true;
             this.colSeatID.VisibleIndex = 0;
-            this.colSeatID.Width = 60;
+            this.colSeatID.Width = 50;
             // 
             // colText
             // 
@@ -160,7 +163,18 @@
             this.colText.OptionsColumn.AllowEdit = false;
             this.colText.Visible = true;
             this.colText.VisibleIndex = 1;
-            this.colText.Width = 360;
+            this.colText.Width = 276;
+            // 
+            // colSendTIme
+            // 
+            this.colSendTIme.DisplayFormat.FormatString = "MM/dd hh:mm";
+            this.colSendTIme.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colSendTIme.FieldName = "SendTIme";
+            this.colSendTIme.MinWidth = 25;
+            this.colSendTIme.Name = "colSendTIme";
+            this.colSendTIme.Visible = true;
+            this.colSendTIme.VisibleIndex = 2;
+            this.colSendTIme.Width = 109;
             // 
             // Root
             // 
@@ -270,5 +284,6 @@
         private System.Windows.Forms.TextBox txbText;
         private DevExpress.XtraLayout.LayoutControlItem 내용;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSendTIme;
     }
 }

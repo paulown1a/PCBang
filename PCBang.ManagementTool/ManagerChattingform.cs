@@ -24,6 +24,7 @@ namespace ManagerForm
         {
             dbsSeat.DataSource = DataRepository.Seat.GetUsing();
             dbsChatting.DataSource = DataRepository.Chatting.GetNotRead(true);
+            timer1.Start();
         }
 
         private void cbbSeat_DropDown(object sender, EventArgs e)
@@ -33,13 +34,14 @@ namespace ManagerForm
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DataRepository.Chatting.UpdateAll(true);
+            DataRepository.Chatting.DeleteAll(true);
             Close();
-            
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            if (cbbSeat.SelectedValue == null)
+                return;
             Chatting chatting = new Chatting();
             chatting.Checked = false;
             chatting.Sent = false;
