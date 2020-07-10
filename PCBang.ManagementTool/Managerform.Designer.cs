@@ -162,10 +162,9 @@
             // 
             // lblRank
             // 
-            this.lblRank.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblRank.Location = new System.Drawing.Point(139, 218);
+            this.lblRank.Location = new System.Drawing.Point(253, 218);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(124, 18);
+            this.lblRank.Size = new System.Drawing.Size(10, 18);
             this.lblRank.StyleController = this.layoutControl2;
             this.lblRank.TabIndex = 16;
             this.lblRank.Text = "--";
@@ -175,7 +174,7 @@
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(12, 218);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(123, 18);
+            this.labelControl5.Size = new System.Drawing.Size(237, 18);
             this.labelControl5.StyleController = this.layoutControl2;
             this.labelControl5.TabIndex = 15;
             this.labelControl5.Text = "등급";
@@ -489,16 +488,16 @@
             this.layoutControlItem16.Control = this.labelControl5;
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 206);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(127, 22);
+            this.layoutControlItem16.Size = new System.Drawing.Size(241, 22);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.lblRank;
-            this.layoutControlItem17.Location = new System.Drawing.Point(127, 206);
+            this.layoutControlItem17.Location = new System.Drawing.Point(241, 206);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(128, 22);
+            this.layoutControlItem17.Size = new System.Drawing.Size(14, 22);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
