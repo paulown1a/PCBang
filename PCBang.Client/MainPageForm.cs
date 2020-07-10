@@ -31,6 +31,18 @@ namespace MainPage
             this.customer = customer;
             this.seatNumber = seatNumber;
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            switch (e.CloseReason)
+            {
+                case CloseReason.UserClosing:
+                    e.Cancel = true;
+                    break;
+            }
+
+            base.OnFormClosing(e);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -70,7 +82,6 @@ namespace MainPage
             if (MessageBox.Show("사용을 종료하시겠습니까?", "사용종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Exit();
-                
             }
             else
             {
