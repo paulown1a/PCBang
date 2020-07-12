@@ -19,8 +19,10 @@ namespace ManagerForm
         public Managerform()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
+        
         private void gridControl1_Load(object sender, EventArgs e)
         {
             List<Seat> seats = DataRepository.Seat.GetAll();
