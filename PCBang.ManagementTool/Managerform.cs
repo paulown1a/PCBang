@@ -93,7 +93,7 @@ namespace ManagerForm
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetAll();
+            List<Seat> seats = DataRepository.Seat.GetWithTime();
             bdsSeat.DataSource = seats;
         }
 

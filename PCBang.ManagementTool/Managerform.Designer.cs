@@ -75,11 +75,11 @@
             this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBreakdown = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemainingTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.colRemainingTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -524,14 +524,18 @@
             this.grvSeat.Click += new System.EventHandler(this.gridControl1_Click);
             this.grvSeat.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
+            // bdsSeat
+            // 
+            this.bdsSeat.DataSource = typeof(PC_Project.Data.Seat);
+            // 
             // cardView1
             // 
             this.cardView1.CardWidth = 150;
             this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colRemainingTime,
             this.colSeatID,
             this.colBreakdown,
-            this.colCustomerID});
+            this.colCustomerID,
+            this.colRemainingTime});
             this.cardView1.GridControl = this.grvSeat;
             this.cardView1.Name = "cardView1";
             this.cardView1.OptionsView.ShowCardCaption = false;
@@ -544,7 +548,7 @@
             this.colSeatID.Name = "colSeatID";
             this.colSeatID.OptionsColumn.AllowEdit = false;
             this.colSeatID.Visible = true;
-            this.colSeatID.VisibleIndex = 1;
+            this.colSeatID.VisibleIndex = 0;
             this.colSeatID.Width = 79;
             // 
             // colBreakdown
@@ -554,7 +558,7 @@
             this.colBreakdown.Name = "colBreakdown";
             this.colBreakdown.OptionsColumn.AllowEdit = false;
             this.colBreakdown.Visible = true;
-            this.colBreakdown.VisibleIndex = 2;
+            this.colBreakdown.VisibleIndex = 1;
             this.colBreakdown.Width = 90;
             // 
             // colCustomerID
@@ -564,8 +568,18 @@
             this.colCustomerID.Name = "colCustomerID";
             this.colCustomerID.OptionsColumn.AllowEdit = false;
             this.colCustomerID.Visible = true;
-            this.colCustomerID.VisibleIndex = 3;
+            this.colCustomerID.VisibleIndex = 2;
             this.colCustomerID.Width = 103;
+            // 
+            // colRemainingTime
+            // 
+            this.colRemainingTime.FieldName = "RemainingTime";
+            this.colRemainingTime.MinWidth = 25;
+            this.colRemainingTime.Name = "colRemainingTime";
+            this.colRemainingTime.OptionsColumn.AllowEdit = false;
+            this.colRemainingTime.Visible = true;
+            this.colRemainingTime.VisibleIndex = 3;
+            this.colRemainingTime.Width = 94;
             // 
             // Root
             // 
@@ -600,15 +614,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // colRemainingTime
-            // 
-            this.colRemainingTime.Caption = "Time";
-            this.colRemainingTime.MinWidth = 25;
-            this.colRemainingTime.Name = "colRemainingTime";
-            this.colRemainingTime.Visible = true;
-            this.colRemainingTime.VisibleIndex = 0;
-            this.colRemainingTime.Width = 94;
             // 
             // Managerform
             // 
@@ -678,7 +683,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private System.Windows.Forms.BindingSource bdsSeat;
         private DevExpress.XtraEditors.LabelControl lblRemainingTime;
         private DevExpress.XtraEditors.LabelControl lblSeat;
         private DevExpress.XtraEditors.LabelControl lblId;
@@ -705,6 +709,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraEditors.LabelControl lblRank;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private System.Windows.Forms.BindingSource bdsSeat;
         private DevExpress.XtraGrid.Columns.GridColumn colRemainingTime;
     }
 }

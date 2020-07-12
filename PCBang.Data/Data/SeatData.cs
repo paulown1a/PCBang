@@ -41,7 +41,6 @@ namespace PC_Project.Data
                         select new { Seat = x, RemainingTime = x.Customer == null ? 0:x.Customer.RemainingTime };
             var list = query.ToList();
             
-
             foreach (var x in list)
             {
                 x.Seat.RemainingTime = x.RemainingTime;
