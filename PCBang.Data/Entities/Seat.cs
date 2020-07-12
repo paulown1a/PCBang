@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PC_Project.Data
 {
-    partial class Product
+    public partial class Seat
     {
-
+        public int RemainingTime { get; set; }
     }
 }

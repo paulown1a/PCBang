@@ -25,7 +25,7 @@ namespace ManagerForm
         
         private void gridControl1_Load(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetAll();
+            List<Seat> seats = DataRepository.Seat.GetWithTime();
             bdsSeat.DataSource = seats;
         }
 
