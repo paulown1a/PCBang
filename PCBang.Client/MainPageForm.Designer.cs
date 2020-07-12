@@ -488,10 +488,11 @@
             // 
             this.btnCDGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.CD_logo;
             this.btnCDGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnCDGame.Location = new System.Drawing.Point(1015, 623);
+            this.btnCDGame.Location = new System.Drawing.Point(1269, 779);
+            this.btnCDGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCDGame.Name = "btnCDGame";
             this.btnCDGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnCDGame.Size = new System.Drawing.Size(350, 350);
+            this.btnCDGame.Size = new System.Drawing.Size(438, 438);
             this.btnCDGame.TabIndex = 4;
             this.btnCDGame.Click += new System.EventHandler(this.btnCDGame_Click);
             // 
@@ -499,11 +500,12 @@
             // 
             this.btnRPGGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.RPG_logo;
             this.btnRPGGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnRPGGame.Location = new System.Drawing.Point(539, 623);
+            this.btnRPGGame.Location = new System.Drawing.Point(674, 779);
+            this.btnRPGGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRPGGame.Name = "btnRPGGame";
             this.btnRPGGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnRPGGame.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
-            this.btnRPGGame.Size = new System.Drawing.Size(350, 350);
+            this.btnRPGGame.Size = new System.Drawing.Size(438, 438);
             this.btnRPGGame.TabIndex = 3;
             this.btnRPGGame.Click += new System.EventHandler(this.btnRPGGame_Click);
             // 
@@ -511,26 +513,29 @@
             // 
             this.btnFPSGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.FPS_logo;
             this.btnFPSGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFPSGame.Location = new System.Drawing.Point(58, 623);
+            this.btnFPSGame.Location = new System.Drawing.Point(72, 779);
+            this.btnFPSGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFPSGame.Name = "btnFPSGame";
             this.btnFPSGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnFPSGame.Size = new System.Drawing.Size(350, 350);
+            this.btnFPSGame.Size = new System.Drawing.Size(438, 438);
             this.btnFPSGame.TabIndex = 2;
             this.btnFPSGame.Click += new System.EventHandler(this.btnFPSGame_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // grdGames
             // 
             this.grdGames.DataSource = this.gameBindingSource;
-            this.grdGames.Location = new System.Drawing.Point(311, 22);
+            this.grdGames.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grdGames.Location = new System.Drawing.Point(389, 28);
             this.grdGames.MainView = this.cardView1;
+            this.grdGames.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grdGames.Name = "grdGames";
-            this.grdGames.Size = new System.Drawing.Size(932, 600);
+            this.grdGames.Size = new System.Drawing.Size(1165, 750);
             this.grdGames.TabIndex = 5;
             this.grdGames.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1});
@@ -543,8 +548,10 @@
             // 
             // cardView1
             // 
+            this.cardView1.CardWidth = 250;
             this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName});
+            this.cardView1.DetailHeight = 437;
             this.cardView1.GridControl = this.grdGames;
             this.cardView1.Name = "cardView1";
             this.cardView1.OptionsView.ShowCardCaption = false;
@@ -556,11 +563,11 @@
             this.colName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colName.AppearanceCell.Options.UseFont = true;
             this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
+            this.colName.MinWidth = 31;
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
-            this.colName.Width = 94;
+            this.colName.Width = 117;
             // 
             // timer2
             // 

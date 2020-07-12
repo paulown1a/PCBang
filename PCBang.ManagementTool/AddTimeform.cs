@@ -60,12 +60,13 @@ namespace ManagerForm
             DataRepository.Order.Insert(order);
 
             Customer customer = DataRepository.Customer.Get(order.CustomerID);
-            customer.RemainingTime = int.Parse(Regex.Replace(DataRepository.Product.Get(order.ProductID).Name, @"\D", "")) * 60;
+            customer.RemainingTime += int.Parse(Regex.Replace(DataRepository.Product.Get(order.ProductID).Name, @"\D", "")) * 60;
             DataRepository.Customer.Update(customer);
 
             MessageBox.Show("결제되었습니다.");
             Close();
         }
+
         private void AddTimeform_KeyDown(object sender, KeyEventArgs e)
         {
             if ((Keys)e.KeyValue == Keys.Escape)
