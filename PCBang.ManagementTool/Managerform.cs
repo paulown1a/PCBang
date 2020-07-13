@@ -14,7 +14,7 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace ManagerForm
 {
-    //add color
+    //add colors
     public partial class Managerform : DevExpress.XtraEditors.XtraForm
     {
         public Managerform()
