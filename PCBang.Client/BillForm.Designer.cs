@@ -1,6 +1,6 @@
 ﻿namespace PC_Project.Client
 {
-    partial class billForm
+    partial class BillForm
     {
         /// <summary>
         /// Required designer variable.
@@ -238,7 +238,7 @@
             this.btnBillOrder.Size = new System.Drawing.Size(360, 27);
             this.btnBillOrder.StyleController = this.layoutControl2;
             this.btnBillOrder.TabIndex = 6;
-            this.btnBillOrder.Text = "&Order";
+            this.btnBillOrder.Text = "결제(&O)";
             this.btnBillOrder.Click += new System.EventHandler(this.btnBillOrder_Click);
             // 
             // btnBillCancel
@@ -248,7 +248,7 @@
             this.btnBillCancel.Size = new System.Drawing.Size(97, 27);
             this.btnBillCancel.StyleController = this.layoutControl2;
             this.btnBillCancel.TabIndex = 5;
-            this.btnBillCancel.Text = "&Cancel";
+            this.btnBillCancel.Text = "취소(&C)";
             this.btnBillCancel.Click += new System.EventHandler(this.btnBillCancel_Click);
             // 
             // layoutControl4
@@ -369,7 +369,7 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // billForm
+            // BillForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(94)))), ((int)(((byte)(197)))));
             this.Appearance.Options.UseBackColor = true;
@@ -377,9 +377,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 774);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "billForm";
+            this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "결제화면";
+            this.Text = "결제";
             this.Load += new System.EventHandler(this.BillForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
