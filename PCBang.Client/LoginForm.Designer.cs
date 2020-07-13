@@ -34,9 +34,10 @@ namespace loginform
             this.lblNewAccount = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbSeat = new System.Windows.Forms.ComboBox();
+            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.txbPassword = new System.Windows.Forms.TextBox();
-            this.txbID = new System.Windows.Forms.TextBox();
+            this.txbId = new System.Windows.Forms.TextBox();
             this.btnNewAccount = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -47,9 +48,9 @@ namespace loginform
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.좌석번호 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.비밀번호)).BeginInit();
@@ -59,7 +60,6 @@ namespace loginform
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.좌석번호)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewAccount
@@ -82,7 +82,7 @@ namespace loginform
             this.layoutControl1.Controls.Add(this.lblNewAccount);
             this.layoutControl1.Controls.Add(this.btnLogin);
             this.layoutControl1.Controls.Add(this.txbPassword);
-            this.layoutControl1.Controls.Add(this.txbID);
+            this.layoutControl1.Controls.Add(this.txbId);
             this.layoutControl1.Controls.Add(this.btnNewAccount);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.layoutControl1.Location = new System.Drawing.Point(0, -6);
@@ -105,7 +105,10 @@ namespace loginform
             this.cbbSeat.Size = new System.Drawing.Size(268, 26);
             this.cbbSeat.TabIndex = 8;
             this.cbbSeat.ValueMember = "SeatID";
-            this.cbbSeat.SelectedIndexChanged += new System.EventHandler(this.cbbSeat_SelectedIndexChanged);
+            // 
+            // seatBindingSource
+            // 
+            this.seatBindingSource.DataSource = typeof(PC_Project.Data.Seat);
             // 
             // btnLogin
             // 
@@ -134,13 +137,13 @@ namespace loginform
             this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
             this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassword_KeyDown);
             // 
-            // txbID
+            // txbId
             // 
-            this.txbID.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbID.Location = new System.Drawing.Point(74, 51);
-            this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(269, 25);
-            this.txbID.TabIndex = 3;
+            this.txbId.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbId.Location = new System.Drawing.Point(74, 51);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(269, 25);
+            this.txbId.TabIndex = 3;
             // 
             // btnNewAccount
             // 
@@ -178,7 +181,7 @@ namespace loginform
             // 
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem2.Control = this.txbID;
+            this.layoutControlItem2.Control = this.txbId;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 46);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(348, 37);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(92, 35);
@@ -255,10 +258,6 @@ namespace loginform
             this.좌석번호.Size = new System.Drawing.Size(347, 36);
             this.좌석번호.TextSize = new System.Drawing.Size(64, 24);
             // 
-            // seatBindingSource
-            // 
-            this.seatBindingSource.DataSource = typeof(PC_Project.Data.Seat);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -271,6 +270,7 @@ namespace loginform
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.비밀번호)).EndInit();
@@ -280,7 +280,6 @@ namespace loginform
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.좌석번호)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,7 +287,7 @@ namespace loginform
         #endregion
 
         private DevExpress.XtraEditors.LabelControl lblNewAccount;
-        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.TextBox txbPassword;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

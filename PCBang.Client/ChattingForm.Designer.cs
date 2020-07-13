@@ -1,6 +1,6 @@
 ﻿namespace PC_Project.Client
 {
-    partial class ChattingForm
+    partial class chattingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ChattingTimer = new System.Windows.Forms.Timer(this.components);
+            this.chattingTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -205,18 +205,18 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // ChattingTimer
+            // chattingTimer
             // 
-            this.ChattingTimer.Interval = 2000;
-            this.ChattingTimer.Tick += new System.EventHandler(this.ChattingTimer_Tick);
+            this.chattingTimer.Interval = 2000;
+            this.chattingTimer.Tick += new System.EventHandler(this.ChattingTimer_Tick);
             // 
-            // ChattingForm
+            // chattingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "ChattingForm";
+            this.Name = "chattingForm";
             this.Text = "ChattingForm";
             this.Load += new System.EventHandler(this.ChattingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -248,7 +248,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private System.Windows.Forms.BindingSource bdsChatting;
         private DevExpress.XtraGrid.Columns.GridColumn colText;
-        private System.Windows.Forms.Timer ChattingTimer;
+        private System.Windows.Forms.Timer chattingTimer;
         private DevExpress.XtraGrid.Columns.GridColumn colSendTIme;
         private DevExpress.XtraGrid.Columns.GridColumn colSent;
     }

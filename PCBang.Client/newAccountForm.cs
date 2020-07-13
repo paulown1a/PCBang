@@ -31,7 +31,7 @@ namespace loginform
                 return;
             }
             
-            if (txbID.Text == "")
+            if (txbId.Text == "")
             {
                 MessageBox.Show("ID를 입력해주세요.");
                 return;
@@ -52,11 +52,9 @@ namespace loginform
                 MessageBox.Show("비밀번호가 일치하지않습니다.");
                 return;
             }
-            
-
 
             String Name = txbName.Text;
-            String ID = txbID.Text;
+            String ID = txbId.Text;
             String Password = txbPassword.Text;
 
             if (DataRepository.Customer.CanUseId(ID))
@@ -83,9 +81,6 @@ namespace loginform
             
         }
 
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

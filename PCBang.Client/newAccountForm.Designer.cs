@@ -33,7 +33,7 @@
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
             this.txbPasswordConfirm = new System.Windows.Forms.TextBox();
             this.txbPassword = new System.Windows.Forms.TextBox();
-            this.txbID = new System.Windows.Forms.TextBox();
+            this.txbId = new System.Windows.Forms.TextBox();
             this.txbName = new System.Windows.Forms.TextBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.이름 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -63,7 +63,7 @@
             this.layoutControl1.Controls.Add(this.btnCreate);
             this.layoutControl1.Controls.Add(this.txbPasswordConfirm);
             this.layoutControl1.Controls.Add(this.txbPassword);
-            this.layoutControl1.Controls.Add(this.txbID);
+            this.layoutControl1.Controls.Add(this.txbId);
             this.layoutControl1.Controls.Add(this.txbName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -87,7 +87,6 @@
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "회원가입";
-            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // btnCreate
             // 
@@ -124,13 +123,13 @@
             this.txbPassword.TabIndex = 4;
             this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
             // 
-            // txbID
+            // txbId
             // 
-            this.txbID.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbID.Location = new System.Drawing.Point(106, 81);
-            this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(241, 25);
-            this.txbID.TabIndex = 3;
+            this.txbId.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbId.Location = new System.Drawing.Point(106, 81);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(241, 25);
+            this.txbId.TabIndex = 3;
             // 
             // txbName
             // 
@@ -172,7 +171,7 @@
             // 
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem2.Control = this.txbID;
+            this.layoutControlItem2.Control = this.txbId;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(352, 35);
@@ -262,7 +261,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox txbName;
-        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.TextBox txbPassword;
         private DevExpress.XtraEditors.SimpleButton btnCreate;
         private System.Windows.Forms.TextBox txbPasswordConfirm;

@@ -40,7 +40,6 @@
             this.lblRemainingTime = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -74,10 +73,10 @@
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -100,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdGames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -123,46 +123,46 @@
             // 
             // lblSeat
             // 
-            this.lblSeat.Font = new System.Drawing.Font("Gulim", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSeat.Location = new System.Drawing.Point(245, 128);
+            this.lblSeat.Font = new System.Drawing.Font("Gulim", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSeat.Location = new System.Drawing.Point(245, 151);
             this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(231, 25);
+            this.lblSeat.Size = new System.Drawing.Size(231, 31);
             this.lblSeat.TabIndex = 1;
             this.lblSeat.Text = "좌석 : ";
             // 
             // lblRank
             // 
-            this.lblRank.Font = new System.Drawing.Font("Gulim", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblRank.Location = new System.Drawing.Point(245, 99);
+            this.lblRank.Font = new System.Drawing.Font("Gulim", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblRank.Location = new System.Drawing.Point(245, 117);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(231, 25);
+            this.lblRank.Size = new System.Drawing.Size(231, 30);
             this.lblRank.TabIndex = 1;
             this.lblRank.Text = "등급 : ";
             // 
             // lblID
             // 
-            this.lblID.Font = new System.Drawing.Font("Gulim", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblID.Location = new System.Drawing.Point(245, 41);
+            this.lblID.Font = new System.Drawing.Font("Gulim", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblID.Location = new System.Drawing.Point(245, 47);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(231, 25);
+            this.lblID.Size = new System.Drawing.Size(231, 31);
             this.lblID.TabIndex = 1;
             this.lblID.Text = "아이디 : ";
             // 
             // lblName
             // 
-            this.lblName.Font = new System.Drawing.Font("Gulim", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblName.Font = new System.Drawing.Font("Gulim", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblName.Location = new System.Drawing.Point(245, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(231, 25);
+            this.lblName.Size = new System.Drawing.Size(231, 31);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "이름 : ";
             // 
             // lblPayamount
             // 
-            this.lblPayamount.Font = new System.Drawing.Font("Gulim", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPayamount.Location = new System.Drawing.Point(245, 157);
+            this.lblPayamount.Font = new System.Drawing.Font("Gulim", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPayamount.Location = new System.Drawing.Point(245, 186);
             this.lblPayamount.Name = "lblPayamount";
-            this.lblPayamount.Size = new System.Drawing.Size(231, 497);
+            this.lblPayamount.Size = new System.Drawing.Size(231, 468);
             this.lblPayamount.TabIndex = 1;
             this.lblPayamount.Text = "금액 : ";
             // 
@@ -194,10 +194,10 @@
             // 
             // lblRemainingTime
             // 
-            this.lblRemainingTime.Font = new System.Drawing.Font("Gulim", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblRemainingTime.Location = new System.Drawing.Point(245, 70);
+            this.lblRemainingTime.Font = new System.Drawing.Font("Gulim", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblRemainingTime.Location = new System.Drawing.Point(245, 82);
             this.lblRemainingTime.Name = "lblRemainingTime";
-            this.lblRemainingTime.Size = new System.Drawing.Size(231, 25);
+            this.lblRemainingTime.Size = new System.Drawing.Size(231, 31);
             this.lblRemainingTime.TabIndex = 1;
             this.lblRemainingTime.Text = "남은시간 : ";
             // 
@@ -233,47 +233,39 @@
             this.Root.Size = new System.Drawing.Size(488, 780);
             this.Root.TextVisible = false;
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(233, 760);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.lblName;
             this.layoutControlItem6.Location = new System.Drawing.Point(233, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(235, 29);
+            this.layoutControlItem6.Size = new System.Drawing.Size(235, 35);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.lblID;
-            this.layoutControlItem7.Location = new System.Drawing.Point(233, 29);
+            this.layoutControlItem7.Location = new System.Drawing.Point(233, 35);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(235, 29);
+            this.layoutControlItem7.Size = new System.Drawing.Size(235, 35);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lblRemainingTime;
-            this.layoutControlItem2.Location = new System.Drawing.Point(233, 58);
+            this.layoutControlItem2.Location = new System.Drawing.Point(233, 70);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(235, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(235, 35);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.lblPayamount;
-            this.layoutControlItem5.Location = new System.Drawing.Point(233, 145);
+            this.layoutControlItem5.Location = new System.Drawing.Point(233, 174);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(235, 501);
+            this.layoutControlItem5.Size = new System.Drawing.Size(235, 472);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -307,18 +299,18 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.lblRank;
-            this.layoutControlItem8.Location = new System.Drawing.Point(233, 87);
+            this.layoutControlItem8.Location = new System.Drawing.Point(233, 105);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(235, 29);
+            this.layoutControlItem8.Size = new System.Drawing.Size(235, 34);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.lblSeat;
-            this.layoutControlItem9.Location = new System.Drawing.Point(233, 116);
+            this.layoutControlItem9.Location = new System.Drawing.Point(233, 139);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(235, 29);
+            this.layoutControlItem9.Size = new System.Drawing.Size(235, 35);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -489,7 +481,7 @@
             this.btnCDGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.CD_logo;
             this.btnCDGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnCDGame.Location = new System.Drawing.Point(151, 590);
-            this.btnCDGame.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCDGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnCDGame.Name = "btnCDGame";
             this.btnCDGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnCDGame.Size = new System.Drawing.Size(400, 400);
@@ -501,7 +493,7 @@
             this.btnRPGGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.RPG_logo;
             this.btnRPGGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnRPGGame.Location = new System.Drawing.Point(1012, 590);
-            this.btnRPGGame.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnRPGGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnRPGGame.Name = "btnRPGGame";
             this.btnRPGGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnRPGGame.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
@@ -514,7 +506,7 @@
             this.btnFPSGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.FPS_logo;
             this.btnFPSGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnFPSGame.Location = new System.Drawing.Point(586, 590);
-            this.btnFPSGame.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnFPSGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnFPSGame.Name = "btnFPSGame";
             this.btnFPSGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnFPSGame.Size = new System.Drawing.Size(400, 400);
@@ -530,10 +522,10 @@
             // grdGames
             // 
             this.grdGames.DataSource = this.gameBindingSource;
-            this.grdGames.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grdGames.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
             this.grdGames.Location = new System.Drawing.Point(342, 40);
             this.grdGames.MainView = this.cardView1;
-            this.grdGames.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grdGames.Margin = new System.Windows.Forms.Padding(5);
             this.grdGames.Name = "grdGames";
             this.grdGames.Size = new System.Drawing.Size(899, 476);
             this.grdGames.TabIndex = 5;
@@ -575,6 +567,14 @@
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(233, 760);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // MainPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -593,7 +593,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -616,6 +615,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdGames)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,7 +625,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         protected System.Windows.Forms.Label lblRemainingTime;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -667,6 +666,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private System.Windows.Forms.BindingSource gameBindingSource;
         private System.Windows.Forms.Timer timer2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }
 

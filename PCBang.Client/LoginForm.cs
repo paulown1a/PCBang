@@ -22,7 +22,7 @@ namespace loginform
 
         private void bntLogin_Click(object sender, EventArgs e)
         {
-            if (txbID.Text == "")
+            if (txbId.Text == "")
             {
                 MessageBox.Show("ID를 입력해주세요.");
                 return;
@@ -33,7 +33,7 @@ namespace loginform
                 return;
             }
 
-            Customer customer = DataRepository.Customer.Login(txbID.Text, txbPassword.Text);
+            Customer customer = DataRepository.Customer.Login(txbId.Text, txbPassword.Text);
             if (customer == null)
                 MessageBox.Show("사용자 정보가 올바르지 않습니다.");
             else if(DataRepository.Seat.LoginCheck(customer.CustomerID))
@@ -67,11 +67,6 @@ namespace loginform
         {
             List<Seat> seats = DataRepository.Seat.GetAll();
             seatBindingSource.DataSource = seats.FindAll(x => x.CustomerID == null);
-        }
-
-        private void cbbSeat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void txbPassword_KeyDown(object sender, KeyEventArgs e)

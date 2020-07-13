@@ -111,7 +111,7 @@ namespace MainPage
         private void btnCall_Click(object sender, EventArgs e)
         {
          
-            PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
+            PC_Project.Client.chattingForm chatting = new PC_Project.Client.chattingForm(int.Parse(seatNumber));
             chatting.ShowDialog();
         }
 
@@ -123,7 +123,7 @@ namespace MainPage
         }
         public void LabelUpdate()
         {
-            RankCheck(customer.Payment);
+            rankCheck(customer.Payment);
             lblName.Text = "이름 : " + customer.Name.ToString();
             lblID.Text = "아이디 : " + customer.LoginID.ToString();
             lblSeat.Text = "좌석번호 : " + seatNumber;
@@ -132,7 +132,7 @@ namespace MainPage
             lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
         }
 
-        private void RankCheck(int TotalPayment)
+        private void rankCheck(int TotalPayment)
         {
             if (TotalPayment >= 30000 && TotalPayment < 60000)
                 customer.Rank = 1;
@@ -166,20 +166,20 @@ namespace MainPage
 
         private void btnCDGame_Click(object sender, EventArgs e)
         {
-            CallGames(201);
+            callGames(201);
         }
 
         private void btnRPGGame_Click(object sender, EventArgs e)
         {
-            CallGames(203);
+            callGames(203);
         }
 
         private void btnFPSGame_Click(object sender, EventArgs e)
         {
-            CallGames(202);
+            callGames(202);
         }
 
-        private void CallGames(int genreId)
+        private void callGames(int genreId)
         {
             if (this.genreId == 0)
             {

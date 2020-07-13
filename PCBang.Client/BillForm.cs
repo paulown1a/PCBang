@@ -13,17 +13,17 @@ using System.Windows.Forms;
 
 namespace PC_Project.Client
 {
-    public partial class BillForm : DevExpress.XtraEditors.XtraForm
+    public partial class billForm : DevExpress.XtraEditors.XtraForm
     {
         private Customer customer;
 
-        public BillForm()
+        public billForm()
         {
             
             InitializeComponent();
         }
 
-        public BillForm(Customer customer) : this()
+        public billForm(Customer customer) : this()
         {
             this.customer = customer;
         }

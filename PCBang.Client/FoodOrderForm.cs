@@ -59,7 +59,7 @@ namespace PC_Room
             public static Color color8 = Color.FromArgb(252, 202, 65);
         }
 
-        private void ActivateButton(object senderBtn, Color color)
+        private void activateButton(object senderBtn, Color color)
         {
             if (senderBtn!=null)
             {
@@ -102,14 +102,14 @@ namespace PC_Room
 
         private void FoodBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender,RGBColors.color4);
+            activateButton(sender,RGBColors.color4);
             GridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(102);
         }
 
         private void BeverageBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            activateButton(sender, RGBColors.color3);
             GridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(104);
         }
@@ -136,7 +136,7 @@ namespace PC_Room
 
         private void ExitBtn_MouseHover(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            activateButton(sender, RGBColors.color1);
         }
 
         private void ExitBtn_MouseLeave(object sender, EventArgs e)
@@ -146,7 +146,7 @@ namespace PC_Room
 
         private void BuyBtn_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color6);
+            //activateButton(sender, RGBColors.color6);
 
             if (DataRepository.Order.GetWithProduct(false, customer.CustomerID).Count==0)
             { 
@@ -155,7 +155,7 @@ namespace PC_Room
             }
             else
             {
-                BillForm billform = new BillForm(customer);
+                billForm billform = new billForm(customer);
                 var res=billform.ShowDialog();
                 bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
                 if (res==DialogResult.OK)
@@ -171,7 +171,7 @@ namespace PC_Room
 
         private void BuyBtn_MouseHover(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color6);
+            activateButton(sender, RGBColors.color6);
         }
 
         private void BuyBtn_MouseLeave(object sender, EventArgs e)
@@ -181,14 +181,14 @@ namespace PC_Room
 
         private void SnackBtn_Click_1(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            activateButton(sender, RGBColors.color2);
             GridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(103);
         }
 
         private void TicketBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color7);
+            activateButton(sender, RGBColors.color7);
             GridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(101);
         }
@@ -264,7 +264,7 @@ namespace PC_Room
 
         private void btnClear_MouseHover(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color8);
+            activateButton(sender, RGBColors.color8);
         }
 
         private void btnClear_MouseLeave(object sender, EventArgs e)
