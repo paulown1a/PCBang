@@ -154,8 +154,8 @@ namespace PC_Room
             }
             else
             {
-                BillForm billform = new BillForm(customer);
-                var res=billform.ShowDialog();
+                billForm BillForm = new billForm(customer);
+                var res=BillForm.ShowDialog();
                 bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
                 if (res==DialogResult.OK)
                 {
