@@ -43,8 +43,8 @@
 # Point of Interest
 * 고객과 관리자간의 실시간 채팅 가능
 ![Chatting](Documents/chatting.png)
-* 관리자 프로그램 분리, 관리 효율 증대
-![Managerform](Documents/managerform.png)
+* 관리자 프로그램 분리, 사용자별 잔여 시간에 따른 색상 변경
+![Manager Form](Documents/ManagerForm.png)
 * 관리자 프로그램 내에서 판매내역 확인가능
 * ![Sales](Documents/sales.png)
 * 음식 주문에 따른 금액 동기화
@@ -56,6 +56,7 @@
 * 각 게임 장르로 구분된 폴더에 빠른 접속기능 (왼쪽부터 순서대로 CD게임, FPS, RPG)
 ![Gamelist](Documents/gamelist.png)
 * 각 좌석별 컴퓨터 고장 여부 확인 가능 및 고장시 사용자 해당 좌석 사용 불가능
+
 
 # 미해결 부분
 * 환불 계산

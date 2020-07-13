@@ -23,7 +23,7 @@ namespace PC_Project.Data
             Delete(seat);
         }
 
-        public object GetUsing()
+        public List<Seat> GetUsing()
         {
             PCBangEntities context = CreateContext();
 
@@ -64,6 +64,17 @@ namespace PC_Project.Data
             PCBangEntities context = CreateContext();
 
             return context.Seats.FirstOrDefault(a => a.CustomerID == customerId) == null ? false : true;
+        }
+
+        public List<Seat> GetCanUse()
+        {
+            PCBangEntities context = CreateContext();
+
+            var query = from x in context.Seats
+                        where x.CustomerID == null && x.Breakdown == false
+                        select x;
+
+            return query.ToList();
         }
     }
 }
