@@ -59,18 +59,18 @@
             this.gridFood = new DevExpress.XtraGrid.GridControl();
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.colName = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colName = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colPrice = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colPrice = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colPhoto = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colPhoto = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.pnHome = new PC_Project.Client.HomeDisplay();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-            this.layoutViewField_colName = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colPrice = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colPhoto = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.MenuPn.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
@@ -82,10 +82,10 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPn
@@ -530,6 +530,20 @@
             this.colName.OptionsFilter.ShowEmptyDateFilter = false;
             this.colName.Width = 94;
             // 
+            // layoutViewField_colName
+            // 
+            this.layoutViewField_colName.EditorPreferredWidth = 352;
+            this.layoutViewField_colName.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colName.Name = "layoutViewField_colName";
+            this.layoutViewField_colName.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colName.Size = new System.Drawing.Size(362, 32);
+            this.layoutViewField_colName.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colName.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colName.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colName.TextToControlDistance = 0;
+            this.layoutViewField_colName.TextVisible = false;
+            // 
             // colPrice
             // 
             this.colPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -553,6 +567,18 @@
             this.colPrice.OptionsFilter.ShowEmptyDateFilter = false;
             this.colPrice.Width = 94;
             // 
+            // layoutViewField_colPrice
+            // 
+            this.layoutViewField_colPrice.EditorPreferredWidth = 352;
+            this.layoutViewField_colPrice.Location = new System.Drawing.Point(0, 32);
+            this.layoutViewField_colPrice.Name = "layoutViewField_colPrice";
+            this.layoutViewField_colPrice.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colPrice.Size = new System.Drawing.Size(362, 32);
+            this.layoutViewField_colPrice.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colPrice.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colPrice.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colPrice.TextVisible = false;
+            // 
             // colPhoto
             // 
             this.colPhoto.Caption = " ";
@@ -563,6 +589,32 @@
             this.colPhoto.Name = "colPhoto";
             this.colPhoto.OptionsColumn.AllowEdit = false;
             this.colPhoto.Width = 500;
+            // 
+            // layoutViewField_colPhoto
+            // 
+            this.layoutViewField_colPhoto.EditorPreferredWidth = 352;
+            this.layoutViewField_colPhoto.Location = new System.Drawing.Point(0, 64);
+            this.layoutViewField_colPhoto.Name = "layoutViewField_colPhoto";
+            this.layoutViewField_colPhoto.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colPhoto.Size = new System.Drawing.Size(362, 205);
+            this.layoutViewField_colPhoto.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colPhoto.StartNewLine = true;
+            this.layoutViewField_colPhoto.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colPhoto.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colPhoto.TextVisible = false;
+            // 
+            // layoutViewCard1
+            // 
+            this.layoutViewCard1.CustomizationFormText = "TemplateCard";
+            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colName,
+            this.layoutViewField_colPrice,
+            this.layoutViewField_colPhoto});
+            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 10;
+            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewCard1.Text = "TemplateCard";
             // 
             // pnHome
             // 
@@ -607,58 +659,6 @@
             this.SeatID.ReadOnly = true;
             this.SeatID.Width = 125;
             // 
-            // layoutViewCard1
-            // 
-            this.layoutViewCard1.CustomizationFormText = "TemplateCard";
-            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_colName,
-            this.layoutViewField_colPrice,
-            this.layoutViewField_colPhoto});
-            this.layoutViewCard1.Name = "layoutViewCard1";
-            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 10;
-            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewCard1.Text = "TemplateCard";
-            // 
-            // layoutViewField_colName
-            // 
-            this.layoutViewField_colName.EditorPreferredWidth = 352;
-            this.layoutViewField_colName.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_colName.Name = "layoutViewField_colName";
-            this.layoutViewField_colName.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_colName.Size = new System.Drawing.Size(362, 32);
-            this.layoutViewField_colName.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutViewField_colName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutViewField_colName.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutViewField_colName.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutViewField_colName.TextToControlDistance = 0;
-            this.layoutViewField_colName.TextVisible = false;
-            // 
-            // layoutViewField_colPrice
-            // 
-            this.layoutViewField_colPrice.EditorPreferredWidth = 352;
-            this.layoutViewField_colPrice.Location = new System.Drawing.Point(0, 32);
-            this.layoutViewField_colPrice.Name = "layoutViewField_colPrice";
-            this.layoutViewField_colPrice.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_colPrice.Size = new System.Drawing.Size(362, 32);
-            this.layoutViewField_colPrice.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutViewField_colPrice.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutViewField_colPrice.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutViewField_colPrice.TextVisible = false;
-            // 
-            // layoutViewField_colPhoto
-            // 
-            this.layoutViewField_colPhoto.EditorPreferredWidth = 352;
-            this.layoutViewField_colPhoto.Location = new System.Drawing.Point(0, 64);
-            this.layoutViewField_colPhoto.Name = "layoutViewField_colPhoto";
-            this.layoutViewField_colPhoto.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutViewField_colPhoto.Size = new System.Drawing.Size(362, 205);
-            this.layoutViewField_colPhoto.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutViewField_colPhoto.StartNewLine = true;
-            this.layoutViewField_colPhoto.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutViewField_colPhoto.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutViewField_colPhoto.TextVisible = false;
-            // 
             // FoodOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -689,10 +689,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             this.ResumeLayout(false);
 
         }
