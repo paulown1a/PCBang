@@ -123,7 +123,7 @@ namespace PC_Room
         private void Reset()
         {
             DisableButton();
-            leftBorderBtnSecond.Visible=false;
+            leftBorderBtnSecond.Visible = false;
             leftBorderBtn.Visible = false;
         }
 
@@ -131,7 +131,6 @@ namespace PC_Room
         {
             pnHome.BringToFront();
             Reset();
-           
         }
 
         private void ExitBtn_MouseHover(object sender, EventArgs e)

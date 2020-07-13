@@ -33,7 +33,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txbName = new System.Windows.Forms.TextBox();
             this.grvCustomer = new DevExpress.XtraGrid.GridControl();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRank = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,24 +44,26 @@
             this.txbID = new System.Windows.Forms.TextBox();
             this.txbPW = new System.Windows.Forms.TextBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -89,7 +91,7 @@
             // 
             // grvCustomer
             // 
-            this.grvCustomer.DataSource = this.customerBindingSource;
+            this.grvCustomer.DataSource = this.bdsCustomer;
             this.grvCustomer.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.grvCustomer.Location = new System.Drawing.Point(12, 130);
             this.grvCustomer.MainView = this.gridView1;
@@ -100,10 +102,6 @@
             this.grvCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.grvCustomer.DoubleClick += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // customerBindingSource
-            // 
-            
             // 
             // gridView1
             // 
@@ -117,6 +115,7 @@
             // 
             // colName
             // 
+            this.colName.Caption = "이름";
             this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
@@ -127,6 +126,7 @@
             // 
             // colRank
             // 
+            this.colRank.Caption = "순위";
             this.colRank.FieldName = "Rank";
             this.colRank.MinWidth = 25;
             this.colRank.Name = "colRank";
@@ -137,6 +137,7 @@
             // 
             // colLoginID
             // 
+            this.colLoginID.Caption = "ID";
             this.colLoginID.FieldName = "LoginID";
             this.colLoginID.MinWidth = 25;
             this.colLoginID.Name = "colLoginID";
@@ -147,6 +148,7 @@
             // 
             // colRemainingTime
             // 
+            this.colRemainingTime.Caption = "남은시간";
             this.colRemainingTime.FieldName = "RemainingTime";
             this.colRemainingTime.MinWidth = 25;
             this.colRemainingTime.Name = "colRemainingTime";
@@ -157,10 +159,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(315, 99);
+            this.btnDelete.Location = new System.Drawing.Point(458, 99);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(288, 27);
+            this.btnDelete.Size = new System.Drawing.Size(145, 27);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "삭제";
@@ -168,10 +170,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(12, 99);
+            this.btnSearch.Location = new System.Drawing.Point(309, 99);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(299, 27);
+            this.btnSearch.Size = new System.Drawing.Size(145, 27);
             this.btnSearch.StyleController = this.layoutControl1;
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "수정";
@@ -196,33 +198,16 @@
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3,
-            this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem3,
+            this.emptySpaceItem1,
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(615, 452);
             this.Root.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnSearch;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 87);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(303, 31);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.btnDelete;
-            this.layoutControlItem4.Location = new System.Drawing.Point(303, 87);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(292, 31);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
@@ -264,9 +249,31 @@
             this.layoutControlItem6.Text = "PW";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(26, 18);
             // 
-            // entityCommand1
+            // layoutControlItem3
             // 
-            
+            this.layoutControlItem3.Control = this.btnSearch;
+            this.layoutControlItem3.Location = new System.Drawing.Point(297, 87);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(149, 31);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 87);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(297, 31);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnDelete;
+            this.layoutControlItem4.Location = new System.Drawing.Point(446, 87);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(149, 31);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // ManageCustomerform
             // 
@@ -276,21 +283,22 @@
             this.Controls.Add(this.layoutControl1);
             this.KeyPreview = true;
             this.Name = "ManageCustomerform";
-            this.Text = "ManageCustomerform";
+            this.Text = "고객관리";
             this.Load += new System.EventHandler(this.DeleteCustomerform_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ManagerCustomerform_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -306,7 +314,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.BindingSource bdsCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colRank;
         private DevExpress.XtraGrid.Columns.GridColumn colLoginID;
@@ -317,5 +325,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.TextBox txbPW;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

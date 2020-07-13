@@ -69,23 +69,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="billForm.cs">
+    <Compile Include="BillForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="billForm.Designer.cs">
-      <DependentUpon>billForm.cs</DependentUpon>
+    <Compile Include="BillForm.Designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="chattingForm.cs">
+    <Compile Include="ChattingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="chattingForm.Designer.cs">
-      <DependentUpon>chattingForm.cs</DependentUpon>
+    <Compile Include="ChattingForm.Designer.cs">
+      <DependentUpon>ChattingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="foodOrderForm.cs">
+    <Compile Include="FoodOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="foodOrderForm.Designer.cs">
-      <DependentUpon>foodOrderForm.cs</DependentUpon>
+    <Compile Include="FoodOrderForm.Designer.cs">
+      <DependentUpon>FoodOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeDisplay.cs">
       <SubType>UserControl</SubType>
@@ -93,23 +93,23 @@
     <Compile Include="HomeDisplay.Designer.cs">
       <DependentUpon>HomeDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="loginForm.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginForm.Designer.cs">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainPageForm.cs">
+    <Compile Include="MainPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainPageForm.Designer.cs">
-      <DependentUpon>mainPageForm.cs</DependentUpon>
+    <Compile Include="MainPageForm.Designer.cs">
+      <DependentUpon>MainPageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="newAccountForm.cs">
+    <Compile Include="NewAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newAccountForm.Designer.cs">
-      <DependentUpon>newAccountForm.cs</DependentUpon>
+    <Compile Include="NewAccountForm.Designer.cs">
+      <DependentUpon>NewAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessKiller.cs" />
     <Compile Include="ProductIcon.cs">
@@ -120,26 +120,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="billForm.resx">
-      <DependentUpon>billForm.cs</DependentUpon>
+    <EmbeddedResource Include="BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="chattingForm.resx">
-      <DependentUpon>chattingForm.cs</DependentUpon>
+    <EmbeddedResource Include="ChattingForm.resx">
+      <DependentUpon>ChattingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="foodOrderForm.resx">
-      <DependentUpon>foodOrderForm.cs</DependentUpon>
+    <EmbeddedResource Include="FoodOrderForm.resx">
+      <DependentUpon>FoodOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeDisplay.resx">
       <DependentUpon>HomeDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="loginForm.resx">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainPageForm.resx">
-      <DependentUpon>mainPageForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainPageForm.resx">
+      <DependentUpon>MainPageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newAccountForm.resx">
-      <DependentUpon>newAccountForm.cs</DependentUpon>
+    <EmbeddedResource Include="NewAccountForm.resx">
+      <DependentUpon>NewAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductIcon.resx">
       <DependentUpon>ProductIcon.cs</DependentUpon>

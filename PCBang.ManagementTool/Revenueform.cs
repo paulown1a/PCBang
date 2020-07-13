@@ -21,18 +21,20 @@ namespace ManagerForm
 
         private void Revenueform_Load(object sender, EventArgs e)
         {
-            var orders = DataRepository.Order.GetWithProduct(true);
-            orderBindingSource.DataSource = orders;
+            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(true);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         private void Revenueform_KeyDown(object sender, KeyEventArgs e)
         {
             if ((Keys)e.KeyValue == Keys.Escape)
                 Close();
         }
+
+
     }
 }

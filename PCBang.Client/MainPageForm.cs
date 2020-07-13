@@ -111,7 +111,7 @@ namespace MainPage
         private void btnCall_Click(object sender, EventArgs e)
         {
          
-            PC_Project.Client.chattingForm chatting = new PC_Project.Client.chattingForm(int.Parse(seatNumber));
+            PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
             chatting.ShowDialog();
         }
 

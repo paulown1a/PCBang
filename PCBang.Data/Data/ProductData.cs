@@ -24,11 +24,11 @@ namespace PC_Project.Data
             Delete(product);
         }
 
-        public int? GetByName(string Name)
+        public int? GetByName(string name)
         {
             PCBangEntities context = CreateContext();
             var query = from x in context.Products
-                        where x.Name == Name
+                        where x.Name == name
                         select x.ProductID;
             return query.FirstOrDefault();
         }

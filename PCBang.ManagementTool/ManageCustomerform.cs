@@ -12,23 +12,21 @@ using PC_Project.Data;
 
 namespace Managerform
 {
-
     public partial class ManageCustomerform : DevExpress.XtraEditors.XtraForm
-{
-    public ManageCustomerform()
     {
-        InitializeComponent();
-    }
+        public ManageCustomerform()
+        {
+            InitializeComponent();
+        }
 
         private void DeleteCustomerform_Load(object sender, EventArgs e)
         {
-            customerBindingSource.DataSource = DataRepository.Customer.GetAll();
-
+            bdsCustomer.DataSource = DataRepository.Customer.GetAll();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Customer customer = customerBindingSource.Current as Customer;
+            Customer customer = bdsCustomer.Current as Customer;
 
             if (customer == null)
                 return;
@@ -36,17 +34,14 @@ namespace Managerform
             if (MessageBox.Show("삭제하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DataRepository.Customer.Delete(customer);
-                MessageBox.Show("삭제 완료");
-                customerBindingSource.DataSource = DataRepository.Customer.GetAll();
+                bdsCustomer.DataSource = DataRepository.Customer.GetAll();
             }
-
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Customer customer = customerBindingSource.Current as Customer;
-            
+            Customer customer = bdsCustomer.Current as Customer;
+
             if (customer == null)
                 return;
 
@@ -63,9 +58,9 @@ namespace Managerform
             DataRepository.Customer.Update(customer);
             MessageBox.Show("변경되었습니다.");
 
-            customerBindingSource.DataSource = DataRepository.Customer.GetAll();
-
+            bdsCustomer.DataSource = DataRepository.Customer.GetAll();
         }
+
         private void ManagerCustomerform_KeyDown(object sender, KeyEventArgs e)
         {
             if ((Keys)e.KeyValue == Keys.Escape)

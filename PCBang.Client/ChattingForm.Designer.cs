@@ -1,6 +1,6 @@
 ﻿namespace PC_Project.Client
 {
-    partial class chattingForm
+    partial class ChattingForm
     {
         /// <summary>
         /// Required designer variable.

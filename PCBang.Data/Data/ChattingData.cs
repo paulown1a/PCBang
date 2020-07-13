@@ -72,12 +72,12 @@ namespace PC_Project.Data
             }
         }
 
-        public void UpdateAll(bool sent, int seatid)
+        public void UpdateAll(bool sent, int seatId)
         {
             PCBangEntities context = CreateContext();
 
             var query = from x in context.Chattings
-                        where x.Sent == sent && x.Checked == false && x.SeatID == seatid
+                        where x.Sent == sent && x.Checked == false && x.SeatID == seatId
                         select x;
             var chattings = query.ToList();
             foreach (var chatting in chattings)
@@ -87,12 +87,12 @@ namespace PC_Project.Data
             }
         }
 
-        public void DeleteAll(bool sent, int seatid)
+        public void DeleteAll(bool sent, int seatId)
         {
             PCBangEntities context = CreateContext();
 
             var query = from x in context.Chattings
-                        where x.SeatID == seatid
+                        where x.SeatID == seatId
                         select x;
             var chattings = query.ToList();
             foreach (var chatting in chattings)

@@ -80,15 +80,6 @@ namespace PC_Project.Data
 
             return list.ConvertAll(x => x.Order);
         }
-        public void Insert(int entity)
-        {
-            PCBangEntities context = CreateContext();
-
-            //context.Albums.Add(album);
-            context.Entry(entity).State = EntityState.Added;
-
-            context.SaveChanges();
-        }
 
         public void DeleteOrder(int customerId)
         {

@@ -12,15 +12,15 @@ using System.Windows.Forms;
 
 namespace PC_Project.Client
 {
-    public partial class chattingForm : Form
+    public partial class ChattingForm : Form
     {
         private int SeatId { get; set; }
-        public chattingForm()
+        public ChattingForm()
         {
             InitializeComponent();
         }
 
-        public chattingForm(int seatId) : this()
+        public ChattingForm(int seatId) : this()
         {
             this.SeatId = seatId;
         }
@@ -34,7 +34,6 @@ namespace PC_Project.Client
         {
             chattingTimer.Start();
             bdsChatting.DataSource = DataRepository.Chatting.GetNotRead(false, SeatId);
-
         }
 
         private void btnSend_Click(object sender, EventArgs e)

@@ -61,11 +61,9 @@ namespace PC_Project.Client
             if (MessageBox.Show("추가주문을 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Close();
-
             }
             else
             {
-
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
