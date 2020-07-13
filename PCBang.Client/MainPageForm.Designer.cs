@@ -542,7 +542,7 @@
             this.grdGames.MainView = this.layoutView1;
             this.grdGames.Margin = new System.Windows.Forms.Padding(5);
             this.grdGames.Name = "grdGames";
-            this.grdGames.Size = new System.Drawing.Size(920, 600);
+            this.grdGames.Size = new System.Drawing.Size(920, 610);
             this.grdGames.TabIndex = 5;
             this.grdGames.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -555,7 +555,7 @@
             // 
             // layoutView1
             // 
-            this.layoutView1.CardMinSize = new System.Drawing.Size(200, 230);
+            this.layoutView1.CardMinSize = new System.Drawing.Size(200, 240);
             this.layoutView1.CardVertInterval = 3;
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.colName,
@@ -570,6 +570,7 @@
             this.layoutView1.OptionsMultiRecordMode.MaxCardRows = 2;
             this.layoutView1.OptionsMultiRecordMode.MultiColumnScrollBarOrientation = DevExpress.XtraGrid.Views.Layout.ScrollBarOrientation.Horizontal;
             this.layoutView1.OptionsView.ShowCardCaption = false;
+            this.layoutView1.OptionsView.ShowHeaderPanel = false;
             this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
             this.layoutView1.TemplateCard = this.layoutViewCard1;
             // 
@@ -625,6 +626,7 @@
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 8;
             this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutViewCard1.Text = "TemplateCard";
+            this.layoutViewCard1.TextLocation = DevExpress.Utils.Locations.Default;
             // 
             // timer2
             // 
