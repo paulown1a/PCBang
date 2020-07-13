@@ -56,7 +56,9 @@
 * 각 게임 장르로 구분된 폴더에 빠른 접속기능 (왼쪽부터 순서대로 CD게임, FPS, RPG)
 ![Gamelist](Documents/gamelist.png)
 * 각 좌석별 컴퓨터 고장 여부 확인 가능 및 고장시 사용자 해당 좌석 사용 불가능
+![Breakdown Manager](Documents/breakdown_manager.PNG)
 
+![Breakdown Client](Documents/breakdown_client.png)
 
 # 미해결 부분
 * 환불 계산
