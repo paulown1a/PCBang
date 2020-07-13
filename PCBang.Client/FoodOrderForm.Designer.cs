@@ -472,7 +472,6 @@
             this.gridFood.TabIndex = 2;
             this.gridFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
-            this.gridFood.Load += new System.EventHandler(this.gridFood_Load);
             this.gridFood.DoubleClick += new System.EventHandler(this.gridFood_DoubleClick);
             // 
             // layoutView1
@@ -501,6 +500,9 @@
             this.layoutView1.OptionsCustomization.AllowSort = false;
             this.layoutView1.OptionsItemText.AlignMode = DevExpress.XtraGrid.Views.Layout.FieldTextAlignMode.CustomSize;
             this.layoutView1.OptionsItemText.TextToControlDistance = 10;
+            this.layoutView1.OptionsMultiRecordMode.MaxCardColumns = 2;
+            this.layoutView1.OptionsMultiRecordMode.MaxCardRows = 3;
+            this.layoutView1.OptionsMultiRecordMode.MultiColumnScrollBarOrientation = DevExpress.XtraGrid.Views.Layout.ScrollBarOrientation.Horizontal;
             this.layoutView1.OptionsView.ShowCardExpandButton = false;
             this.layoutView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.layoutView1.OptionsView.ShowHeaderPanel = false;

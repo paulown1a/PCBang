@@ -248,10 +248,5 @@ namespace PC_Room
         {
             Reset();
         }
-
-        private void gridFood_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
