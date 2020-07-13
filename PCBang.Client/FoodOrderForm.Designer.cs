@@ -562,7 +562,7 @@
             this.MinimizeBox = false;
             this.Name = "FoodOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ORDER FOOD";
+            this.Text = "음식주문";
             this.Load += new System.EventHandler(this.FoodOrderForm_Load);
             this.MenuPn.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

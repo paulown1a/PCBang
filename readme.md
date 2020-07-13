@@ -30,7 +30,7 @@
 * Entity Framework
 
 ### 서드파티 컨트롤
-* DevExpress
+* DevExpress WinForms
 
 ### 데이터베이스
 * MS-SQL Server 2019
@@ -46,12 +46,13 @@
 * 관리자 프로그램 분리, 관리 효율 증대
 ![Managerform](Documents/managerform.png)
 * 음식 주문에 따른 금액 동기화
-* ![Foodorder](Documents/foodorder.png)
+![Foodorder](Documents/foodorder.png)
 * 사용 금액을 토대로 나눈 회원 등급
 * 인기 게임 순위 목록
 * 타이머를 이용한 남은 시간 계산 (현재 단위는 분으로 설정되어있지만 개발과정의 편리성을 위해 2초에 1분씩 줄어들게 설계)
-* 각 게임 장르로 구분된 폴더에 빠른 접속기능
-* ![Main Form](Documents/MainForm.png)
+![Main Form](Documents/MainForm.png)
+* 각 게임 장르로 구분된 폴더에 빠른 접속기능 (왼쪽부터 순서대로 CD게임, FPS, RPG)
+![Gamelist](Documents/gamelist.png)
 
 # 미해결 부분
 * 월간 게임순위

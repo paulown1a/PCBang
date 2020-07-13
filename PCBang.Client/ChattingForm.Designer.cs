@@ -217,7 +217,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
             this.Name = "chattingForm";
-            this.Text = "ChattingForm";
+            this.Text = "채팅";
             this.Load += new System.EventHandler(this.ChattingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
