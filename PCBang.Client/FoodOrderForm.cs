@@ -34,8 +34,8 @@ namespace PC_Room
             
             leftBorderBtn = new Panel();
             leftBorderBtnSecond = new Panel();
-            leftBorderBtn.Size = new Size(7, 48);
-            leftBorderBtnSecond.Size = new Size(7, 48);
+            leftBorderBtn.Size = new Size(7, 52);
+            leftBorderBtnSecond.Size = new Size(7, 52);
             MenuPn.Controls.Add(leftBorderBtn);
             CalulatorPn.Controls.Add(leftBorderBtnSecond);
             
