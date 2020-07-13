@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
+            this.cbbCode = new System.Windows.Forms.ComboBox();
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
+            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.결제방식 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.GridBill = new DevExpress.XtraGrid.GridControl();
             this.bdsOrderinBill = new System.Windows.Forms.BindingSource(this.components);
@@ -52,14 +57,14 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.cbbCode = new System.Windows.Forms.ComboBox();
-            this.결제방식 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
+            this.layoutControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.결제방식)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridBill)).BeginInit();
@@ -80,12 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
-            this.layoutControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.결제방식)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -101,6 +101,50 @@
             this.layoutControl1.Size = new System.Drawing.Size(509, 774);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // layoutControl5
+            // 
+            this.layoutControl5.Controls.Add(this.cbbCode);
+            this.layoutControl5.Location = new System.Drawing.Point(12, 556);
+            this.layoutControl5.Name = "layoutControl5";
+            this.layoutControl5.Root = this.layoutControlGroup4;
+            this.layoutControl5.Size = new System.Drawing.Size(485, 52);
+            this.layoutControl5.TabIndex = 6;
+            this.layoutControl5.Text = "layoutControl5";
+            // 
+            // cbbCode
+            // 
+            this.cbbCode.DataSource = this.bdsCode;
+            this.cbbCode.DisplayMember = "Name";
+            this.cbbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCode.FormattingEnabled = true;
+            this.cbbCode.Location = new System.Drawing.Point(67, 12);
+            this.cbbCode.Name = "cbbCode";
+            this.cbbCode.Size = new System.Drawing.Size(406, 26);
+            this.cbbCode.TabIndex = 4;
+            this.cbbCode.ValueMember = "CodeID";
+            // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(PC_Project.Data.Code);
+            // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup4.GroupBordersVisible = false;
+            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.결제방식});
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Size = new System.Drawing.Size(485, 52);
+            this.layoutControlGroup4.TextVisible = false;
+            // 
+            // 결제방식
+            // 
+            this.결제방식.Control = this.cbbCode;
+            this.결제방식.Location = new System.Drawing.Point(0, 0);
+            this.결제방식.Name = "결제방식";
+            this.결제방식.Size = new System.Drawing.Size(465, 32);
+            this.결제방식.TextSize = new System.Drawing.Size(52, 18);
             // 
             // layoutControl3
             // 
@@ -194,7 +238,7 @@
             this.btnBillOrder.Size = new System.Drawing.Size(360, 27);
             this.btnBillOrder.StyleController = this.layoutControl2;
             this.btnBillOrder.TabIndex = 6;
-            this.btnBillOrder.Text = "&Order";
+            this.btnBillOrder.Text = "결제(&O)";
             this.btnBillOrder.Click += new System.EventHandler(this.btnBillOrder_Click);
             // 
             // btnBillCancel
@@ -204,7 +248,7 @@
             this.btnBillCancel.Size = new System.Drawing.Size(97, 27);
             this.btnBillCancel.StyleController = this.layoutControl2;
             this.btnBillCancel.TabIndex = 5;
-            this.btnBillCancel.Text = "&Cancel";
+            this.btnBillCancel.Text = "취소(&C)";
             this.btnBillCancel.Click += new System.EventHandler(this.btnBillCancel_Click);
             // 
             // layoutControl4
@@ -316,16 +360,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // layoutControl5
-            // 
-            this.layoutControl5.Controls.Add(this.cbbCode);
-            this.layoutControl5.Location = new System.Drawing.Point(12, 556);
-            this.layoutControl5.Name = "layoutControl5";
-            this.layoutControl5.Root = this.layoutControlGroup4;
-            this.layoutControl5.Size = new System.Drawing.Size(485, 52);
-            this.layoutControl5.TabIndex = 6;
-            this.layoutControl5.Text = "layoutControl5";
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.layoutControl5;
@@ -334,40 +368,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(489, 56);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // layoutControlGroup4
-            // 
-            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup4.GroupBordersVisible = false;
-            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.결제방식});
-            this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(485, 52);
-            this.layoutControlGroup4.TextVisible = false;
-            // 
-            // cbbCode
-            // 
-            this.cbbCode.DataSource = this.bdsCode;
-            this.cbbCode.DisplayMember = "Name";
-            this.cbbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCode.FormattingEnabled = true;
-            this.cbbCode.Location = new System.Drawing.Point(76, 12);
-            this.cbbCode.Name = "cbbCode";
-            this.cbbCode.Size = new System.Drawing.Size(397, 26);
-            this.cbbCode.TabIndex = 4;
-            this.cbbCode.ValueMember = "CodeID";
-            // 
-            // 결제방식
-            // 
-            this.결제방식.Control = this.cbbCode;
-            this.결제방식.Location = new System.Drawing.Point(0, 0);
-            this.결제방식.Name = "결제방식";
-            this.결제방식.Size = new System.Drawing.Size(465, 32);
-            this.결제방식.TextSize = new System.Drawing.Size(52, 18);
-            // 
-            // bdsCode
-            // 
-            this.bdsCode.DataSource = typeof(PC_Project.Data.Code);
             // 
             // BillForm
             // 
@@ -379,10 +379,15 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BillForm";
+            this.Text = "결제";
             this.Load += new System.EventHandler(this.BillForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
+            this.layoutControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.결제방식)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridBill)).EndInit();
@@ -403,12 +408,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
-            this.layoutControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.결제방식)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 
         }

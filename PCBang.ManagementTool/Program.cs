@@ -1,4 +1,5 @@
 ﻿using Managerform;
+using PC_Room;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace ManagerForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerLoginform());
+            Application.Run(new FoodOrderForm());
         }
     }
 }

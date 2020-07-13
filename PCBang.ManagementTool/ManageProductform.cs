@@ -28,7 +28,7 @@ namespace ManagerForm
             if (txbPhoto.Text == null)
                 return;
            
-            DataRepository.Product.AddPhoto((int)cbbProduct.SelectedValue, "C:\\git\\PCBang\\FoodPhoto\\" + txbPhoto.Text);
+            DataRepository.Product.AddPhoto((int)cbbProduct.SelectedValue,txbPhoto.Text);
             MessageBox.Show($"{cbbProduct.SelectedValue}{txbPhoto.Text}");
         }
 
