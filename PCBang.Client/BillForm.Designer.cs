@@ -1,6 +1,6 @@
 ﻿namespace PC_Project.Client
 {
-    partial class BillForm
+    partial class billForm
     {
         /// <summary>
         /// Required designer variable.
