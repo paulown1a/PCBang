@@ -74,6 +74,8 @@
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.colName = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colName = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colPhoto = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colPhoto = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -103,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -492,11 +495,11 @@
             // 
             this.btnCDGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.CD_logo;
             this.btnCDGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnCDGame.Location = new System.Drawing.Point(151, 590);
+            this.btnCDGame.Location = new System.Drawing.Point(132, 638);
             this.btnCDGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnCDGame.Name = "btnCDGame";
             this.btnCDGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnCDGame.Size = new System.Drawing.Size(400, 400);
+            this.btnCDGame.Size = new System.Drawing.Size(350, 350);
             this.btnCDGame.TabIndex = 4;
             this.btnCDGame.Click += new System.EventHandler(this.btnCDGame_Click);
             // 
@@ -504,12 +507,12 @@
             // 
             this.btnRPGGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.RPG_logo;
             this.btnRPGGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnRPGGame.Location = new System.Drawing.Point(1014, 590);
+            this.btnRPGGame.Location = new System.Drawing.Point(1034, 638);
             this.btnRPGGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnRPGGame.Name = "btnRPGGame";
             this.btnRPGGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnRPGGame.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
-            this.btnRPGGame.Size = new System.Drawing.Size(400, 400);
+            this.btnRPGGame.Size = new System.Drawing.Size(350, 350);
             this.btnRPGGame.TabIndex = 3;
             this.btnRPGGame.Click += new System.EventHandler(this.btnRPGGame_Click);
             // 
@@ -517,11 +520,11 @@
             // 
             this.btnFPSGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.FPS_logo;
             this.btnFPSGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFPSGame.Location = new System.Drawing.Point(586, 590);
+            this.btnFPSGame.Location = new System.Drawing.Point(588, 638);
             this.btnFPSGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnFPSGame.Name = "btnFPSGame";
             this.btnFPSGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnFPSGame.Size = new System.Drawing.Size(400, 400);
+            this.btnFPSGame.Size = new System.Drawing.Size(350, 350);
             this.btnFPSGame.TabIndex = 2;
             this.btnFPSGame.Click += new System.EventHandler(this.btnFPSGame_Click);
             // 
@@ -535,11 +538,11 @@
             // 
             this.grdGames.DataSource = this.gameBindingSource;
             this.grdGames.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
-            this.grdGames.Location = new System.Drawing.Point(342, 40);
+            this.grdGames.Location = new System.Drawing.Point(321, 18);
             this.grdGames.MainView = this.layoutView1;
             this.grdGames.Margin = new System.Windows.Forms.Padding(5);
             this.grdGames.Name = "grdGames";
-            this.grdGames.Size = new System.Drawing.Size(899, 476);
+            this.grdGames.Size = new System.Drawing.Size(920, 600);
             this.grdGames.TabIndex = 5;
             this.grdGames.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -552,9 +555,11 @@
             // 
             // layoutView1
             // 
-            this.layoutView1.CardMinSize = new System.Drawing.Size(93, 48);
+            this.layoutView1.CardMinSize = new System.Drawing.Size(200, 230);
+            this.layoutView1.CardVertInterval = 3;
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
-            this.colName});
+            this.colName,
+            this.colPhoto});
             this.layoutView1.DetailHeight = 546;
             this.layoutView1.GridControl = this.grdGames;
             this.layoutView1.Name = "layoutView1";
@@ -580,12 +585,33 @@
             // 
             // layoutViewField_colName
             // 
-            this.layoutViewField_colName.EditorPreferredWidth = 207;
+            this.layoutViewField_colName.EditorPreferredWidth = 244;
             this.layoutViewField_colName.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_colName.Name = "layoutViewField_colName";
-            this.layoutViewField_colName.Size = new System.Drawing.Size(211, 28);
+            this.layoutViewField_colName.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colName.Size = new System.Drawing.Size(244, 24);
             this.layoutViewField_colName.TextSize = new System.Drawing.Size(0, 0);
             this.layoutViewField_colName.TextVisible = false;
+            // 
+            // colPhoto
+            // 
+            this.colPhoto.FieldName = "Photo";
+            this.colPhoto.LayoutViewField = this.layoutViewField_colPhoto;
+            this.colPhoto.MinWidth = 25;
+            this.colPhoto.Name = "colPhoto";
+            this.colPhoto.OptionsColumn.AllowEdit = false;
+            this.colPhoto.Width = 94;
+            // 
+            // layoutViewField_colPhoto
+            // 
+            this.layoutViewField_colPhoto.EditorPreferredWidth = 244;
+            this.layoutViewField_colPhoto.Location = new System.Drawing.Point(0, 24);
+            this.layoutViewField_colPhoto.Name = "layoutViewField_colPhoto";
+            this.layoutViewField_colPhoto.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colPhoto.Size = new System.Drawing.Size(244, 24);
+            this.layoutViewField_colPhoto.StartNewLine = true;
+            this.layoutViewField_colPhoto.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colPhoto.TextVisible = false;
             // 
             // layoutViewCard1
             // 
@@ -593,9 +619,11 @@
             this.layoutViewCard1.GroupBordersVisible = false;
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_colName});
+            this.layoutViewField_colName,
+            this.layoutViewField_colPhoto});
             this.layoutViewCard1.Name = "layoutViewTemplateCard";
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 8;
+            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutViewCard1.Text = "TemplateCard";
             // 
             // timer2
@@ -646,6 +674,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             this.ResumeLayout(false);
 
@@ -698,7 +727,9 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn colName;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn colPhoto;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colName;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colPhoto;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
     }
 }
