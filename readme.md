@@ -54,7 +54,10 @@
 * 타이머를 이용한 남은 시간 계산 (현재 단위는 분으로 설정되어있지만 개발과정의 편리성을 위해 5초에 1분씩 줄어들게 설계)
 ![Main Form](Documents/MainForm.png)
 * 각 게임 장르로 구분된 폴더에 빠른 접속기능 (왼쪽부터 순서대로 CD게임, FPS, RPG)
-![Gamelist](Documents/gamelist.png)
+* 게임 아이콘 이미지는 데이터베이스에 바이너리 형식으로 저장됨
+![Gamelist C D](Documents/gamelistCD.png)
+![Gamelist R P G](Documents/gamelistRPG.png)
+
 * 각 좌석별 컴퓨터 고장 여부 확인 가능 및 고장시 사용자 해당 좌석 사용 불가능
 ![Breakdown Manager](Documents/breakdown_manager.PNG)
 
