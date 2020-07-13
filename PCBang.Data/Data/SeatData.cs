@@ -34,6 +34,21 @@ namespace PC_Project.Data
             return query.ToList();
         }
 
+        public List<Seat> GetWithTime()
+        {
+            PCBangEntities context = CreateContext();
+            var query = from x in context.Seats
+                        select new { Seat = x, RemainingTime = x.Customer == null ? 0:x.Customer.RemainingTime };
+            var list = query.ToList();
+            
+            foreach (var x in list)
+            {
+                x.Seat.RemainingTime = x.RemainingTime;
+            }
+
+            return list.ConvertAll(x => x.Seat);
+        }
+
         public void Update(string seatId, int? customerID = null)
         {
             Seat seat = Get(int.Parse(seatId));

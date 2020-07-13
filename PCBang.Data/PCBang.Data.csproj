@@ -74,6 +74,7 @@
     <Compile Include="Data\ProductData.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Seat.cs" />
     <Compile Include="Game.cs">
       <DependentUpon>PCBang.tt</DependentUpon>
     </Compile>

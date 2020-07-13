@@ -13,17 +13,19 @@ using PC_Project.Data;
 
 namespace ManagerForm
 {
-    //hi
+  
     public partial class Managerform : DevExpress.XtraEditors.XtraForm
     {
         public Managerform()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
+        
         private void gridControl1_Load(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetAll();
+            List<Seat> seats = DataRepository.Seat.GetWithTime();
             bdsSeat.DataSource = seats;
         }
 
@@ -91,7 +93,7 @@ namespace ManagerForm
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetAll();
+            List<Seat> seats = DataRepository.Seat.GetWithTime();
             bdsSeat.DataSource = seats;
         }
 

@@ -149,6 +149,7 @@ namespace MainPage
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            customer.RemainingTime = DataRepository.Customer.Get(customer.CustomerID).RemainingTime;
             customer.RemainingTime--;
             DataRepository.Customer.Update(customer);
             lblRemainingTime.Text = "남은시간 : " + customer.RemainingTime.ToString() + " 분";
