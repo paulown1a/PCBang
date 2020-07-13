@@ -65,7 +65,7 @@ namespace loginform
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetAll();
+            List<Seat> seats = DataRepository.Seat.GetCanUse();
             seatBindingSource.DataSource = seats.FindAll(x => x.CustomerID == null);
         }
 
