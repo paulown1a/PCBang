@@ -21,7 +21,12 @@ namespace ManagerForm
 
         private void Revenueform_Load(object sender, EventArgs e)
         {
-            bdsOrder.DataSource = DataRepository.Order.GetWithProduct(true);
+            List<Order> orders = DataRepository.Order.GetWithProduct(true);
+            int total = 0;
+            foreach(Order order in orders)
+               total += order.buyed == true ?order.Count * order.ProductPrice:0;
+            lblTotal.Text = total.ToString("C0");
+            bdsOrder.DataSource = orders;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -34,7 +39,5 @@ namespace ManagerForm
             if ((Keys)e.KeyValue == Keys.Escape)
                 Close();
         }
-
-
     }
 }

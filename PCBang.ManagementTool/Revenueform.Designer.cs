@@ -42,6 +42,10 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvRevenue)).BeginInit();
@@ -51,10 +55,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lblTotal);
+            this.layoutControl1.Controls.Add(this.labelControl1);
             this.layoutControl1.Controls.Add(this.btnClose);
             this.layoutControl1.Controls.Add(this.grvRevenue);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -67,9 +75,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(557, 322);
+            this.btnClose.Location = new System.Drawing.Point(478, 322);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(145, 25);
+            this.btnClose.Size = new System.Drawing.Size(224, 25);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -151,7 +159,9 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.emptySpaceItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(714, 359);
             this.Root.TextVisible = false;
@@ -168,19 +178,55 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 310);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(318, 310);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(545, 29);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(148, 29);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnClose;
-            this.layoutControlItem2.Location = new System.Drawing.Point(545, 310);
+            this.layoutControlItem2.Location = new System.Drawing.Point(466, 310);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(149, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(228, 29);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 322);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(44, 18);
+            this.labelControl1.StyleController = this.layoutControl1;
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "총 수입";
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.labelControl1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 310);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(48, 29);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Location = new System.Drawing.Point(60, 322);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(266, 25);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "--";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.lblTotal;
+            this.layoutControlItem4.Location = new System.Drawing.Point(48, 310);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(270, 29);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // Revenueform
             // 
@@ -201,6 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,5 +268,9 @@
         private System.Windows.Forms.Button btnClose;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private System.Windows.Forms.Label lblTotal;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

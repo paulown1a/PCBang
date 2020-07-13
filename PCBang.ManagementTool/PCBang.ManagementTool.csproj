@@ -80,6 +80,12 @@
     <Compile Include="ManageCustomerform.Designer.cs">
       <DependentUpon>ManageCustomerform.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageGameform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageGameform.Designer.cs">
+      <DependentUpon>ManageGameform.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageProductform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="ManageCustomerform.resx">
       <DependentUpon>ManageCustomerform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageGameform.resx">
+      <DependentUpon>ManageGameform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageProductform.resx">
       <DependentUpon>ManageProductform.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +155,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PC_Project.Data.Chatting.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Customer.datasource" />
+    <None Include="Properties\DataSources\PC_Project.Data.Game.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Order.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Product.datasource" />
     <None Include="Properties\DataSources\PC_Project.Data.Seat.datasource" />

@@ -33,9 +33,19 @@ namespace ManagerForm
         {
             Seat seat = bdsSeat.Current as Seat;
 
-            if (seat.CustomerID == null) 
-                return;
-
+            if (seat.CustomerID == null)
+            {
+                if (MessageBox.Show("고장 상태를 해제하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    seat.Breakdown = false;
+                    DataRepository.Seat.Update(seat);
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
             AddTimeform addTimeform = new AddTimeform(seat.CustomerID);
             addTimeform.Show();
         }
@@ -93,6 +103,12 @@ namespace ManagerForm
         {
             ManageProductform manageProductform = new ManageProductform();
             manageProductform.Show();
+        }
+
+        private void btnManageGame_Click(object sender, EventArgs e)
+        {
+            ManageGameform manageGameform = new ManageGameform();
+            manageGameform.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

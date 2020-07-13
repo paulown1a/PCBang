@@ -50,7 +50,7 @@ namespace ManagerForm
             this.lblRemainingTime = new DevExpress.XtraEditors.LabelControl();
             this.btnAddTime = new DevExpress.XtraEditors.SimpleButton();
             this.lblSeat = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnManageCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.lblId = new DevExpress.XtraEditors.LabelControl();
             this.lblName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -89,6 +89,8 @@ namespace ManagerForm
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnManageGame = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -121,6 +123,7 @@ namespace ManagerForm
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel1
@@ -148,6 +151,7 @@ namespace ManagerForm
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.btnManageGame);
             this.layoutControl2.Controls.Add(this.lblRank);
             this.layoutControl2.Controls.Add(this.labelControl5);
             this.layoutControl2.Controls.Add(this.btnChatting);
@@ -156,7 +160,7 @@ namespace ManagerForm
             this.layoutControl2.Controls.Add(this.lblRemainingTime);
             this.layoutControl2.Controls.Add(this.btnAddTime);
             this.layoutControl2.Controls.Add(this.lblSeat);
-            this.layoutControl2.Controls.Add(this.simpleButton1);
+            this.layoutControl2.Controls.Add(this.btnManageCustomer);
             this.layoutControl2.Controls.Add(this.lblId);
             this.layoutControl2.Controls.Add(this.lblName);
             this.layoutControl2.Controls.Add(this.labelControl4);
@@ -173,7 +177,7 @@ namespace ManagerForm
             // 
             // lblRank
             // 
-            this.lblRank.Location = new System.Drawing.Point(208, 247);
+            this.lblRank.Location = new System.Drawing.Point(208, 221);
             this.lblRank.Name = "lblRank";
             this.lblRank.Size = new System.Drawing.Size(10, 18);
             this.lblRank.StyleController = this.layoutControl2;
@@ -183,7 +187,7 @@ namespace ManagerForm
             // labelControl5
             // 
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(12, 247);
+            this.labelControl5.Location = new System.Drawing.Point(12, 221);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(192, 18);
             this.labelControl5.StyleController = this.layoutControl2;
@@ -192,7 +196,7 @@ namespace ManagerForm
             // 
             // btnChatting
             // 
-            this.btnChatting.Location = new System.Drawing.Point(12, 323);
+            this.btnChatting.Location = new System.Drawing.Point(12, 292);
             this.btnChatting.Name = "btnChatting";
             this.btnChatting.Size = new System.Drawing.Size(206, 27);
             this.btnChatting.StyleController = this.layoutControl2;
@@ -202,7 +206,7 @@ namespace ManagerForm
             // 
             // btnManageProducts
             // 
-            this.btnManageProducts.Location = new System.Drawing.Point(12, 354);
+            this.btnManageProducts.Location = new System.Drawing.Point(12, 416);
             this.btnManageProducts.Name = "btnManageProducts";
             this.btnManageProducts.Size = new System.Drawing.Size(206, 27);
             this.btnManageProducts.StyleController = this.layoutControl2;
@@ -212,7 +216,7 @@ namespace ManagerForm
             // 
             // btnRevenue
             // 
-            this.btnRevenue.Location = new System.Drawing.Point(12, 447);
+            this.btnRevenue.Location = new System.Drawing.Point(12, 323);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(206, 27);
             this.btnRevenue.StyleController = this.layoutControl2;
@@ -222,7 +226,7 @@ namespace ManagerForm
             // 
             // lblRemainingTime
             // 
-            this.lblRemainingTime.Location = new System.Drawing.Point(208, 181);
+            this.lblRemainingTime.Location = new System.Drawing.Point(208, 168);
             this.lblRemainingTime.Name = "lblRemainingTime";
             this.lblRemainingTime.Size = new System.Drawing.Size(10, 18);
             this.lblRemainingTime.StyleController = this.layoutControl2;
@@ -231,7 +235,7 @@ namespace ManagerForm
             // 
             // btnAddTime
             // 
-            this.btnAddTime.Location = new System.Drawing.Point(12, 385);
+            this.btnAddTime.Location = new System.Drawing.Point(12, 354);
             this.btnAddTime.Name = "btnAddTime";
             this.btnAddTime.Size = new System.Drawing.Size(206, 27);
             this.btnAddTime.StyleController = this.layoutControl2;
@@ -241,26 +245,26 @@ namespace ManagerForm
             // 
             // lblSeat
             // 
-            this.lblSeat.Location = new System.Drawing.Point(208, 122);
+            this.lblSeat.Location = new System.Drawing.Point(208, 114);
             this.lblSeat.Name = "lblSeat";
             this.lblSeat.Size = new System.Drawing.Size(10, 18);
             this.lblSeat.StyleController = this.layoutControl2;
             this.lblSeat.TabIndex = 10;
             this.lblSeat.Text = "--";
             // 
-            // simpleButton1
+            // btnManageCustomer
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 416);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(206, 27);
-            this.simpleButton1.StyleController = this.layoutControl2;
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "회원관리";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnManageCustomer.Location = new System.Drawing.Point(12, 385);
+            this.btnManageCustomer.Name = "btnManageCustomer";
+            this.btnManageCustomer.Size = new System.Drawing.Size(206, 27);
+            this.btnManageCustomer.StyleController = this.layoutControl2;
+            this.btnManageCustomer.TabIndex = 4;
+            this.btnManageCustomer.Text = "회원관리";
+            this.btnManageCustomer.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // lblId
             // 
-            this.lblId.Location = new System.Drawing.Point(208, 66);
+            this.lblId.Location = new System.Drawing.Point(208, 62);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(10, 18);
             this.lblId.StyleController = this.layoutControl2;
@@ -279,7 +283,7 @@ namespace ManagerForm
             // labelControl4
             // 
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(12, 181);
+            this.labelControl4.Location = new System.Drawing.Point(12, 168);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(192, 18);
             this.labelControl4.StyleController = this.layoutControl2;
@@ -289,7 +293,7 @@ namespace ManagerForm
             // labelControl3
             // 
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(12, 122);
+            this.labelControl3.Location = new System.Drawing.Point(12, 114);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(192, 18);
             this.labelControl3.StyleController = this.layoutControl2;
@@ -299,7 +303,7 @@ namespace ManagerForm
             // labelControl2
             // 
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(12, 66);
+            this.labelControl2.Location = new System.Drawing.Point(12, 62);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(192, 18);
             this.labelControl2.StyleController = this.layoutControl2;
@@ -332,15 +336,16 @@ namespace ManagerForm
             this.layoutControlItem11,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
             this.layoutControlItem3,
-            this.layoutControlItem14,
             this.layoutControlItem15,
             this.emptySpaceItem1,
             this.layoutControlItem16,
             this.layoutControlItem17,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.layoutControlItem18,
+            this.layoutControlItem14,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(230, 486);
             this.layoutControlGroup1.TextVisible = false;
@@ -350,7 +355,7 @@ namespace ManagerForm
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 22);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(210, 32);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(210, 28);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -365,23 +370,23 @@ namespace ManagerForm
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 132);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 124);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(210, 37);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(210, 32);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 76);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 72);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(210, 34);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(210, 30);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.labelControl2;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(196, 22);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -390,7 +395,7 @@ namespace ManagerForm
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.labelControl3;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 110);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 102);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(196, 22);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -399,7 +404,7 @@ namespace ManagerForm
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.labelControl4;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 169);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 156);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(196, 22);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -417,7 +422,7 @@ namespace ManagerForm
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.lblId;
-            this.layoutControlItem11.Location = new System.Drawing.Point(196, 54);
+            this.layoutControlItem11.Location = new System.Drawing.Point(196, 50);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(14, 22);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -426,7 +431,7 @@ namespace ManagerForm
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.lblSeat;
-            this.layoutControlItem12.Location = new System.Drawing.Point(196, 110);
+            this.layoutControlItem12.Location = new System.Drawing.Point(196, 102);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(14, 22);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
@@ -435,7 +440,7 @@ namespace ManagerForm
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.lblRemainingTime;
-            this.layoutControlItem13.Location = new System.Drawing.Point(196, 169);
+            this.layoutControlItem13.Location = new System.Drawing.Point(196, 156);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(14, 22);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
@@ -443,8 +448,8 @@ namespace ManagerForm
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.simpleButton1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 404);
+            this.layoutControlItem4.Control = this.btnManageCustomer;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 373);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(210, 31);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -453,7 +458,7 @@ namespace ManagerForm
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnAddTime;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 373);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 342);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(210, 31);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -462,7 +467,7 @@ namespace ManagerForm
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnRevenue;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 435);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 311);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(210, 31);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -471,7 +476,7 @@ namespace ManagerForm
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.btnManageProducts;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 342);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 404);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(210, 31);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
@@ -480,7 +485,7 @@ namespace ManagerForm
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.btnChatting;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 311);
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 280);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(210, 31);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
@@ -489,15 +494,15 @@ namespace ManagerForm
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 257);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 231);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(210, 54);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(210, 49);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.labelControl5;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 235);
+            this.layoutControlItem16.Location = new System.Drawing.Point(0, 209);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(196, 22);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
@@ -506,7 +511,7 @@ namespace ManagerForm
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.lblRank;
-            this.layoutControlItem17.Location = new System.Drawing.Point(196, 235);
+            this.layoutControlItem17.Location = new System.Drawing.Point(196, 209);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(14, 22);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
@@ -515,9 +520,9 @@ namespace ManagerForm
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 191);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 178);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(210, 44);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(210, 31);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // grvSeat
@@ -654,6 +659,25 @@ namespace ManagerForm
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnManageGame
+            // 
+            this.btnManageGame.Location = new System.Drawing.Point(12, 447);
+            this.btnManageGame.Name = "btnManageGame";
+            this.btnManageGame.Size = new System.Drawing.Size(206, 27);
+            this.btnManageGame.StyleController = this.layoutControl2;
+            this.btnManageGame.TabIndex = 17;
+            this.btnManageGame.Text = "게임관리";
+            this.btnManageGame.Click += new System.EventHandler(this.btnManageGame_Click);
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.btnManageGame;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 435);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(210, 31);
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem18.TextVisible = false;
+            // 
             // Managerform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -694,6 +718,7 @@ namespace ManagerForm
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -715,7 +740,7 @@ namespace ManagerForm
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton btnAddTime;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnManageCustomer;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
@@ -750,5 +775,7 @@ namespace ManagerForm
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
         private DevExpress.XtraGrid.Columns.GridColumn colRemainingTime;
         private DevExpress.XtraGrid.Columns.GridColumn colBreakdown;
+        private DevExpress.XtraEditors.SimpleButton btnManageGame;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
     }
 }
