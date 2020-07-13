@@ -22,7 +22,7 @@ namespace PC_Project.Client
             ProcessKiller.Instance.Start();
 
             Application.Run(new LoginForm());
-            //
+            
 
         }
     }
