@@ -18,7 +18,7 @@ namespace ManagerForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FoodOrderForm());
+            Application.Run(new ManagerLoginform());
         }
     }
 }
