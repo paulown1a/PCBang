@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Managerform;
 using PC_Project.Data;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace ManagerForm
 {
@@ -25,8 +26,7 @@ namespace ManagerForm
         
         private void gridControl1_Load(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetWithCustomer();
-            bdsSeat.DataSource = seats;
+            bdsSeat.DataSource = DataRepository.Seat.GetWithCustomer();
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -63,15 +63,13 @@ namespace ManagerForm
                 lblRemainingTime.Text = "--";
                 lblRank.Text = "--";
             }
-            }
+        }
 
         private void btnAddtime_Click(object sender, EventArgs e)
         {
             AddTimeform addtimeform = new AddTimeform();
             addtimeform.Show();
-            
         }
-
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -91,16 +89,15 @@ namespace ManagerForm
             managerChattingform.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            List<Seat> seats = DataRepository.Seat.GetWithCustomer();
-            bdsSeat.DataSource = seats;
-        }
-
         private void btnManageProducts_Click(object sender, EventArgs e)
         {
             ManageProductform manageProductform = new ManageProductform();
             manageProductform.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            bdsSeat.DataSource = DataRepository.Seat.GetWithCustomer();
         }
     }
 }
