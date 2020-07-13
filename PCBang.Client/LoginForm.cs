@@ -65,8 +65,8 @@ namespace loginform
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            List<Seat> seats = DataRepository.Seat.GetAll();
-            seatBindingSource.DataSource = seats.FindAll(x => x.CustomerID == null);
+            List<Seat> seats = DataRepository.Seat.GetCanUse();
+            seatBindingSource.DataSource = seats;
         }
 
         private void txbPassword_KeyDown(object sender, KeyEventArgs e)
