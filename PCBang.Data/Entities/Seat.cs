@@ -9,5 +9,6 @@ namespace PC_Project.Data
     public partial class Seat
     {
         public int RemainingTime { get; set; }
+        public string CustomerName { get; set; }
     }
 }

@@ -71,7 +71,7 @@
             this.Controls.Add(this.txtPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ManagerLoginform";
-            this.Text = "ManagerLoginform";
+            this.Text = "로그인";
             this.ResumeLayout(false);
             this.PerformLayout();
 

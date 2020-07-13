@@ -10,8 +10,6 @@ namespace PC_Project.Data
     {
         public string ProductName { get; set; }
         public int ProductPrice { get; set; }
-
-        public bool HasLongName => ProductName.Length > 10;
     }
 
 }

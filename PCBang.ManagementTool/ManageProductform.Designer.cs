@@ -34,6 +34,7 @@
             this.btnOk = new DevExpress.XtraEditors.SimpleButton();
             this.txbPhoto = new System.Windows.Forms.TextBox();
             this.cbbProduct = new System.Windows.Forms.ComboBox();
+            this.bdsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.상품명 = new DevExpress.XtraLayout.LayoutControlItem();
             this.사진경로 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -41,9 +42,9 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bdsProduct = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.상품명)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.사진경로)).BeginInit();
@@ -51,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -106,6 +106,10 @@
             this.cbbProduct.Size = new System.Drawing.Size(379, 23);
             this.cbbProduct.TabIndex = 4;
             this.cbbProduct.ValueMember = "ProductID";
+            // 
+            // bdsProduct
+            // 
+            this.bdsProduct.DataSource = typeof(PC_Project.Data.Product);
             // 
             // Root
             // 
@@ -172,10 +176,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(438, 35);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // bdsProduct
-            // 
-            this.bdsProduct.DataSource = typeof(PC_Project.Data.Product);
-            // 
             // ManageProductform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -184,10 +184,11 @@
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ManageProductform";
-            this.Text = "ManageProductform";
+            this.Text = "물건관리(사진입력)";
             this.Load += new System.EventHandler(this.ManageProductform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.상품명)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.사진경로)).EndInit();
@@ -195,7 +196,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).EndInit();
             this.ResumeLayout(false);
 
         }

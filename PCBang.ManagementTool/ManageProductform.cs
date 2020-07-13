@@ -28,8 +28,8 @@ namespace ManagerForm
             if (txbPhoto.Text == null)
                 return;
            
-            DataRepository.Product.AddPhoto((int)cbbProduct.SelectedValue, "C:\\git\\PCBang\\FoodPhoto\\" + txbPhoto.Text);
-            MessageBox.Show($"{cbbProduct.SelectedValue}{txbPhoto.Text}");
+            DataRepository.Product.AddPhoto((int)cbbProduct.SelectedValue, txbPhoto.Text);
+            MessageBox.Show($"삽입되었습니다.");
         }
 
         private void ManageProductform_Load(object sender, EventArgs e)
