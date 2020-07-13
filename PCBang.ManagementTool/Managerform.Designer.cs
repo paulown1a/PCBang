@@ -72,10 +72,10 @@
             this.grvSeat = new DevExpress.XtraGrid.GridControl();
             this.bdsSeat = new System.Windows.Forms.BindingSource(this.components);
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.colRemainingTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeatID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBreakdown = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRemainingTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -533,16 +533,27 @@
             this.cardView1.CardWidth = 150;
             this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSeatID,
-            this.colBreakdown,
-            this.colCustomerID,
-            this.colRemainingTime});
+            this.colCustomerName,
+            this.colRemainingTime,
+            this.colBreakdown});
             this.cardView1.GridControl = this.grvSeat;
             this.cardView1.Name = "cardView1";
             this.cardView1.OptionsView.ShowCardCaption = false;
             this.cardView1.OptionsView.ShowQuickCustomizeButton = false;
             // 
+            // colRemainingTime
+            // 
+            this.colRemainingTime.Caption = "남은시간";
+            this.colRemainingTime.FieldName = "RemainingTime";
+            this.colRemainingTime.MinWidth = 25;
+            this.colRemainingTime.Name = "colRemainingTime";
+            this.colRemainingTime.Visible = true;
+            this.colRemainingTime.VisibleIndex = 2;
+            this.colRemainingTime.Width = 94;
+            // 
             // colSeatID
             // 
+            this.colSeatID.Caption = "자리";
             this.colSeatID.FieldName = "SeatID";
             this.colSeatID.MinWidth = 25;
             this.colSeatID.Name = "colSeatID";
@@ -553,33 +564,24 @@
             // 
             // colBreakdown
             // 
+            this.colBreakdown.Caption = "고장여부";
             this.colBreakdown.FieldName = "Breakdown";
             this.colBreakdown.MinWidth = 25;
             this.colBreakdown.Name = "colBreakdown";
             this.colBreakdown.OptionsColumn.AllowEdit = false;
             this.colBreakdown.Visible = true;
-            this.colBreakdown.VisibleIndex = 1;
+            this.colBreakdown.VisibleIndex = 3;
             this.colBreakdown.Width = 90;
             // 
-            // colCustomerID
+            // colCustomerName
             // 
-            this.colCustomerID.FieldName = "CustomerID";
-            this.colCustomerID.MinWidth = 25;
-            this.colCustomerID.Name = "colCustomerID";
-            this.colCustomerID.OptionsColumn.AllowEdit = false;
-            this.colCustomerID.Visible = true;
-            this.colCustomerID.VisibleIndex = 2;
-            this.colCustomerID.Width = 103;
-            // 
-            // colRemainingTime
-            // 
-            this.colRemainingTime.FieldName = "RemainingTime";
-            this.colRemainingTime.MinWidth = 25;
-            this.colRemainingTime.Name = "colRemainingTime";
-            this.colRemainingTime.OptionsColumn.AllowEdit = false;
-            this.colRemainingTime.Visible = true;
-            this.colRemainingTime.VisibleIndex = 3;
-            this.colRemainingTime.Width = 94;
+            this.colCustomerName.Caption = "고객이름";
+            this.colCustomerName.FieldName = "CustomerName";
+            this.colCustomerName.MinWidth = 25;
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.Visible = true;
+            this.colCustomerName.VisibleIndex = 1;
+            this.colCustomerName.Width = 94;
             // 
             // Root
             // 
@@ -622,7 +624,7 @@
             this.ClientSize = new System.Drawing.Size(826, 475);
             this.Controls.Add(this.sidePanel1);
             this.Name = "Managerform";
-            this.Text = "Managerform";
+            this.Text = "관리";
             this.sidePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -683,6 +685,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private System.Windows.Forms.BindingSource bdsSeat;
         private DevExpress.XtraEditors.LabelControl lblRemainingTime;
         private DevExpress.XtraEditors.LabelControl lblSeat;
         private DevExpress.XtraEditors.LabelControl lblId;
@@ -694,7 +697,6 @@
         private DevExpress.XtraGrid.Views.Card.CardView cardView1;
         private DevExpress.XtraGrid.Columns.GridColumn colSeatID;
         private DevExpress.XtraGrid.Columns.GridColumn colBreakdown;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
         private DevExpress.XtraEditors.SimpleButton btnRevenue;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
@@ -709,7 +711,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraEditors.LabelControl lblRank;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
-        private System.Windows.Forms.BindingSource bdsSeat;
         private DevExpress.XtraGrid.Columns.GridColumn colRemainingTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
     }
 }

@@ -29,7 +29,7 @@ namespace ManagerForm
                 return;
            
             DataRepository.Product.AddPhoto((int)cbbProduct.SelectedValue, txbPhoto.Text);
-            MessageBox.Show($"{cbbProduct.SelectedValue}{txbPhoto.Text}");
+            MessageBox.Show($"삽입되었습니다.");
         }
 
         private void ManageProductform_Load(object sender, EventArgs e)

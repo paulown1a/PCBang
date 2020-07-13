@@ -21,15 +21,15 @@ namespace PC_Project.Data
             return context.Customers.FirstOrDefault(a => a.LoginID == loginId) == null ? true : false;
         }
 
-        public Customer Login(string ID, string Password)
+        public Customer Login(string loginId, string password)
         {
             PCBangEntities context = CreateContext();
-            Customer customer = context.Customers.FirstOrDefault(a => a.LoginID == ID);
+            Customer customer = context.Customers.FirstOrDefault(a => a.LoginID == loginId);
             if (customer == null)
                 return null;
             else
             {
-                if (customer.LoginPassword == Password)
+                if (customer.LoginPassword == password)
                     return customer;
                 else
                     return null;
@@ -44,14 +44,12 @@ namespace PC_Project.Data
             Delete(customer);
         }
 
-        public void Insert(string name, string iD, string password)
+        public void Insert(string name, string loginId, string password)
         {
             Customer newCustomer = new Customer();
+
             newCustomer.Name = name;
-
-
-            newCustomer.LoginID = iD;
-
+            newCustomer.LoginID = loginId;
             newCustomer.LoginPassword = password;
 
             Insert(newCustomer);

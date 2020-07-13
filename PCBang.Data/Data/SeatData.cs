@@ -34,35 +34,36 @@ namespace PC_Project.Data
             return query.ToList();
         }
 
-        public List<Seat> GetWithTime()
+        public List<Seat> GetWithCustomer()
         {
             PCBangEntities context = CreateContext();
             var query = from x in context.Seats
-                        select new { Seat = x, RemainingTime = x.Customer == null ? 0:x.Customer.RemainingTime };
+                        select new { Seat = x, CustomerName = x.Customer.Name, RemainingTime = x.Customer == null ? 0:x.Customer.RemainingTime };
             var list = query.ToList();
             
             foreach (var x in list)
             {
                 x.Seat.RemainingTime = x.RemainingTime;
+                x.Seat.CustomerName = x.CustomerName;
             }
 
             return list.ConvertAll(x => x.Seat);
         }
 
-        public void Update(string seatId, int? customerID = null)
+        public void Update(string seatId, int? customerId = null)
         {
             Seat seat = Get(int.Parse(seatId));
             if (seat == null)
                 return;
-            seat.CustomerID = customerID;
+            seat.CustomerID = customerId;
             Update(seat);
         }
 
-        public bool LoginCheck(int customerID)
+        public bool LoginCheck(int customerId)
         {
             PCBangEntities context = CreateContext();
 
-            return context.Seats.FirstOrDefault(a => a.CustomerID == customerID) == null ? false : true;
+            return context.Seats.FirstOrDefault(a => a.CustomerID == customerId) == null ? false : true;
         }
     }
 }

@@ -32,7 +32,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnClose = new System.Windows.Forms.Button();
             this.grvRevenue = new DevExpress.XtraGrid.GridControl();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsOrder = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -77,7 +77,7 @@
             // 
             // grvRevenue
             // 
-            this.grvRevenue.DataSource = this.orderBindingSource;
+            this.grvRevenue.DataSource = this.bdsOrder;
             this.grvRevenue.Location = new System.Drawing.Point(12, 12);
             this.grvRevenue.MainView = this.gridView1;
             this.grvRevenue.Name = "grvRevenue";
@@ -85,6 +85,10 @@
             this.grvRevenue.TabIndex = 4;
             this.grvRevenue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bdsOrder
+            // 
+            this.bdsOrder.DataSource = typeof(PC_Project.Data.Order);
             // 
             // gridView1
             // 
@@ -98,6 +102,7 @@
             // 
             // colProductName
             // 
+            this.colProductName.Caption = "상품명";
             this.colProductName.FieldName = "ProductName";
             this.colProductName.MinWidth = 25;
             this.colProductName.Name = "colProductName";
@@ -108,6 +113,7 @@
             // 
             // colProductPrice
             // 
+            this.colProductPrice.Caption = "가격";
             this.colProductPrice.FieldName = "ProductPrice";
             this.colProductPrice.MinWidth = 25;
             this.colProductPrice.Name = "colProductPrice";
@@ -118,6 +124,7 @@
             // 
             // colCount
             // 
+            this.colCount.Caption = "수량";
             this.colCount.FieldName = "Count";
             this.colCount.MinWidth = 25;
             this.colCount.Name = "colCount";
@@ -128,6 +135,7 @@
             // 
             // colOrderTime
             // 
+            this.colOrderTime.Caption = "주문시간";
             this.colOrderTime.FieldName = "OrderTime";
             this.colOrderTime.MinWidth = 25;
             this.colOrderTime.Name = "colOrderTime";
@@ -181,12 +189,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
             this.Name = "Revenueform";
+            this.Text = "판매내역";
             this.Load += new System.EventHandler(this.Revenueform_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Revenueform_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -200,7 +209,7 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl grvRevenue;
-        private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.BindingSource bdsOrder;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colCount;
         private DevExpress.XtraGrid.Columns.GridColumn colOrderTime;

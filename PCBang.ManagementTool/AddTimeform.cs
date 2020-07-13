@@ -14,16 +14,16 @@ namespace ManagerForm
 {
     public partial class AddTimeform : Form
     {
-        private int? customerID;
+        private int? customerId;
 
         public AddTimeform()
         {
             InitializeComponent();
         }
 
-        public AddTimeform(int? customerID) : this()
+        public AddTimeform(int? customerId) : this()
         {
-            this.customerID = customerID;
+            this.customerId = customerId;
         }
 
         private void cbbTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -33,13 +33,11 @@ namespace ManagerForm
 
         private void AddTimeform_Load(object sender, EventArgs e)
         {
-            customerBindingSource.DataSource = DataRepository.Customer.GetAll();
-            List<Product> products = DataRepository.Product.GetAll().FindAll(x => x.CodeID == 101);
-            productBindingSource.DataSource = products;
-            List<Code> codes = DataRepository.Code.GetAll().FindAll(x => x.CodeID < 100 );
-            codeBindingSource.DataSource = codes;
-            if (customerID != null)
-                cbbCustomer.SelectedValue = customerID;
+            bdsCustomer.DataSource = DataRepository.Customer.GetAll();
+            bdsProduct.DataSource = DataRepository.Product.GetAll().FindAll(x => x.CodeID == 101);
+            bdsCode.DataSource = DataRepository.Code.GetAll().FindAll(x => x.CodeID < 100 );
+            if (customerId != null)
+                cbbCustomer.SelectedValue = customerId;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

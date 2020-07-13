@@ -34,7 +34,6 @@ namespace PC_Project.Client
         {
             chattingTimer.Start();
             bdsChatting.DataSource = DataRepository.Chatting.GetNotRead(false, SeatId);
-
         }
 
         private void btnSend_Click(object sender, EventArgs e)
