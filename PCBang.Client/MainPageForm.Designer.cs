@@ -500,7 +500,7 @@
             // 
             this.btnRPGGame.ImageOptions.Image = global::PC_Project.Client.Properties.Resources.RPG_logo;
             this.btnRPGGame.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnRPGGame.Location = new System.Drawing.Point(1012, 590);
+            this.btnRPGGame.Location = new System.Drawing.Point(1014, 590);
             this.btnRPGGame.Margin = new System.Windows.Forms.Padding(5);
             this.btnRPGGame.Name = "btnRPGGame";
             this.btnRPGGame.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -605,6 +605,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            this.layoutControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblMonlyBestGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();

@@ -34,5 +34,7 @@ namespace ManagerForm
             if ((Keys)e.KeyValue == Keys.Escape)
                 Close();
         }
+
+
     }
 }
