@@ -44,7 +44,7 @@
 * 고객과 관리자간의 실시간 채팅 가능
 ![Chatting](Documents/chatting.png)
 * 관리자 프로그램 분리, 사용자별 잔여 시간에 따른 색상 변경
-![Manager Form](Documents/ManagerForm.png)
+![Managerform](Documents/managerform.png)
 * 관리자 프로그램 내에서 판매내역 확인가능
 ![Sales](Documents/sales.png)
 * 음식 주문에 따른 금액 동기화
@@ -67,5 +67,4 @@
 * 환불 계산
 * 음식주문 창 열시 전체화면 축소
 * 관리자가 고객 강제사용종료 기능 미구현
-* Windows 타이머와 polling 기법을 사용하여 실시간 동기화 구현하여 프로그램 부하가 예상됨 (정보가 적어서 thread를 사용하지 못함)
- 
+* 소켓 프로그래밍 대신 Windows 타이머와 polling 기법을 사용하여 실시간 동기화 구현
