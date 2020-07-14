@@ -45,6 +45,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.chattingTimer = new System.Windows.Forms.Timer(this.components);
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -73,9 +75,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(402, 413);
+            this.btnClose.Location = new System.Drawing.Point(597, 413);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(386, 25);
+            this.btnClose.Size = new System.Drawing.Size(191, 25);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -83,9 +85,9 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(12, 413);
+            this.btnSend.Location = new System.Drawing.Point(402, 413);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(386, 25);
+            this.btnSend.Size = new System.Drawing.Size(191, 25);
             this.btnSend.TabIndex = 6;
             this.btnSend.Text = "보내기";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -163,8 +165,9 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.emptySpaceItem1,
+            this.layoutControlItem3});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
@@ -190,18 +193,18 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSend;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 401);
+            this.layoutControlItem3.Location = new System.Drawing.Point(390, 401);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(390, 29);
+            this.layoutControlItem3.Size = new System.Drawing.Size(195, 29);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnClose;
-            this.layoutControlItem4.Location = new System.Drawing.Point(390, 401);
+            this.layoutControlItem4.Location = new System.Drawing.Point(585, 401);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(390, 29);
+            this.layoutControlItem4.Size = new System.Drawing.Size(195, 29);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -210,13 +213,21 @@
             this.chattingTimer.Interval = 2000;
             this.chattingTimer.Tick += new System.EventHandler(this.ChattingTimer_Tick);
             // 
-            // chattingForm
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 401);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(390, 29);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // ChattingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "chattingForm";
+            this.Name = "ChattingForm";
             this.Text = "채팅";
             this.Load += new System.EventHandler(this.ChattingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -229,6 +240,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +263,6 @@
         private System.Windows.Forms.Timer chattingTimer;
         private DevExpress.XtraGrid.Columns.GridColumn colSendTIme;
         private DevExpress.XtraGrid.Columns.GridColumn colSent;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }
