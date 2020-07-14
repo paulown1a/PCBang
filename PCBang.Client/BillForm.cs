@@ -51,7 +51,7 @@ namespace PC_Project.Client
                 DataRepository.Order.Update(order);
             }
 
-            //MessageBox.Show(customer.Payment.ToString());
+            
             DataRepository.Customer.Update(customer);
 
             MessageBox.Show("주문이 완료되었습니다.");

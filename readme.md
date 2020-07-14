@@ -48,7 +48,7 @@
 * 관리자 프로그램 내에서 판매내역 확인가능
 ![Sales](Documents/sales.png)
 * 음식 주문에 따른 금액 동기화
-![Foodorder](Documents/foodorder.png)
+![Foodorder](Documents/foodorder.PNG)
 * 인기 게임 순위 목록 구현
 * 사용 금액을 토대로 나눈 회원 등급
 * 타이머를 이용한 남은 시간 계산 (현재 단위는 분으로 설정되어있지만 개발과정의 편리성을 위해 5초에 1분씩 줄어들게 설계)
