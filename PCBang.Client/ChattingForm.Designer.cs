@@ -69,15 +69,15 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
+            this.layoutControl1.Size = new System.Drawing.Size(801, 442);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(597, 413);
+            this.btnClose.Location = new System.Drawing.Point(597, 405);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(191, 25);
+            this.btnClose.Size = new System.Drawing.Size(192, 25);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(402, 413);
+            this.btnSend.Location = new System.Drawing.Point(402, 405);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(191, 25);
             this.btnSend.TabIndex = 6;
@@ -95,9 +95,9 @@
             // 
             // txbText
             // 
-            this.txbText.Location = new System.Drawing.Point(12, 384);
+            this.txbText.Location = new System.Drawing.Point(12, 376);
             this.txbText.Name = "txbText";
-            this.txbText.Size = new System.Drawing.Size(776, 25);
+            this.txbText.Size = new System.Drawing.Size(777, 25);
             this.txbText.TabIndex = 5;
             this.txbText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbText_KeyDown);
             // 
@@ -107,7 +107,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(776, 368);
+            this.gridControl1.Size = new System.Drawing.Size(777, 360);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -169,7 +169,7 @@
             this.emptySpaceItem1,
             this.layoutControlItem3});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 450);
+            this.Root.Size = new System.Drawing.Size(801, 442);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -177,23 +177,23 @@
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(780, 372);
+            this.layoutControlItem1.Size = new System.Drawing.Size(781, 364);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txbText;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 372);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 364);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(780, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(781, 29);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSend;
-            this.layoutControlItem3.Location = new System.Drawing.Point(390, 401);
+            this.layoutControlItem3.Location = new System.Drawing.Point(390, 393);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(195, 29);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -202,9 +202,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnClose;
-            this.layoutControlItem4.Location = new System.Drawing.Point(585, 401);
+            this.layoutControlItem4.Location = new System.Drawing.Point(585, 393);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(195, 29);
+            this.layoutControlItem4.Size = new System.Drawing.Size(196, 29);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -216,7 +216,7 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 401);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 393);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(390, 29);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -225,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(801, 442);
             this.Controls.Add(this.layoutControl1);
             this.Name = "ChattingForm";
             this.Text = "채팅";
