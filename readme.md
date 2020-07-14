@@ -46,7 +46,7 @@
 * 관리자 프로그램 분리, 사용자별 잔여 시간에 따른 색상 변경
 ![Manager Form](Documents/ManagerForm.png)
 * 관리자 프로그램 내에서 판매내역 확인가능
-* ![Sales](Documents/sales.png)
+![Sales](Documents/sales.png)
 * 음식 주문에 따른 금액 동기화
 ![Foodorder](Documents/foodorder.png)
 * 인기 게임 순위 목록 구현

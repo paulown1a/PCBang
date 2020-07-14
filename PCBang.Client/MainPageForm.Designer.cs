@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lblSeat = new System.Windows.Forms.Label();
             this.lblRank = new System.Windows.Forms.Label();
@@ -68,16 +67,16 @@
             this.btnCDGame = new DevExpress.XtraEditors.SimpleButton();
             this.btnRPGGame = new DevExpress.XtraEditors.SimpleButton();
             this.btnFPSGame = new DevExpress.XtraEditors.SimpleButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.grdGames = new DevExpress.XtraGrid.GridControl();
-            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsGame = new System.Windows.Forms.BindingSource();
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.colName = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colName = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.colPhoto = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colPhoto = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -102,7 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGames)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).BeginInit();
@@ -536,7 +535,7 @@
             // 
             // grdGames
             // 
-            this.grdGames.DataSource = this.gameBindingSource;
+            this.grdGames.DataSource = this.bdsGame;
             this.grdGames.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
             this.grdGames.Location = new System.Drawing.Point(321, 18);
             this.grdGames.MainView = this.layoutView1;
@@ -549,9 +548,9 @@
             this.grdGames.Visible = false;
             this.grdGames.DoubleClick += new System.EventHandler(this.grdGames_DoubleClick);
             // 
-            // gameBindingSource
+            // bdsGame
             // 
-            this.gameBindingSource.DataSource = typeof(PC_Project.Data.Game);
+            this.bdsGame.DataSource = typeof(PC_Project.Data.Game);
             // 
             // layoutView1
             // 
@@ -673,7 +672,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGames)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).EndInit();
@@ -724,7 +723,7 @@
         private DevExpress.XtraEditors.SimpleButton btnCDGame;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraGrid.GridControl grdGames;
-        private System.Windows.Forms.BindingSource gameBindingSource;
+        private System.Windows.Forms.BindingSource bdsGame;
         private System.Windows.Forms.Timer timer2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;

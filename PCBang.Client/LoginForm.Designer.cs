@@ -30,11 +30,10 @@ namespace loginform
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblNewAccount = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbSeat = new System.Windows.Forms.ComboBox();
-            this.seatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsSeat = new System.Windows.Forms.BindingSource();
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbId = new System.Windows.Forms.TextBox();
@@ -50,7 +49,7 @@ namespace loginform
             this.좌석번호 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.비밀번호)).BeginInit();
@@ -69,7 +68,8 @@ namespace loginform
             this.lblNewAccount.Appearance.Options.UseTextOptions = true;
             this.lblNewAccount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblNewAccount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblNewAccount.Location = new System.Drawing.Point(5, 5);
+            this.lblNewAccount.Location = new System.Drawing.Point(5, 6);
+            this.lblNewAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblNewAccount.Name = "lblNewAccount";
             this.lblNewAccount.Size = new System.Drawing.Size(338, 36);
             this.lblNewAccount.StyleController = this.layoutControl1;
@@ -85,30 +85,32 @@ namespace loginform
             this.layoutControl1.Controls.Add(this.txbId);
             this.layoutControl1.Controls.Add(this.btnNewAccount);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.layoutControl1.Location = new System.Drawing.Point(0, -6);
+            this.layoutControl1.Location = new System.Drawing.Point(0, -7);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(797, 212, 812, 500);
             this.layoutControl1.OptionsView.UseSkinIndents = false;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(348, 519);
+            this.layoutControl1.Size = new System.Drawing.Size(348, 623);
             this.layoutControl1.TabIndex = 7;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // cbbSeat
             // 
-            this.cbbSeat.DataSource = this.seatBindingSource;
+            this.cbbSeat.DataSource = this.bdsSeat;
             this.cbbSeat.DisplayMember = "SeatID";
             this.cbbSeat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSeat.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cbbSeat.Location = new System.Drawing.Point(75, 121);
+            this.cbbSeat.Location = new System.Drawing.Point(75, 139);
+            this.cbbSeat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbSeat.Name = "cbbSeat";
             this.cbbSeat.Size = new System.Drawing.Size(268, 26);
             this.cbbSeat.TabIndex = 8;
             this.cbbSeat.ValueMember = "SeatID";
             // 
-            // seatBindingSource
+            // bdsSeat
             // 
-            this.seatBindingSource.DataSource = typeof(PC_Project.Data.Seat);
+            this.bdsSeat.DataSource = typeof(PC_Project.Data.Seat);
             // 
             // btnLogin
             // 
@@ -119,9 +121,10 @@ namespace loginform
             this.btnLogin.Appearance.Options.UseFont = true;
             this.btnLogin.Appearance.Options.UseForeColor = true;
             this.btnLogin.AutoWidthInLayoutControl = true;
-            this.btnLogin.Location = new System.Drawing.Point(6, 457);
+            this.btnLogin.Location = new System.Drawing.Point(6, 538);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(337, 57);
+            this.btnLogin.Size = new System.Drawing.Size(337, 79);
             this.btnLogin.StyleController = this.layoutControl1;
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "로그인";
@@ -130,9 +133,10 @@ namespace loginform
             // txbPassword
             // 
             this.txbPassword.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbPassword.Location = new System.Drawing.Point(74, 86);
+            this.txbPassword.Location = new System.Drawing.Point(74, 97);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(269, 25);
+            this.txbPassword.Size = new System.Drawing.Size(269, 30);
             this.txbPassword.TabIndex = 4;
             this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
             this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassword_KeyDown);
@@ -140,9 +144,10 @@ namespace loginform
             // txbId
             // 
             this.txbId.Font = new System.Drawing.Font("Gulim", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbId.Location = new System.Drawing.Point(74, 51);
+            this.txbId.Location = new System.Drawing.Point(74, 54);
+            this.txbId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(269, 25);
+            this.txbId.Size = new System.Drawing.Size(269, 31);
             this.txbId.TabIndex = 3;
             // 
             // btnNewAccount
@@ -151,7 +156,8 @@ namespace loginform
             this.btnNewAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewAccount.Appearance.Options.UseBackColor = true;
             this.btnNewAccount.Appearance.Options.UseFont = true;
-            this.btnNewAccount.Location = new System.Drawing.Point(6, 413);
+            this.btnNewAccount.Location = new System.Drawing.Point(6, 492);
+            this.btnNewAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.Size = new System.Drawing.Size(337, 34);
             this.btnNewAccount.StyleController = this.layoutControl1;
@@ -174,7 +180,7 @@ namespace loginform
             this.좌석번호});
             this.Root.Name = "Root";
             this.Root.OptionsItemText.TextToControlDistance = 5;
-            this.Root.Size = new System.Drawing.Size(348, 519);
+            this.Root.Size = new System.Drawing.Size(348, 623);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -182,11 +188,11 @@ namespace loginform
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.txbId;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 46);
-            this.layoutControlItem2.MaxSize = new System.Drawing.Size(348, 37);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(92, 35);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem2.MaxSize = new System.Drawing.Size(348, 44);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(92, 42);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(348, 35);
+            this.layoutControlItem2.Size = new System.Drawing.Size(348, 43);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "ID";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(64, 24);
@@ -196,36 +202,36 @@ namespace loginform
             this.비밀번호.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.비밀번호.AppearanceItemCaption.Options.UseFont = true;
             this.비밀번호.Control = this.txbPassword;
-            this.비밀번호.Location = new System.Drawing.Point(0, 81);
-            this.비밀번호.MaxSize = new System.Drawing.Size(348, 35);
-            this.비밀번호.MinSize = new System.Drawing.Size(92, 35);
+            this.비밀번호.Location = new System.Drawing.Point(0, 91);
+            this.비밀번호.MaxSize = new System.Drawing.Size(348, 42);
+            this.비밀번호.MinSize = new System.Drawing.Size(92, 42);
             this.비밀번호.Name = "비밀번호";
-            this.비밀번호.Size = new System.Drawing.Size(348, 35);
+            this.비밀번호.Size = new System.Drawing.Size(348, 42);
             this.비밀번호.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.비밀번호.TextSize = new System.Drawing.Size(64, 24);
             // 
             // simpleSeparator1
             // 
             this.simpleSeparator1.AllowHotTrack = false;
-            this.simpleSeparator1.Location = new System.Drawing.Point(0, 116);
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 133);
             this.simpleSeparator1.Name = "simpleSeparator1";
-            this.simpleSeparator1.Size = new System.Drawing.Size(1, 403);
+            this.simpleSeparator1.Size = new System.Drawing.Size(1, 490);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(1, 152);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(1, 171);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(347, 256);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(347, 315);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnLogin;
-            this.layoutControlItem5.Location = new System.Drawing.Point(1, 452);
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(80, 44);
+            this.layoutControlItem5.Location = new System.Drawing.Point(1, 532);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(80, 53);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(347, 67);
+            this.layoutControlItem5.Size = new System.Drawing.Size(347, 91);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -235,16 +241,16 @@ namespace loginform
             this.layoutControlItem1.Control = this.lblNewAccount;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(348, 46);
+            this.layoutControlItem1.Size = new System.Drawing.Size(348, 48);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnNewAccount;
-            this.layoutControlItem3.Location = new System.Drawing.Point(1, 408);
+            this.layoutControlItem3.Location = new System.Drawing.Point(1, 486);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(347, 44);
+            this.layoutControlItem3.Size = new System.Drawing.Size(347, 46);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -253,24 +259,25 @@ namespace loginform
             this.좌석번호.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.좌석번호.AppearanceItemCaption.Options.UseFont = true;
             this.좌석번호.Control = this.cbbSeat;
-            this.좌석번호.Location = new System.Drawing.Point(1, 116);
+            this.좌석번호.Location = new System.Drawing.Point(1, 133);
             this.좌석번호.Name = "좌석번호";
-            this.좌석번호.Size = new System.Drawing.Size(347, 36);
+            this.좌석번호.Size = new System.Drawing.Size(347, 38);
             this.좌석번호.TextSize = new System.Drawing.Size(64, 24);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 513);
+            this.ClientSize = new System.Drawing.Size(348, 616);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.비밀번호)).EndInit();
@@ -302,7 +309,7 @@ namespace loginform
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private System.Windows.Forms.ComboBox cbbSeat;
         private DevExpress.XtraLayout.LayoutControlItem 좌석번호;
-        private System.Windows.Forms.BindingSource seatBindingSource;
+        private System.Windows.Forms.BindingSource bdsSeat;
     }
 }
 

@@ -23,7 +23,7 @@ namespace ManagerForm
         {
             bdsSeat.DataSource = DataRepository.Seat.GetUsing();
             bdsChatting.DataSource = DataRepository.Chatting.GetAll();
-            timer1.Start();
+            timChatting.Start();
         }
 
         private void cbbSeat_DropDown(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace ManagerForm
         public Managerform()
         {
             InitializeComponent();
-            timer1.Start();
+            timSeat.Start();
         }
 
         
