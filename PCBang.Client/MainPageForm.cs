@@ -111,7 +111,7 @@ namespace MainPage
         private void btnCall_Click(object sender, EventArgs e)
         {
          
-            PC_Project.Client.chattingForm chatting = new PC_Project.Client.chattingForm(int.Parse(seatNumber));
+            PC_Project.Client.ChattingForm chatting = new PC_Project.Client.ChattingForm(int.Parse(seatNumber));
             chatting.ShowDialog();
         }
 
@@ -183,7 +183,7 @@ namespace MainPage
         {
             if (this.genreId == 0)
             {
-                gameBindingSource.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
+                bdsGame.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
                 this.genreId = genreId;
                 grdGames.Visible = true;
             }
@@ -194,14 +194,14 @@ namespace MainPage
             }
             else
             {
-                gameBindingSource.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
+                bdsGame.DataSource = DataRepository.GameGenre.GetbyGenre(genreId);
                 this.genreId = genreId;
             }
         }
 
         private void grdGames_DoubleClick(object sender, EventArgs e)
         {
-            Game game = gameBindingSource.Current as Game;
+            Game game = bdsGame.Current as Game;
             if (game == null)
                 return;
             DataRepository.Game.ClickGame(game);

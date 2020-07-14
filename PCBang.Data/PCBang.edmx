@@ -43,6 +43,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CodeID" Type="int" Nullable="false" />
           <Property Name="PlayCount" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="GameGenre">
           <Key>
@@ -418,6 +419,7 @@
           <NavigationProperty Name="GameGenres" Relationship="PCBangModel.FK_게임장르_게임" FromRole="Game" ToRole="GameGenre" />
           <NavigationProperty Name="GameUsingLists" Relationship="PCBangModel.FK_게임_이용내역_게임" FromRole="Game" ToRole="GameUsingList" />
           <Property Name="PlayCount" Type="Int32" Nullable="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -677,6 +679,7 @@
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="PCBangModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="PlayCount" ColumnName="PlayCount" />
                 <ScalarProperty Name="CodeID" ColumnName="CodeID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

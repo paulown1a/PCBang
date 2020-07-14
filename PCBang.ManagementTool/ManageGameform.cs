@@ -11,13 +11,12 @@ using System.Windows.Forms;
 
 namespace ManagerForm
 {
-    public partial class ManageProductform : Form
+    public partial class ManageGameform : Form
     {
-        public ManageProductform()
+        public ManageGameform()
         {
             InitializeComponent();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -27,14 +26,14 @@ namespace ManagerForm
         {
             if (txbPhoto.Text == null)
                 return;
-           
-            DataRepository.Product.AddPhoto((int)cbbProduct.SelectedValue,txbPhoto.Text);
-            MessageBox.Show($"{cbbProduct.SelectedValue}{txbPhoto.Text}");
+
+            DataRepository.Game.AddPhoto((int)cbbGame.SelectedValue, txbPhoto.Text);
+            MessageBox.Show($"{cbbGame.SelectedValue}{txbPhoto.Text}");
         }
 
-        private void ManageProductform_Load(object sender, EventArgs e)
+        private void ManageGameform_Load(object sender, EventArgs e)
         {
-            bdsProduct.DataSource = DataRepository.Product.GetAll();
+            bdsGame.DataSource = DataRepository.Game.GetAll();
         }
     }
 }

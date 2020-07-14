@@ -19,9 +19,9 @@ using DevExpress.XtraGrid.Views.Card;
 
 namespace PC_Room
 {
-    public partial class FoodOrderForm :Form
+    public partial class FoodOrderForm : DevExpress.XtraEditors.XtraForm
     {
-        private IconButton currentBtn;
+        private IconButton btnCurrent;
         private Panel leftBorderBtn;
         private Panel leftBorderBtnSecond;
         private int seatNumber;
@@ -34,8 +34,8 @@ namespace PC_Room
             
             leftBorderBtn = new Panel();
             leftBorderBtnSecond = new Panel();
-            leftBorderBtn.Size = new Size(7, 48);
-            leftBorderBtnSecond.Size = new Size(7, 48);
+            leftBorderBtn.Size = new Size(7, 52);
+            leftBorderBtnSecond.Size = new Size(7, 52);
             MenuPn.Controls.Add(leftBorderBtn);
             CalulatorPn.Controls.Add(leftBorderBtnSecond);
             
@@ -59,28 +59,28 @@ namespace PC_Room
             public static Color color8 = Color.FromArgb(252, 202, 65);
         }
 
-        private void activateButton(object senderBtn, Color color)
+        private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn!=null)
             {
                 DisableButton();
 
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                if(senderBtn==ExitBtn || senderBtn== BuyBtn || senderBtn==btnClear)
+                btnCurrent = (IconButton)senderBtn;
+                btnCurrent.BackColor = Color.FromArgb(37, 36, 81);
+                btnCurrent.ForeColor = color;
+                btnCurrent.TextAlign = ContentAlignment.MiddleCenter;
+                btnCurrent.IconColor = color;
+                btnCurrent.TextImageRelation = TextImageRelation.TextBeforeImage;
+                btnCurrent.ImageAlign = ContentAlignment.MiddleRight;
+                if(senderBtn==btnExit || senderBtn== btnBuy || senderBtn==btnClear)
                 {
                     leftBorderBtnSecond.BackColor = color;
-                    leftBorderBtnSecond.Location = new Point(currentBtn.Location.X, currentBtn.Location.Y);
+                    leftBorderBtnSecond.Location = new Point(btnCurrent.Location.X, btnCurrent.Location.Y);
                     leftBorderBtnSecond.Visible = true;
                     leftBorderBtnSecond.BringToFront();
                 }
                 leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(currentBtn.Location.X, currentBtn.Location.Y);
+                leftBorderBtn.Location = new Point(btnCurrent.Location.X, btnCurrent.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
 
@@ -89,32 +89,32 @@ namespace PC_Room
         }
         private void DisableButton()
         {
-            if(currentBtn!=null)
+            if(btnCurrent!=null)
             { 
-                currentBtn.BackColor = Color.FromArgb(37, 30, 68);
-                currentBtn.ForeColor = Color.Gainsboro;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.Gainsboro;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+                btnCurrent.BackColor = Color.FromArgb(37, 30, 68);
+                btnCurrent.ForeColor = Color.Gainsboro;
+                btnCurrent.TextAlign = ContentAlignment.MiddleLeft;
+                btnCurrent.IconColor = Color.Gainsboro;
+                btnCurrent.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnCurrent.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
 
-        private void FoodBtn_Click(object sender, EventArgs e)
+        private void btnFood_Click(object sender, EventArgs e)
         {
-            activateButton(sender,RGBColors.color4);
-            GridFood.BringToFront();
+            ActivateButton(sender,RGBColors.color4);
+            gridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(102);
         }
 
-        private void BeverageBtn_Click(object sender, EventArgs e)
+        private void btnBeverage_Click(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color3);
-            GridFood.BringToFront();
+            ActivateButton(sender, RGBColors.color3);
+            gridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(104);
         }
 
-        private void ExitBtn_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             DataRepository.Order.DeleteOrder(customer.CustomerID);
             Close();
@@ -133,19 +133,19 @@ namespace PC_Room
             Reset();
         }
 
-        private void ExitBtn_MouseHover(object sender, EventArgs e)
+        private void btnExit_MouseHover(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color1);
         }
 
-        private void ExitBtn_MouseLeave(object sender, EventArgs e)
+        private void btnExit_MouseLeave(object sender, EventArgs e)
         {
             Reset();
         }
 
-        private void BuyBtn_Click(object sender, EventArgs e)
+        private void btnBuy_Click(object sender, EventArgs e)
         {
-            //activateButton(sender, RGBColors.color6);
+            //ActivateButton(sender, RGBColors.color6);
 
             if (DataRepository.Order.GetWithProduct(false, customer.CustomerID).Count==0)
             { 
@@ -154,8 +154,8 @@ namespace PC_Room
             }
             else
             {
-                billForm billform = new billForm(customer);
-                var res=billform.ShowDialog();
+                BillForm billForm = new BillForm(customer);
+                var res=billForm.ShowDialog();
                 bdsOrder.DataSource = DataRepository.Order.GetWithProduct(false, customer.CustomerID);
                 if (res==DialogResult.OK)
                 {
@@ -168,51 +168,29 @@ namespace PC_Room
                 
         }
 
-        private void BuyBtn_MouseHover(object sender, EventArgs e)
+        private void btnBuy_MouseHover(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color6);
+            ActivateButton(sender, RGBColors.color6);
         }
 
-        private void BuyBtn_MouseLeave(object sender, EventArgs e)
+        private void btnBuy_MouseLeave(object sender, EventArgs e)
         {
             Reset();
         }
 
-        private void SnackBtn_Click_1(object sender, EventArgs e)
+        private void btnSnack_Click_1(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color2);
-            GridFood.BringToFront();
+            ActivateButton(sender, RGBColors.color2);
+            gridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(103);
         }
 
-        private void TicketBtn_Click(object sender, EventArgs e)
+        private void btnTicket_Click(object sender, EventArgs e)
+
         {
-            activateButton(sender, RGBColors.color7);
-            GridFood.BringToFront();
+            ActivateButton(sender, RGBColors.color7);
+            gridFood.BringToFront();
             bdsProduct.DataSource = DataRepository.Product.Getbycode(101);
-        }
-
-        private void gridControl1_Load(object sender, EventArgs e)
-        {
-            
-            List<Product> products =
-                DataRepository.Product.Getbycode(102);
-            bdsProduct.DataSource = products;
-        }
-
-        private void productIcon1_OrderBtnClicked(object sender, loginform.ProductIcon.OrderBtnClickedEventArgs e)
-        {
-
-            Order order = new Order();
-
-            order.ProductID = e.ProductId;
-
-            order.SeatID = seatNumber;
-            order.CustomerID = customer.CustomerID;
-            order.OrderTime = DateTime.Now;
-            order.buyed = false;
-            DataRepository.Order.Insert(order);
-
         }
 
         private void FoodOrderForm_Load(object sender, EventArgs e)
@@ -223,7 +201,7 @@ namespace PC_Room
         }
 
 
-        private void GridFood_DoubleClick(object sender, EventArgs e)
+        private void gridFood_DoubleClick(object sender, EventArgs e)
         {
            
             Product product = bdsProduct.Current as Product;
@@ -263,13 +241,12 @@ namespace PC_Room
 
         private void btnClear_MouseHover(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color8);
+            ActivateButton(sender, RGBColors.color8);
         }
 
         private void btnClear_MouseLeave(object sender, EventArgs e)
         {
             Reset();
         }
-
     }
 }

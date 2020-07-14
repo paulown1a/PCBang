@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodOrderForm));
             this.MenuPn = new System.Windows.Forms.Panel();
-            this.TicketBtn = new FontAwesome.Sharp.IconButton();
-            this.SnackBtn = new FontAwesome.Sharp.IconButton();
-            this.BeverageBtn = new FontAwesome.Sharp.IconButton();
-            this.FoodBtn = new FontAwesome.Sharp.IconButton();
+            this.btnTicket = new FontAwesome.Sharp.IconButton();
+            this.btnSnack = new FontAwesome.Sharp.IconButton();
+            this.btnBeverage = new FontAwesome.Sharp.IconButton();
+            this.btnFood = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.HomeIcon = new System.Windows.Forms.PictureBox();
-            this.ExitBtn = new FontAwesome.Sharp.IconButton();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.CalulatorPn = new System.Windows.Forms.Panel();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.gridBIll = new DevExpress.XtraGrid.GridControl();
@@ -45,7 +45,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BuyBtn = new FontAwesome.Sharp.IconButton();
+            this.btnBuy = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.colProductID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodeID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,16 +56,21 @@
             this.bdsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.SeatIdbtn = new System.Windows.Forms.Label();
-            this.GridFood = new DevExpress.XtraGrid.GridControl();
-            this.cardview1 = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPhoto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridFood = new DevExpress.XtraGrid.GridControl();
+            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            this.colName = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colName = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colPrice = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colPrice = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colPhoto = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colPhoto = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.pnHome = new PC_Project.Client.HomeDisplay();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MenuPn.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
@@ -75,124 +80,133 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardview1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPn
             // 
             this.MenuPn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.MenuPn.Controls.Add(this.TicketBtn);
-            this.MenuPn.Controls.Add(this.SnackBtn);
-            this.MenuPn.Controls.Add(this.BeverageBtn);
-            this.MenuPn.Controls.Add(this.FoodBtn);
+            this.MenuPn.Controls.Add(this.btnTicket);
+            this.MenuPn.Controls.Add(this.btnSnack);
+            this.MenuPn.Controls.Add(this.btnBeverage);
+            this.MenuPn.Controls.Add(this.btnFood);
             this.MenuPn.Controls.Add(this.panel2);
             this.MenuPn.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPn.Location = new System.Drawing.Point(0, 0);
+            this.MenuPn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MenuPn.Name = "MenuPn";
-            this.MenuPn.Size = new System.Drawing.Size(220, 770);
+            this.MenuPn.Size = new System.Drawing.Size(220, 924);
             this.MenuPn.TabIndex = 0;
             // 
-            // TicketBtn
+            // btnTicket
             // 
-            this.TicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.TicketBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TicketBtn.FlatAppearance.BorderSize = 0;
-            this.TicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.TicketBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TicketBtn.IconChar = FontAwesome.Sharp.IconChar.FireAlt;
-            this.TicketBtn.IconColor = System.Drawing.Color.Ivory;
-            this.TicketBtn.IconSize = 30;
-            this.TicketBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TicketBtn.Location = new System.Drawing.Point(0, 320);
-            this.TicketBtn.Name = "TicketBtn";
-            this.TicketBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.TicketBtn.Rotation = 0D;
-            this.TicketBtn.Size = new System.Drawing.Size(220, 60);
-            this.TicketBtn.TabIndex = 5;
-            this.TicketBtn.Text = "Ticket";
-            this.TicketBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TicketBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.TicketBtn.UseVisualStyleBackColor = false;
-            this.TicketBtn.Click += new System.EventHandler(this.TicketBtn_Click);
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnTicket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTicket.FlatAppearance.BorderSize = 0;
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicket.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTicket.IconChar = FontAwesome.Sharp.IconChar.FireAlt;
+            this.btnTicket.IconColor = System.Drawing.Color.Ivory;
+            this.btnTicket.IconSize = 30;
+            this.btnTicket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTicket.Location = new System.Drawing.Point(0, 384);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTicket.Rotation = 0D;
+            this.btnTicket.Size = new System.Drawing.Size(220, 72);
+            this.btnTicket.TabIndex = 5;
+            this.btnTicket.Text = "Ticket";
+            this.btnTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTicket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
-            // SnackBtn
+            // btnSnack
             // 
-            this.SnackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.SnackBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SnackBtn.FlatAppearance.BorderSize = 0;
-            this.SnackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SnackBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.SnackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SnackBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SnackBtn.IconChar = FontAwesome.Sharp.IconChar.Disease;
-            this.SnackBtn.IconColor = System.Drawing.Color.Ivory;
-            this.SnackBtn.IconSize = 30;
-            this.SnackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SnackBtn.Location = new System.Drawing.Point(0, 260);
-            this.SnackBtn.Name = "SnackBtn";
-            this.SnackBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SnackBtn.Rotation = 0D;
-            this.SnackBtn.Size = new System.Drawing.Size(220, 60);
-            this.SnackBtn.TabIndex = 4;
-            this.SnackBtn.Text = "Snack";
-            this.SnackBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SnackBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SnackBtn.UseVisualStyleBackColor = false;
-            this.SnackBtn.Click += new System.EventHandler(this.SnackBtn_Click_1);
+            this.btnSnack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnSnack.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSnack.FlatAppearance.BorderSize = 0;
+            this.btnSnack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSnack.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSnack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSnack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSnack.IconChar = FontAwesome.Sharp.IconChar.Disease;
+            this.btnSnack.IconColor = System.Drawing.Color.Ivory;
+            this.btnSnack.IconSize = 30;
+            this.btnSnack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSnack.Location = new System.Drawing.Point(0, 312);
+            this.btnSnack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSnack.Name = "btnSnack";
+            this.btnSnack.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSnack.Rotation = 0D;
+            this.btnSnack.Size = new System.Drawing.Size(220, 72);
+            this.btnSnack.TabIndex = 4;
+            this.btnSnack.Text = "Snack";
+            this.btnSnack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSnack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSnack.UseVisualStyleBackColor = false;
+            this.btnSnack.Click += new System.EventHandler(this.btnSnack_Click_1);
             // 
-            // BeverageBtn
+            // btnBeverage
             // 
-            this.BeverageBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.BeverageBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BeverageBtn.FlatAppearance.BorderSize = 0;
-            this.BeverageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BeverageBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BeverageBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BeverageBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BeverageBtn.IconChar = FontAwesome.Sharp.IconChar.WineGlassAlt;
-            this.BeverageBtn.IconColor = System.Drawing.Color.Ivory;
-            this.BeverageBtn.IconSize = 30;
-            this.BeverageBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BeverageBtn.Location = new System.Drawing.Point(0, 200);
-            this.BeverageBtn.Name = "BeverageBtn";
-            this.BeverageBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BeverageBtn.Rotation = 0D;
-            this.BeverageBtn.Size = new System.Drawing.Size(220, 60);
-            this.BeverageBtn.TabIndex = 3;
-            this.BeverageBtn.Text = "Beverage";
-            this.BeverageBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BeverageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BeverageBtn.UseVisualStyleBackColor = false;
-            this.BeverageBtn.Click += new System.EventHandler(this.BeverageBtn_Click);
+            this.btnBeverage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnBeverage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBeverage.FlatAppearance.BorderSize = 0;
+            this.btnBeverage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBeverage.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBeverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBeverage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBeverage.IconChar = FontAwesome.Sharp.IconChar.WineGlassAlt;
+            this.btnBeverage.IconColor = System.Drawing.Color.Ivory;
+            this.btnBeverage.IconSize = 30;
+            this.btnBeverage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBeverage.Location = new System.Drawing.Point(0, 240);
+            this.btnBeverage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBeverage.Name = "btnBeverage";
+            this.btnBeverage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBeverage.Rotation = 0D;
+            this.btnBeverage.Size = new System.Drawing.Size(220, 72);
+            this.btnBeverage.TabIndex = 3;
+            this.btnBeverage.Text = "Beverage";
+            this.btnBeverage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBeverage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBeverage.UseVisualStyleBackColor = false;
+            this.btnBeverage.Click += new System.EventHandler(this.btnBeverage_Click);
             // 
-            // FoodBtn
+            // btnFood
             // 
-            this.FoodBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.FoodBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.FoodBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FoodBtn.FlatAppearance.BorderSize = 0;
-            this.FoodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FoodBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.FoodBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FoodBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FoodBtn.IconChar = FontAwesome.Sharp.IconChar.PizzaSlice;
-            this.FoodBtn.IconColor = System.Drawing.Color.Ivory;
-            this.FoodBtn.IconSize = 30;
-            this.FoodBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FoodBtn.Location = new System.Drawing.Point(0, 140);
-            this.FoodBtn.Name = "FoodBtn";
-            this.FoodBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.FoodBtn.Rotation = 0D;
-            this.FoodBtn.Size = new System.Drawing.Size(220, 60);
-            this.FoodBtn.TabIndex = 1;
-            this.FoodBtn.Text = "Food";
-            this.FoodBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FoodBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.FoodBtn.UseVisualStyleBackColor = false;
-            this.FoodBtn.Click += new System.EventHandler(this.FoodBtn_Click);
+            this.btnFood.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnFood.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFood.FlatAppearance.BorderSize = 0;
+            this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFood.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFood.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFood.IconChar = FontAwesome.Sharp.IconChar.PizzaSlice;
+            this.btnFood.IconColor = System.Drawing.Color.Ivory;
+            this.btnFood.IconSize = 30;
+            this.btnFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFood.Location = new System.Drawing.Point(0, 168);
+            this.btnFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFood.Name = "btnFood";
+            this.btnFood.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnFood.Rotation = 0D;
+            this.btnFood.Size = new System.Drawing.Size(220, 72);
+            this.btnFood.TabIndex = 1;
+            this.btnFood.Text = "Food";
+            this.btnFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFood.UseVisualStyleBackColor = false;
+            this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
             // panel2
             // 
@@ -200,60 +214,64 @@
             this.panel2.Controls.Add(this.HomeIcon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 140);
+            this.panel2.Size = new System.Drawing.Size(220, 168);
             this.panel2.TabIndex = 0;
             // 
             // HomeIcon
             // 
             this.HomeIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
             this.HomeIcon.Image = ((System.Drawing.Image)(resources.GetObject("HomeIcon.Image")));
-            this.HomeIcon.Location = new System.Drawing.Point(38, 25);
+            this.HomeIcon.Location = new System.Drawing.Point(38, 30);
+            this.HomeIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HomeIcon.Name = "HomeIcon";
-            this.HomeIcon.Size = new System.Drawing.Size(142, 86);
+            this.HomeIcon.Size = new System.Drawing.Size(142, 103);
             this.HomeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomeIcon.TabIndex = 0;
             this.HomeIcon.TabStop = false;
             this.HomeIcon.Click += new System.EventHandler(this.HomeIcon_Click);
             // 
-            // ExitBtn
+            // btnExit
             // 
-            this.ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.ExitBtn.FlatAppearance.BorderSize = 0;
-            this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.ExitBtn.Font = new System.Drawing.Font("Harlow Solid Italic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ExitBtn.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            this.ExitBtn.IconColor = System.Drawing.Color.Ivory;
-            this.ExitBtn.IconSize = 30;
-            this.ExitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExitBtn.Location = new System.Drawing.Point(713, 181);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ExitBtn.Rotation = 0D;
-            this.ExitBtn.Size = new System.Drawing.Size(200, 60);
-            this.ExitBtn.TabIndex = 4;
-            this.ExitBtn.Text = "Exit";
-            this.ExitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ExitBtn.UseVisualStyleBackColor = false;
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            this.ExitBtn.MouseLeave += new System.EventHandler(this.ExitBtn_MouseLeave);
-            this.ExitBtn.MouseHover += new System.EventHandler(this.ExitBtn_MouseHover);
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnExit.Font = new System.Drawing.Font("Harlow Solid Italic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            this.btnExit.IconColor = System.Drawing.Color.Ivory;
+            this.btnExit.IconSize = 30;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(713, 217);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnExit.Rotation = 0D;
+            this.btnExit.Size = new System.Drawing.Size(200, 72);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
+            this.btnExit.MouseHover += new System.EventHandler(this.btnExit_MouseHover);
             // 
             // CalulatorPn
             // 
             this.CalulatorPn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
             this.CalulatorPn.Controls.Add(this.btnClear);
             this.CalulatorPn.Controls.Add(this.gridBIll);
-            this.CalulatorPn.Controls.Add(this.ExitBtn);
-            this.CalulatorPn.Controls.Add(this.BuyBtn);
+            this.CalulatorPn.Controls.Add(this.btnExit);
+            this.CalulatorPn.Controls.Add(this.btnBuy);
             this.CalulatorPn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CalulatorPn.Location = new System.Drawing.Point(220, 501);
+            this.CalulatorPn.Location = new System.Drawing.Point(220, 601);
+            this.CalulatorPn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CalulatorPn.Name = "CalulatorPn";
-            this.CalulatorPn.Size = new System.Drawing.Size(917, 269);
+            this.CalulatorPn.Size = new System.Drawing.Size(917, 323);
             this.CalulatorPn.TabIndex = 3;
             // 
             // btnClear
@@ -268,11 +286,12 @@
             this.btnClear.IconColor = System.Drawing.Color.Ivory;
             this.btnClear.IconSize = 30;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(487, 21);
+            this.btnClear.Location = new System.Drawing.Point(487, 25);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClear.Rotation = 0D;
-            this.btnClear.Size = new System.Drawing.Size(220, 60);
+            this.btnClear.Size = new System.Drawing.Size(220, 72);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,10 +304,12 @@
             // gridBIll
             // 
             this.gridBIll.DataSource = this.bdsOrder;
-            this.gridBIll.Location = new System.Drawing.Point(6, 21);
+            this.gridBIll.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridBIll.Location = new System.Drawing.Point(6, 25);
             this.gridBIll.MainView = this.gridView1;
+            this.gridBIll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridBIll.Name = "gridBIll";
-            this.gridBIll.Size = new System.Drawing.Size(475, 226);
+            this.gridBIll.Size = new System.Drawing.Size(475, 271);
             this.gridBIll.TabIndex = 7;
             this.gridBIll.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -300,9 +321,12 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colProductName,
             this.colProductPrice});
+            this.gridView1.DetailHeight = 420;
             this.gridView1.GridControl = this.gridBIll;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -331,31 +355,32 @@
             this.colProductPrice.VisibleIndex = 1;
             this.colProductPrice.Width = 94;
             // 
-            // BuyBtn
+            // btnBuy
             // 
-            this.BuyBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
-            this.BuyBtn.FlatAppearance.BorderSize = 0;
-            this.BuyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BuyBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BuyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuyBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BuyBtn.IconChar = FontAwesome.Sharp.IconChar.Coins;
-            this.BuyBtn.IconColor = System.Drawing.Color.Ivory;
-            this.BuyBtn.IconSize = 30;
-            this.BuyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuyBtn.Location = new System.Drawing.Point(487, 181);
-            this.BuyBtn.Name = "BuyBtn";
-            this.BuyBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BuyBtn.Rotation = 0D;
-            this.BuyBtn.Size = new System.Drawing.Size(220, 60);
-            this.BuyBtn.TabIndex = 5;
-            this.BuyBtn.Text = "BUY";
-            this.BuyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BuyBtn.UseVisualStyleBackColor = false;
-            this.BuyBtn.Click += new System.EventHandler(this.BuyBtn_Click);
-            this.BuyBtn.MouseLeave += new System.EventHandler(this.BuyBtn_MouseLeave);
-            this.BuyBtn.MouseHover += new System.EventHandler(this.BuyBtn_MouseHover);
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(72)))));
+            this.btnBuy.FlatAppearance.BorderSize = 0;
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuy.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuy.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            this.btnBuy.IconColor = System.Drawing.Color.Ivory;
+            this.btnBuy.IconSize = 30;
+            this.btnBuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuy.Location = new System.Drawing.Point(487, 217);
+            this.btnBuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBuy.Rotation = 0D;
+            this.btnBuy.Size = new System.Drawing.Size(220, 72);
+            this.btnBuy.TabIndex = 5;
+            this.btnBuy.Text = "BUY";
+            this.btnBuy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            this.btnBuy.MouseLeave += new System.EventHandler(this.btnBuy_MouseLeave);
+            this.btnBuy.MouseHover += new System.EventHandler(this.btnBuy_MouseHover);
             // 
             // panel4
             // 
@@ -363,8 +388,9 @@
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(220, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(917, 15);
+            this.panel4.Size = new System.Drawing.Size(917, 18);
             this.panel4.TabIndex = 4;
             // 
             // colProductID
@@ -416,101 +442,190 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.SeatIdbtn);
-            this.panel1.Controls.Add(this.GridFood);
+            this.panel1.Controls.Add(this.gridFood);
             this.panel1.Controls.Add(this.pnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(220, 15);
+            this.panel1.Location = new System.Drawing.Point(220, 18);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 486);
+            this.panel1.Size = new System.Drawing.Size(917, 583);
             this.panel1.TabIndex = 5;
             // 
             // SeatIdbtn
             // 
             this.SeatIdbtn.AutoSize = true;
-            this.SeatIdbtn.Location = new System.Drawing.Point(687, 24);
+            this.SeatIdbtn.Location = new System.Drawing.Point(687, 29);
             this.SeatIdbtn.Name = "SeatIdbtn";
-            this.SeatIdbtn.Size = new System.Drawing.Size(0, 15);
+            this.SeatIdbtn.Size = new System.Drawing.Size(0, 18);
             this.SeatIdbtn.TabIndex = 1;
             // 
-            // GridFood
+            // gridFood
             // 
-            this.GridFood.DataSource = this.bdsProduct;
-            this.GridFood.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridFood.Location = new System.Drawing.Point(0, 0);
-            this.GridFood.MainView = this.cardview1;
-            this.GridFood.Name = "GridFood";
-            this.GridFood.Size = new System.Drawing.Size(917, 486);
-            this.GridFood.TabIndex = 2;
-            this.GridFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardview1});
-            this.GridFood.DoubleClick += new System.EventHandler(this.GridFood_DoubleClick);
+            this.gridFood.DataSource = this.bdsProduct;
+            this.gridFood.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridFood.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridFood.Location = new System.Drawing.Point(0, 0);
+            this.gridFood.MainView = this.layoutView1;
+            this.gridFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridFood.Name = "gridFood";
+            this.gridFood.Size = new System.Drawing.Size(917, 583);
+            this.gridFood.TabIndex = 2;
+            this.gridFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.layoutView1});
+            this.gridFood.DoubleClick += new System.EventHandler(this.gridFood_DoubleClick);
             // 
-            // cardview1
+            // layoutView1
             // 
-            this.cardview1.Appearance.Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cardview1.Appearance.Card.Options.UseFont = true;
-            this.cardview1.Appearance.FieldCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.cardview1.AppearancePrint.CardCaption.Options.UseTextOptions = true;
-            this.cardview1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.cardview1.CardInterval = 24;
-            this.cardview1.CardScrollButtonBorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.cardview1.CardWidth = 300;
-            this.cardview1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.layoutView1.Appearance.Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.layoutView1.Appearance.Card.Options.UseFont = true;
+            this.layoutView1.Appearance.FieldCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.layoutView1.Appearance.FieldValue.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.layoutView1.Appearance.FieldValue.Options.UseFont = true;
+            this.layoutView1.AppearancePrint.Card.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.layoutView1.AppearancePrint.Card.Options.UseFont = true;
+            this.layoutView1.AppearancePrint.CardCaption.Options.UseTextOptions = true;
+            this.layoutView1.CardHorzInterval = 1;
+            this.layoutView1.CardMinSize = new System.Drawing.Size(350, 142);
+            this.layoutView1.CardVertInterval = 1;
+            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.colName,
             this.colPrice,
             this.colPhoto});
-            this.cardview1.DetailHeight = 950;
-            this.cardview1.GridControl = this.GridFood;
-            this.cardview1.Name = "cardview1";
-            this.cardview1.OptionsBehavior.FieldAutoHeight = true;
-            this.cardview1.OptionsBehavior.ReadOnly = true;
-            this.cardview1.OptionsBehavior.Sizeable = false;
-            this.cardview1.OptionsView.ShowCardExpandButton = false;
-            this.cardview1.OptionsView.ShowQuickCustomizeButton = false;
+            this.layoutView1.DetailHeight = 3000;
+            this.layoutView1.GridControl = this.gridFood;
+            this.layoutView1.Name = "layoutView1";
+            this.layoutView1.OptionsBehavior.AllowRuntimeCustomization = false;
+            this.layoutView1.OptionsBehavior.ReadOnly = true;
+            this.layoutView1.OptionsCustomization.AllowFilter = false;
+            this.layoutView1.OptionsCustomization.AllowSort = false;
+            this.layoutView1.OptionsItemText.AlignMode = DevExpress.XtraGrid.Views.Layout.FieldTextAlignMode.CustomSize;
+            this.layoutView1.OptionsItemText.TextToControlDistance = 10;
+            this.layoutView1.OptionsMultiRecordMode.MaxCardColumns = 2;
+            this.layoutView1.OptionsMultiRecordMode.MaxCardRows = 3;
+            this.layoutView1.OptionsMultiRecordMode.MultiColumnScrollBarOrientation = DevExpress.XtraGrid.Views.Layout.ScrollBarOrientation.Horizontal;
+            this.layoutView1.OptionsView.ShowCardExpandButton = false;
+            this.layoutView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.layoutView1.OptionsView.ShowHeaderPanel = false;
+            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
+            this.layoutView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPrice, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.layoutView1.TemplateCard = this.layoutViewCard1;
             // 
             // colName
             // 
-            this.colName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.colName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colName.AppearanceCell.Options.UseFont = true;
+            this.colName.AppearanceHeader.Options.UseFont = true;
+            this.colName.Caption = "이름";
             this.colName.FieldName = "Name";
+            this.colName.LayoutViewField = this.layoutViewField_colName;
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
             this.colName.OptionsColumn.AllowEdit = false;
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
+            this.colName.OptionsFilter.AllowAutoFilter = false;
+            this.colName.OptionsFilter.AllowFilter = false;
+            this.colName.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.colName.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.colName.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.colName.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.colName.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.colName.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.colName.OptionsFilter.ShowEmptyDateFilter = false;
             this.colName.Width = 94;
+            // 
+            // layoutViewField_colName
+            // 
+            this.layoutViewField_colName.EditorPreferredWidth = 352;
+            this.layoutViewField_colName.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colName.Name = "layoutViewField_colName";
+            this.layoutViewField_colName.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colName.Size = new System.Drawing.Size(362, 32);
+            this.layoutViewField_colName.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colName.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colName.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colName.TextToControlDistance = 0;
+            this.layoutViewField_colName.TextVisible = false;
             // 
             // colPrice
             // 
             this.colPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11F);
             this.colPrice.AppearanceCell.Options.UseFont = true;
+            this.colPrice.Caption = "가격";
             this.colPrice.DisplayFormat.FormatString = "c0";
             this.colPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colPrice.FieldName = "Price";
+            this.colPrice.LayoutViewField = this.layoutViewField_colPrice;
             this.colPrice.MinWidth = 25;
             this.colPrice.Name = "colPrice";
             this.colPrice.OptionsColumn.AllowEdit = false;
-            this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 2;
+            this.colPrice.OptionsFilter.AllowAutoFilter = false;
+            this.colPrice.OptionsFilter.AllowFilter = false;
+            this.colPrice.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.colPrice.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.colPrice.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.colPrice.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.colPrice.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.colPrice.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.colPrice.OptionsFilter.ShowEmptyDateFilter = false;
             this.colPrice.Width = 94;
+            // 
+            // layoutViewField_colPrice
+            // 
+            this.layoutViewField_colPrice.EditorPreferredWidth = 352;
+            this.layoutViewField_colPrice.Location = new System.Drawing.Point(0, 32);
+            this.layoutViewField_colPrice.Name = "layoutViewField_colPrice";
+            this.layoutViewField_colPrice.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colPrice.Size = new System.Drawing.Size(362, 32);
+            this.layoutViewField_colPrice.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colPrice.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colPrice.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colPrice.TextVisible = false;
             // 
             // colPhoto
             // 
+            this.colPhoto.Caption = " ";
             this.colPhoto.FieldName = "Photo";
+            this.colPhoto.LayoutViewField = this.layoutViewField_colPhoto;
             this.colPhoto.MaxWidth = 500;
             this.colPhoto.MinWidth = 500;
             this.colPhoto.Name = "colPhoto";
             this.colPhoto.OptionsColumn.AllowEdit = false;
-            this.colPhoto.Visible = true;
-            this.colPhoto.VisibleIndex = 0;
             this.colPhoto.Width = 500;
+            // 
+            // layoutViewField_colPhoto
+            // 
+            this.layoutViewField_colPhoto.EditorPreferredWidth = 352;
+            this.layoutViewField_colPhoto.Location = new System.Drawing.Point(0, 64);
+            this.layoutViewField_colPhoto.Name = "layoutViewField_colPhoto";
+            this.layoutViewField_colPhoto.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewField_colPhoto.Size = new System.Drawing.Size(362, 205);
+            this.layoutViewField_colPhoto.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colPhoto.StartNewLine = true;
+            this.layoutViewField_colPhoto.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colPhoto.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutViewField_colPhoto.TextVisible = false;
+            // 
+            // layoutViewCard1
+            // 
+            this.layoutViewCard1.CustomizationFormText = "TemplateCard";
+            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colName,
+            this.layoutViewField_colPrice,
+            this.layoutViewField_colPhoto});
+            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.OptionsItemText.TextToControlDistance = 10;
+            this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutViewCard1.Text = "TemplateCard";
             // 
             // pnHome
             // 
             this.pnHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnHome.Location = new System.Drawing.Point(0, 0);
+            this.pnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnHome.Name = "pnHome";
-            this.pnHome.Size = new System.Drawing.Size(917, 486);
+            this.pnHome.Size = new System.Drawing.Size(917, 583);
             this.pnHome.TabIndex = 3;
             // 
             // productNameDataGridViewTextBoxColumn
@@ -549,15 +664,16 @@
             // 
             // FoodOrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1137, 770);
+            this.ClientSize = new System.Drawing.Size(1137, 924);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.CalulatorPn);
             this.Controls.Add(this.MenuPn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FoodOrderForm";
@@ -574,8 +690,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardview1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,15 +704,15 @@
 
         private System.Windows.Forms.Panel MenuPn;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton FoodBtn;
-        private FontAwesome.Sharp.IconButton ExitBtn;
-        private FontAwesome.Sharp.IconButton BeverageBtn;
+        private FontAwesome.Sharp.IconButton btnFood;
+        private FontAwesome.Sharp.IconButton btnExit;
+        private FontAwesome.Sharp.IconButton btnBeverage;
         private System.Windows.Forms.PictureBox HomeIcon;
         private System.Windows.Forms.Panel CalulatorPn;
         private System.Windows.Forms.Panel panel4;
-        private FontAwesome.Sharp.IconButton BuyBtn;
-        private FontAwesome.Sharp.IconButton SnackBtn;
-        private FontAwesome.Sharp.IconButton TicketBtn;
+        private FontAwesome.Sharp.IconButton btnBuy;
+        private FontAwesome.Sharp.IconButton btnSnack;
+        private FontAwesome.Sharp.IconButton btnTicket;
         private System.Windows.Forms.BindingSource bdsProduct;
         private DevExpress.XtraGrid.Columns.GridColumn colProductID;
         private DevExpress.XtraGrid.Columns.GridColumn colCodeID;
@@ -607,16 +727,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatID;
-        private DevExpress.XtraGrid.GridControl GridFood;
-        private DevExpress.XtraGrid.Views.Card.CardView cardview1;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colPhoto;
+        private DevExpress.XtraGrid.GridControl gridFood;
         private PC_Project.Client.HomeDisplay pnHome;
         private DevExpress.XtraGrid.GridControl gridBIll;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colProductName;
         private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;
         private FontAwesome.Sharp.IconButton btnClear;
+        private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn colName;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn colPrice;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn colPhoto;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colName;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colPrice;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colPhoto;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
     }
 }
